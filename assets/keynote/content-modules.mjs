@@ -30,12 +30,14 @@ export function composeModules(config,reference,renderers,{revision=0,appUrl='',
  return {reference:{...reference,deckId:revision?reference.deckId+'-content-'+revision:reference.deckId,chapters,slides:entries},renderers:designs};
 }
 
-export async function loadContentSnapshot(){
+export async function loadContentSnapshot({onRetry=()=>{},attempts=6,wait=ms=>new Promise(resolve=>setTimeout(resolve,ms))}={}){
  const preview=new URLSearchParams(location.search).get('preview')==='1';
  const token=preview?sessionStorage.getItem('signal-admin-token'):null;
  if(preview&&!token)throw Error('Admin login required to preview draft');
- const response=await fetch((window.SIGNAL_HOSTING?.apiOrigin||'')+'/api/'+(preview?'admin/content':'content'),{cache:'no-store',headers:token?{Authorization:'Bearer '+token}:{},signal:AbortSignal.timeout(10000)});
- if(!response.ok){if(response.status===404&&!preview)return null;throw Error('Content unavailable');}
- const data=await response.json();
- return preview?{revision:data.published.revision,config:data.draft,preview:true}:data;
+ for(let attempt=1;attempt<=attempts;attempt++)try{
+  const response=await fetch((window.SIGNAL_HOSTING?.apiOrigin||'')+'/api/'+(preview?'admin/content':'content'),{cache:'no-store',headers:token?{Authorization:'Bearer '+token}:{},signal:AbortSignal.timeout(15000)});
+  if(!response.ok){const error=Object.assign(Error('Content unavailable'),{status:response.status});throw error;}
+  const data=await response.json(),snapshot=preview?{revision:data.published.revision,config:data.draft,preview:true}:data;
+  if(!Array.isArray(snapshot.config?.modules))throw Error('Invalid presentation content');return snapshot;
+ }catch(error){if([401,403].includes(error.status)||attempt===attempts)throw error;onRetry(attempt);await wait(Math.min(attempt*1000,3000));}
 }

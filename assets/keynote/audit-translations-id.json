@@ -975,7 +975,7 @@
     "Verify implementation and actual effects; feed back evidence.": "Verifikasi pelaksanaan dan dampak aktual; gunakan bukti sebagai umpan balik.",
     "A framework for continuous risk assurance. Human judgment can challenge the evidence at every phase.": "Framework assurance risiko berkelanjutan. Pertimbangan manusia dapat menantang bukti di setiap tahap.",
     "← → or Space": "← → atau Space",
-    "AI agent": "Agen AI",
+    "AI agent": "Agent AI",
     "Prepare evidence and advice": "Siapkan bukti dan saran",
     "Human": "Manusia",
     "Decide, act and verify": "Putuskan, bertindak, dan verifikasi",
@@ -1139,7 +1139,115 @@
     "Read the source. Mark unsupported claims; leave correct content unmarked.": "Baca sumber. Tandai klaim tanpa dukungan; biarkan konten yang benar.",
     "Finish & debrief": "Selesaikan dan bahas",
     "Accuracy first, then time. Presenter closes the session to reveal results.": "Ketepatan dahulu, lalu waktu. Presenter menutup sesi untuk menampilkan hasil.",
-    "Open human-in-the-loop practice ?": "Buka praktik human-in-the-loop ?"
+    "Open human-in-the-loop practice ?": "Buka praktik human-in-the-loop ?",
+    "Chatbots, AI agents and agentic AI": "Chatbot, agent AI, dan Agentic AI",
+    "From answering a question to coordinating work toward an objective.": "Dari menjawab pertanyaan menuju koordinasi pekerjaan untuk mencapai tujuan.",
+    "Agentic AI in the audit process": "Agentic AI dalam proses audit",
+    "AI automates preparation and follow-up. People approve scope, evidence, conclusions and risk decisions.": "AI mengotomasi persiapan dan tindak lanjut. Manusia menyetujui lingkup, bukti, simpulan, dan keputusan risiko.",
+    "Historical reporting of the April 2025 US tariff announcement. Not a current tariff rate. Company names, portfolio shares and impacts in the exercise are fictional context; the article does not establish a loss for either organisation.": "Pemberitaan historis pengumuman tarif AS April 2025, bukan tarif yang berlaku saat ini. Nama perusahaan, proporsi portofolio dan dampak latihan adalah konteks fiktif; artikel tidak membuktikan kerugian pada kedua organisasi.",
+    "Liberation Day tariff announcement": "Pengumuman tarif Liberation Day",
+    "One real article. Two different organisational exposures.": "Satu berita nyata. Dua eksposur organisasi yang berbeda.",
+    "Agentic AI in Assurance Management Systems": "Agentic AI dalam sistem manajemen assurance",
+    "Apply coordinated AI workflows with explicit human approval gates.": "Terapkan alur AI terkoordinasi dengan gerbang persetujuan manusia yang jelas.",
+    "Two organisations for the risk exercise": "Dua organisasi untuk latihan risiko",
+    "Choose an industry. Review its given objective and three registered risks.": "Pilih industri. Tinjau tujuan dan tiga risiko awal yang sudah tersedia.",
+    "Risk-manager response to the released signal": "Respons pengelola risiko atas sinyal yang dirilis",
+    "Accept or decline relevance, review the score and agree mitigation above tolerance.": "Terima atau tolak relevansi, tinjau skor, dan sepakati mitigasi jika melewati toleransi.",
+    "Agentic AI and case references": "Referensi Agentic AI dan studi kasus",
+    "Architecture guidance and the historical article used in the exercise.": "Panduan arsitektur dan berita historis yang digunakan dalam latihan.",
+    "Chatbot": "Chatbot",
+    "Agentic AI system": "Sistem Agentic AI",
+    "Answer": "Jawaban",
+    "Goal": "Tujuan",
+    "Tools & actions": "Alat & tindakan",
+    "Task output": "Hasil tugas",
+    "Analysis": "Analisis",
+    "Memory & tools": "Memori & alat",
+    "Coordination": "Koordinasi",
+    "Execute": "Jalankan",
+    "Evaluate & adapt": "Evaluasi & sesuaikan",
+    "Responds to a request.": "Merespons permintaan.",
+    "Uses tools to complete a task.": "Menggunakan alat untuk menyelesaikan tugas.",
+    "Plans, coordinates and adapts work toward a goal.": "Merencanakan, mengoordinasikan, dan menyesuaikan pekerjaan untuk mencapai tujuan.",
+    "Practical distinctions, not three mutually exclusive product categories. Agentic systems may use one or several agents; people set permissions and approval gates.": "Pembedaan praktis, bukan tiga kategori produk yang saling terpisah. Sistem agentic dapat memakai satu atau beberapa agent; manusia menetapkan izin dan gerbang persetujuan.",
+    "Scope & objectives": "Lingkup & tujuan",
+    "Approved access": "Akses disetujui",
+    "Propose audit plan": "Usulkan rencana audit",
+    "Prioritise & explain": "Prioritaskan & jelaskan",
+    "Approve plan": "Setujui rencana",
+    "Scope, budget, exclusions": "Lingkup, anggaran, pengecualian",
+    "Execute programme": "Jalankan program",
+    "Retrieve criteria & test": "Cari kriteria & uji",
+    "Validate evidence": "Validasi bukti",
+    "Challenge & investigate": "Uji & telusuri",
+    "Draft findings": "Draf temuan",
+    "Link evidence & criteria": "Kaitkan bukti & kriteria",
+    "Issue report": "Terbitkan laporan",
+    "Approve the conclusion": "Setujui simpulan",
+    "Track follow-up": "Pantau tindak lanjut",
+    "Collect new evidence": "Kumpulkan bukti baru",
+    "Decide risk response": "Putuskan respons risiko",
+    "Score, action, tolerance": "Skor, tindakan, toleransi",
+    "Update context": "Perbarui konteks",
+    "Feed the next cycle": "Masukan siklus berikutnya",
+    "AI · prepares and automates": "AI · menyiapkan dan mengotomasi",
+    "H · humans approve and decide": "H · manusia menyetujui dan memutuskan",
+    "Every arc retains evidence, permissions and an audit trail.": "Setiap alur mempertahankan bukti, izin, dan jejak audit.",
+    "Historical April 2025 announcement, not today’s tariff rate. The same article can challenge an existing risk or reveal an unregistered exposure.": "Pengumuman historis April 2025, bukan tarif yang berlaku saat ini. Berita yang sama dapat mengubah risiko yang ada atau mengungkap eksposur yang belum tercatat.",
+    "FOOD MANUFACTURING & EXPORT": "MANUFAKTUR PANGAN & EKSPOR",
+    "FINANCIAL SERVICES · SME LENDING": "JASA KEUANGAN · PEMBIAYAAN UKM",
+    "Grow US export revenue while protecting a 15% operating margin.": "Tingkatkan pendapatan ekspor AS dengan mempertahankan margin operasi 15%.",
+    "Grow the SME loan portfolio by 15% while keeping NPL below 3%.": "Tingkatkan portofolio pembiayaan UKM 15% dengan NPL di bawah 3%.",
+    "45% of revenue from US buyers": "45% pendapatan dari pembeli AS",
+    "35% of loans to export manufacturers": "35% pembiayaan untuk produsen eksportir",
+    "Review the registered demand and margin risk.": "Tinjau risiko permintaan dan margin yang sudah terdaftar.",
+    "Consider a new trade-policy concentration risk.": "Pertimbangkan risiko konsentrasi kebijakan perdagangan yang baru.",
+    "Choose your organisation ↗": "Pilih organisasi Anda ↗",
+    "One objective and three initial risks per organisation. The presenter releases the same news signal to both.": "Satu tujuan dan tiga risiko awal per organisasi. Presenter merilis sinyal berita yang sama kepada keduanya.",
+    "Food manufacturing & export": "Manufaktur pangan & ekspor",
+    "Financial services · SME lending": "Jasa keuangan · Pembiayaan UKM",
+    "Grow US export revenue while protecting a 15% operating margin": "Tingkatkan pendapatan ekspor AS dengan mempertahankan margin operasi 15%",
+    "Grow the SME loan portfolio by 15% while keeping non-performing loans below 3%": "Tingkatkan portofolio pembiayaan UKM 15% dengan kredit bermasalah di bawah 3%",
+    "45% of revenue comes from US buyers. Annual capacity investment assumes stable export orders.": "45% pendapatan berasal dari pembeli AS. Investasi kapasitas tahunan mengasumsikan pesanan ekspor stabil.",
+    "35% of the loan portfolio finances Indonesian export manufacturers. The current register has no specific trade-policy concentration risk.": "35% portofolio membiayai produsen eksportir Indonesia. Register belum memuat risiko konsentrasi akibat kebijakan perdagangan.",
+    "US demand weakens and export margins fall": "Permintaan AS melemah dan margin ekspor turun",
+    "Cold-chain disruption damages product quality": "Gangguan rantai dingin menurunkan mutu produk",
+    "Raw-material supply becomes unreliable": "Pasokan bahan baku tidak andal",
+    "Loan approval overrides weaken underwriting": "Pengecualian persetujuan melemahkan analisis kredit",
+    "A core-system outage delays customer service": "Gangguan sistem utama menghambat layanan nasabah",
+    "Customer identity fraud causes financial loss": "Pemalsuan identitas nasabah menimbulkan kerugian keuangan",
+    "Export-borrower concentration increases credit losses": "Konsentrasi debitur eksportir meningkatkan kerugian kredit",
+    "Choose your organisation": "Pilih organisasi Anda",
+    "Choose organisation →": "Pilih organisasi →",
+    "One objective and three initial risks are already prepared. Your decisions belong to your private workspace.": "Satu tujuan dan tiga risiko awal sudah disiapkan. Keputusan tersimpan di workspace privat Anda.",
+    "Connecting to your private workspace…": "Menghubungkan workspace privat Anda…",
+    "Signal released": "Sinyal sudah dirilis",
+    "Waiting for the presenter to release a signal": "Menunggu presenter merilis sinyal",
+    "Objectives": "Tujuan",
+    "Risk monitoring": "Pemantauan risiko",
+    "Risk": "Risiko",
+    "Mitigation plans": "Rencana mitigasi",
+    "NEW RISK SUGGESTED · NEWS": "USULAN RISIKO BARU · BERITA",
+    "Read the original ANTARA article ↗": "Baca berita asli ANTARA ↗",
+    "The objective is already exposed through export-linked borrowers, but this scenario is missing from the register.": "Tujuan terekspos melalui debitur terkait ekspor, tetapi skenario ini belum tercatat di register.",
+    "Accept mapping & add the risk": "Setujui pemetaan & tambah risiko",
+    "Decline mapping": "Tolak pemetaan",
+    "No pending signal for this risk.": "Tidak ada sinyal yang menunggu untuk risiko ini.",
+    "Your objective and risk register are ready. Wait for the presenter’s news release.": "Tujuan dan register risiko sudah siap. Tunggu rilis berita dari presenter.",
+    "Review US buyer commitments and product coverage; diversify destination markets and negotiate pricing to protect the margin.": "Tinjau komitmen pembeli AS dan cakupan produk; diversifikasi pasar tujuan dan negosiasikan harga untuk menjaga margin.",
+    "Map export-linked borrowers, stress-test repayment capacity and review sector concentration limits with the Credit Risk Director.": "Petakan debitur terkait ekspor, lakukan stress test kemampuan bayar, dan tinjau limit konsentrasi sektor bersama Direktur Risiko Kredit.",
+    "US buyers account for 45% of revenue. Tariff changes may affect pricing, orders and the 15% margin objective. Verify product coverage and buyer responses.": "Pembeli AS menyumbang 45% pendapatan. Perubahan tarif dapat memengaruhi harga, pesanan dan target margin 15%. Verifikasi cakupan produk dan respons pembeli.",
+    "35% of loans finance export manufacturers. Weaker borrower orders may affect repayment and the NPL objective. This trade-policy concentration is missing from the current risk register.": "35% pembiayaan ditujukan kepada produsen eksportir. Pelemahan pesanan dapat memengaruhi pembayaran dan target NPL. Konsentrasi kebijakan perdagangan ini belum tercatat di register.",
+    "Historical ANTARA reporting of the April 2025 announcement, not a current tariff rate or proof of company loss. Exposure percentages are exercise context.": "Berita historis ANTARA mengenai pengumuman April 2025, bukan tarif terkini atau bukti kerugian perusahaan. Persentase eksposur merupakan konteks latihan.",
+    "Risk Manager": "Pengelola Risiko",
+    "Operations Director": "Direktur Operasional",
+    "Compliance Director": "Direktur Kepatuhan",
+    "Credit Risk Director": "Direktur Risiko Kredit",
+    "The 2 April 2025 announcement listed a 32% reciprocal tariff for Indonesian goods entering the US, scheduled for 9 April at the time of reporting. Review export demand, product coverage and contract terms before revising a strategy. This is a historical announcement, not today’s tariff rate.": "Pengumuman 2 April 2025 mencantumkan tarif resiprokal 32% atas barang Indonesia yang masuk AS, yang saat diberitakan dijadwalkan berlaku 9 April. Tinjau permintaan ekspor, cakupan produk, dan kontrak sebelum merevisi strategi. Ini pengumuman historis, bukan tarif yang berlaku saat ini.",
+    "1 news signal to review": "1 sinyal berita perlu ditinjau",
+    "Planned target": "Target rencana",
+    "Trade-policy risk mapping: accept": "Pemetaan risiko kebijakan perdagangan: diterima",
+    "Trade-policy risk mapping: decline": "Pemetaan risiko kebijakan perdagangan: ditolak"
   },
   "notes": {
     "aib-cover": "Akses materi: tinyurl.com/rsm-ai-audit.\n\nPembuka dari RSM Indonesia: Dena Sucianandika dan Teuku Raja Irfan Radarma. Fokus sesi adalah pekerjaan dan keputusan yang akrab bagi peserta. Alur dimulai dari penggunaan AI sehari-hari, lalu tugas dengan dokumen nyata yang diizinkan, penilaian AI dalam proses bisnis, workspace audit dan respons risiko. Tidak perlu membuka dengan definisi teknis AI. Bukti riset dijelaskan sesuai populasi, periode dan batas klaimnya.\n\nPertanyaan: AI in Audit and Beyond Penghubung: Audit the AI. Audit with AI. Go beyond audit.",
@@ -1169,11 +1277,11 @@
     "aib-section-beyond": "Setelah pertanyaan apa yang berubah setelah laporan terbit, kembali ke tujuan penjualan sehat dan penerimaan kas. Tanyakan apa arti evidence baru bagi exposure saat ini dan respons management. Berita, laporan internal dan warning kontrol memperluas sumber informasi. AI membantu membawa dan menjelaskan sinyal; manusia memeriksa relevansi, menetapkan assessment dan memantau action.\n\nPertanyaan: Go beyond audit. Penghubung: Connect assurance evidence to the objective and the risk decision.",
     "aib-risk-gap": "NC State/AICPA 2026 State of Risk Oversight. Dua angka berasal dari pertanyaan berbeda, bukan angka komplementer yang dijumlahkan. Ini persepsi eksekutif dalam survei tersebut, bukan bukti setiap organisasi gagal. Gunakan sebagai pembuka pertanyaan: apakah temuan assurance memperbarui penilaian risiko dan prioritas manajemen secara tepat waktu?\n\nPertanyaan: The risk picture changes between audit projects. Penghubung: New information can challenge yesterday’s assessment.",
     "aib-connect": "Tujuan menuntun identifikasi risiko; risiko menuntun assurance; assurance mengembalikan bukti ke penilaian risiko dan keputusan tindakan. Tidak semua temuan mengubah skor: manajemen bisa mempertahankannya jika bukti kurang relevan atau kontrol kompensasi efektif. Rekam alasan agar tidak menjadi sekadar ritual update register.\n\nPertanyaan: Risk-based audit can feed continuous risk assurance. Penghubung: A finding is a signal about the objective—not only an item to close.",
-    "aib-three-signals": "Demo fokus hanya tiga kelompok. Pertama hasil audit approved/issued dari AMS yang benar-benar terhubung ke registered risk Aruna dalam browser yang sama. Kedua internal memo/report yang merupakan teaching record dengan source content. Ketiga external news memakai artikel ANTARA nyata bertanggal 3 April 2025 sebagai historical replay; link sumber dapat dibuka. Social-media lead merupakan teaching example yang jelas belum diverifikasi, tanpa atribusi ke orang/akun nyata. Tanyakan relevansi ke objective dan konteks; jangan menganggap topik cocok berarti exposure terbukti. Dalam cerita Aruna melayani pelanggan manufaktur ekspor, sehingga dependensi perlu diverifikasi sebelum mengaitkan tarif dengan collection. Continuous assurance dapat memakai sumber lain; tiga ini bukan batas framework.\n\nPertanyaan: Three sources for this demonstration. Penghubung: Audit results. Internal memos and reports. News and social-media leads.",
+    "aib-three-signals": "Peserta memilih eksportir pangan atau pembiayaan UKM. Masing-masing memulai dengan satu tujuan dan tiga risiko. Eksposur diberikan: ketergantungan pembeli AS atau konsentrasi debitur eksportir. Sinyal baru muncul setelah presenter merilis kasus historis ANTARA. Satu perusahaan menilai ulang risiko terdaftar, sedangkan yang lain dapat menambah risiko yang disarankan sebelum menilai. Keputusan bersifat privat dan tersimpan di server.",
     "aib-signal-framework": "SIGNAL adalah framework pengajaran dari materi presenter, bukan standar eksternal. S Sense: tangkap sumber beserta asal dan tanggal; I Interpret: kaitkan objective dan registered risk; G Gauge: jelaskan asumsi yang mungkin berubah dan ketidakpastian; N Notify: sampaikan kepada owner yang tepat; A Act: manusia menerima/menolak, merevisi assessment dan memutuskan response; L Learn: periksa pelaksanaan dan efektivitas serta gunakan bukti berikutnya. AI dapat mendukung S I G N; manusia dapat menantang semua tahap dan mempunyai authority pada A L. Jangan membuat notifikasi menjadi auto-update skor tanpa persetujuan. Sistem demo menggunakan prepared examples dan rule transparan, bukan live model atau stream terjadwal.\n\nPertanyaan: SIGNAL Penghubung: AI prepares the evidence and advice. People retain the decision and the follow-through.",
     "aib-review-signals": "Buka alert per risiko dan semua signal yang dipetakan ke risiko itu. Baca summary, why dan source. Accept/decline tiap signal; alasan penolakan tidak dipaksakan peritem. Setelah seluruhnya diputus, analisis saran likelihood/impact berdasarkan evidence yang diterima. Unverified social lead sendiri tidak menyebabkan suggested increase. P, S dan selection manusia terlihat pada risk map. Custom assessment membutuhkan reasoning. Jika assessment baru di atas tolerance, pilih/ubah mitigation beserta owner, due date dan expected likelihood/impact reduction. Finish menyimpan semua keputusan, assessment dan plan sekaligus. Tidak menghitung tiga signal berkorelasi sebagai tiga kenaikan yang dijumlahkan.\n\nPertanyaan: Review the signals as one decision sequence. Penghubung: Accept or decline relevance, review the proposed score, and agree a response when exposure exceeds tolerance.",
     "aib-score": "Angka contoh, bukan kalibrasi statistik. Tolerance ilustratif 12. Temuan menantang efektivitas kontrol sehingga penilai mengusulkan likelihood 4 dari 3, impact tetap 4. Manajemen dapat menolak dengan alasan. Mitigasi yang direncanakan menurunkan likelihood satu poin; residual 12 hanya proyeksi sampai implementasi dan efektivitasnya diverifikasi. Jangan tampilkan proyeksi sebagai kondisi aktual.\n\nPertanyaan: If the risk has increased, what action is needed? Penghubung: The action’s expected effect is a plan—not evidence that the risk has already fallen.",
-    "aib-risk-demo": "Gunakan tab Risk workspace di aplikasi topik ini. Risiko dan sumber berasal dari paket Beyond Compliance sebelumnya, sebagai contoh kedua yang berbeda dari kasus Aruna. Jangan menyebut kasus berita historis sebagai berita hari ini. Selesaikan review sinyal, penyesuaian skor dan rencana mitigasi sebagai satu rangkaian. Dalam versi ini AMS dan workspace risiko adalah dua demo; tidak ada transfer temuan otomatis antar keduanya.\n\nPertanyaan: Try the three signal sources. Penghubung: Issue an audit result, capture a memo, then inspect the historical news and the unverified lead.",
+    "aib-risk-demo": "Rilis satu sumber melalui kontrol admin khusus. Eksportir membuka alert pada risiko pertamanya. Pembiayaan menerima atau menolak usulan risiko baru dahulu. Pemetaan yang diterima masuk ke alur reviu berkesinambungan: putuskan sinyal, pilih penilaian, setujui respons di atas toleransi, lalu selesaikan sekali. Eksposur saat ini terpisah dari target setelah mitigasi. Muat ulang mempertahankan keputusan tersimpan. Reset seminar membersihkan latihan melalui reset epoch.",
     "aib-next": "Kembali ke ide–execution–usage. Pilih satu keputusan yang perlu diperbaiki, calon pengguna yang jelas, informasi yang boleh digunakan, dan hasil yang dapat diperiksa. AI membantu membuat dashboard atau sistem, tetapi aplikasi yang berjalan belum membuktikan manfaat. Uji pada cakupan kecil; bandingkan kualitas, waktu dan dampak keputusan; tentukan owner serta pemelihara sebelum memperluas. Jangan menjadikan jumlah fitur atau jumlah alert sebagai ukuran utama keberhasilan.",
     "aib-sources": "Bedakan fungsi sumber: standar profesi, kerangka risiko dan guidance teknis. Diagram pada materi adalah penjelasan yang dirancang untuk seminar, bukan reproduksi grafis resmi. Pilih kriteria engagement yang berlaku; daftar referensi tidak menggantikan pembacaan standar atau penilaian konformitas.\n\nPertanyaan: The references behind the framework. Penghubung: Professional standards and established frameworks.",
     "aib-research": "Riset HBS/BCG menunjukkan efek pada tugas yang diuji, bukan akurasi audit. Survei RSM adalah organisasi AI-using Amerika Serikat/Kanada; jangan menggeneralisasi ke seluruh pasar atau Indonesia. NC State/AICPA menilai persepsi eksekutif. PCAOB adalah observasi staff historis. Sumber teknis Anthropic dipakai untuk pembedaan arsitektur, bukan standar assurance.\n\nPertanyaan: The evidence behind the claims. Penghubung: Study design, population and context matter.",
@@ -1187,7 +1295,11 @@
     "aib-on-premise": "Alur on-premise dapat mempertahankan pemrosesan dalam kendali infrastruktur organisasi dengan antarmuka chatbot atau agent yang tetap familiar. Ini pilihan konservatif untuk lokasi data, bukan klaim bahwa setiap sistem on-premise lebih aman daripada setiap layanan cloud. Jalankan retrieval, embedding, inferensi dan layanan pendukung secara lokal; batasi koneksi keluar serta periksa telemetri, log, konektor, backup dan dukungan jarak jauh. Tinjau kapasitas perangkat, kualitas model, pemeliharaan dan hak akses. Pengunduhan model serta pembaruan dapat dikendalikan terpisah dari pemrosesan dokumen produksi. Sesuai informasi pembicara, RSM Indonesia telah membantu beberapa klien di Indonesia menerapkan AI on-premise. Jangan mengungkap identitas klien atau mengarang hasil terukur.\n\nRAG di dalam alur yang sama:\nJelaskan RAG memakai kebijakan kredit internal. Dokumen berizin diproses dan dibuat indeks pencariannya. Saat ada pertanyaan, retriever menemukan potongan relevan yang boleh diakses pengguna, lalu menambahkannya ke masukan model. Repositori asli tidak digantikan bobot model dan RAG tidak memerlukan pelatihan ulang model dasar atas repositori itu. Namun, model TETAP memproses teks yang diambil saat inferensi. RAG sendiri tidak menjamin nihil retensi vendor atau melarang training berdasarkan kebijakan penggunaan data yang berbeda. Layanan inferensi atau embedding cloud masih dapat menerima teks perusahaan. Alur sepenuhnya lokal harus mencakup embedding, retrieval, inferensi dan proses pendukung, dengan filter akses dan log yang aman. Bedakan dari fine-tuning. Jawaban yang memiliki sitasi tetap diverifikasi ke sumber asli.",
     "aib-rag": "Jelaskan RAG memakai kebijakan kredit internal. Dokumen berizin diproses dan dibuat indeks pencariannya. Saat ada pertanyaan, retriever menemukan potongan relevan yang boleh diakses pengguna, lalu menambahkannya ke masukan model. Repositori asli tidak digantikan bobot model dan RAG tidak memerlukan pelatihan ulang model dasar atas repositori itu. Namun, model TETAP memproses teks yang diambil saat inferensi. RAG sendiri tidak menjamin nihil retensi vendor atau melarang training berdasarkan kebijakan penggunaan data yang berbeda. Layanan inferensi atau embedding cloud masih dapat menerima teks perusahaan. Alur sepenuhnya lokal harus mencakup embedding, retrieval, inferensi dan proses pendukung, dengan filter akses dan log yang aman. Bedakan dari fine-tuning. Jawaban yang memiliki sitasi tetap diverifikasi ke sumber asli.",
     "aib-analytics-disruption": "Bandingkan pekerjaan yang terlihat oleh pengguna. Sebelumnya analis menjalankan perumusan tugas, persiapan data, pemilihan model, pelatihan, pengujian dan penyajian. Pada contoh LLM-first, pengguna menjelaskan analisis yang diinginkan lewat prompt dan agent menangani pembacaan, alat, analisis serta visualisasi. Animasi berulang menunjukkan pekerjaan teknis berpindah ke belakang prompt. Ini ilustrasi alur analisis dokumen dan data sehari-hari, bukan klaim bahwa semua pemodelan prediktif menjadi tugas yang sama atau metode teknis tidak diperlukan. Jelaskan pembedaan itu secara lisan tanpa memenuhi slide dengan detail evaluasi model.",
-    "aib-hitl-practice": "Presenter: buka Admin > Signals & participants untuk membuka sesi human-in-the-loop. Kemudian buka Demo aplikasi > Human-in-the-loop dan tayangkan walkthrough yang sama dengan alur peserta: isi nama, periksa dokumen, pasang penanda, lalu Finish. Lima konten meliputi slide strategi, report audit tiga halaman, dashboard, memo, dan brief. Tiga konten mengandung slop. Periksa semua halaman report. Nilai maksimal 20 per konten; penanda salah atau berulang mengurangi 5, minimum nol. Hasil walkthrough tidak masuk leaderboard. Tutup sesi dari Signals & participants untuk menampilkan peringkat dan pembahasan."
+    "aib-hitl-practice": "Presenter: buka Admin > Signals & participants untuk membuka sesi human-in-the-loop. Kemudian buka Demo aplikasi > Human-in-the-loop dan tayangkan walkthrough yang sama dengan alur peserta: isi nama, periksa dokumen, pasang penanda, lalu Finish. Lima konten meliputi slide strategi, report audit tiga halaman, dashboard, memo, dan brief. Tiga konten mengandung slop. Periksa semua halaman report. Nilai maksimal 20 per konten; penanda salah atau berulang mengurangi 5, minimum nol. Hasil walkthrough tidak masuk leaderboard. Tutup sesi dari Signals & participants untuk menampilkan peringkat dan pembahasan.",
+    "aib-agentic-concepts": "Ini pembedaan praktis, bukan taksonomi universal. Chatbot merespons percakapan. Agent beralat dapat bertindak dan memeriksa hasil. Sistem agentic mengendalikan rencana lebih panjang, mengoordinasikan alat atau agent khusus dan menyesuaikan langkah berdasarkan umpan balik. Satu agent pun dapat bersifat agentic; banyak agent tidak otomatis bermanfaat atau andal. Arc animasi menunjukkan aliran informasi dan umpan balik, bukan kewenangan tanpa batas. Manusia tetap menetapkan akses, kondisi berhenti dan gerbang persetujuan. Diagram adalah sintesis pembelajaran, sedangkan Anthropic menjadi rujukan pembedaan arsitektur workflow dan agent.",
+    "aib-agentic-audit": "Jelaskan tiap arc sebelum membuka AMS. AI mengusulkan prioritas dan program dalam akses yang disetujui; manusia menyetujui lingkup, kapasitas dan pengecualian. Agent mencari kriteria dan mengolah catatan; auditor memvalidasi bukti serta menelusuri anomali. AI menyusun draf temuan, tetapi hanya reviewer berwenang menerbitkan laporan. Tindak lanjut mengumpulkan bukti, sedangkan pemilik risiko memutuskan skor dan respons. Umpan balik mengubah perencanaan berikutnya. Node AI dapat memakai alat deterministik; otomasi tidak mengalihkan pertimbangan profesional ke mesin. AMS berikut mendemonstrasikan beberapa langkah dengan aturan yang disiapkan dan persetujuan manusia, bukan model otonom terhubung.",
+    "aib-tariff-case": "Tampilkan berita historis ANTARA sebelum merilisnya. Tanyakan dampaknya pada eksportir pangan dan perusahaan pembiayaan UKM. Eksportir sudah mencatat risiko permintaan dan margin; pembiayaan memiliki debitur eksportir tetapi belum mencatat konsentrasi kebijakan perdagangan. Buka Admin > Sinyal & peserta lalu rilis sinyal tarif ANTARA. Peserta menerima sumber sesuai organisasi pilihannya. Angka 32% adalah pengumuman historis, bukan tarif terkini. Periksa cakupan produk dan ketergantungan riil; jangan mengubah judul berita menjadi asumsi kerugian perusahaan.",
+    "aib-agentic-references": "Baca panduan arsitektur asli dan berita bertanggal. Diagram merupakan sintesis pembelajaran; angka eksposur perusahaan adalah asumsi skenario, bukan fakta yang dibuktikan berita."
   },
   "contexts": {
     "aib-cover": {
@@ -1204,7 +1316,7 @@
     },
     "aib-section-capability": {
       "context": "",
-      "connection": "Dua cara penggunaan yang dikenal. Satu pertanyaan: apa yang terjadi pada informasi kita?"
+      "connection": "Alat yang familiar. Informasi terlindungi. Titik awal baru untuk analisis."
     },
     "aib-ai-modes": {
       "context": "Panduan rekayasa yang membedakan alur kerja yang sudah ditentukan dari penggunaan alat yang diarahkan model. Digunakan untuk membedakan arsitektur, bukan tolok ukur, standar audit, atau klaim bahwa otonomi selalu lebih baik. Panduan khusus produk tentang izin agent, sandbox, dan jaringan perintah. Pembatasan shell tidak membuktikan inferensi model luring atau mencakup semua jalur pencarian, aplikasi, atau MCP. Diagram menyederhanakan konsep, bukan mereplikasi antarmuka persis.",
@@ -1212,7 +1324,7 @@
     },
     "aib-document-journey": {
       "context": "Panduan khusus produk tentang izin agent, sandbox, dan jaringan perintah. Pembatasan shell tidak membuktikan inferensi model luring atau mencakup semua jalur pencarian, aplikasi, atau MCP. Diagram menyederhanakan konsep, bukan mereplikasi antarmuka persis. Dokumentasi Work untuk Enterprise/Edu: percakapan, berkas unggahan, memori, dan sumber terhubung dapat memiliki siklus retensi/penghapusan berbeda. Bukan kebijakan universal akun ChatGPT konsumen atau API. Penjelasan primer produk: alat CLI dapat membaca isi berkas lokal dan mengirimkannya ke layanan inferensi daring. Berlaku khusus pada Claude Code berbasis cloud, bukan semua agent lokal atau model luring.",
-      "connection": "Dokumen asli dapat tetap di komputer Anda, sementara salinan atau informasi terpilih dikirim ke layanan daring."
+      "connection": "Berbagi tanpa izin dapat mengekspos informasi rahasia ke luar organisasi."
     },
     "aib-general-safeguards": {
       "context": "Dokumentasi Work untuk Enterprise/Edu: percakapan, berkas unggahan, memori, dan sumber terhubung dapat memiliki siklus retensi/penghapusan berbeda. Bukan kebijakan universal akun ChatGPT konsumen atau API. Dokumentasi Claude Code membedakan penggunaan data akun konsumen dan komersial, pilihan penggunaan untuk pengembangan model, serta berbagi umpan balik/sesi. Ketentuan bergantung pada akun dan fitur; bukan pernyataan tentang semua penyedia. Dokumentasi khusus API ditinjau 13 November 2026: data API tidak digunakan untuk pelatihan secara default kecuali pengguna memilih ikut serta. Pengaturan retensi dan pemrosesan adalah hal terpisah. Pernyataan ini tidak berlaku untuk semua akun chatbot pribadi atau fitur. LLM02:2025. Sanitasi data, hak akses minimum, pembatasan sumber, dan risiko pengungkapan. Instruksi dalam prompt atau penyamaran data bukan jaminan privasi yang lengkap.",
@@ -1260,7 +1372,7 @@
     },
     "aib-idea-execution-usage": {
       "context": "758 konsultan BCG; tugas pekerjaan pengetahuan menggunakan GPT-4. Manfaat berlaku pada tugas dalam cakupan kemampuan yang diuji, bukan akurasi audit. Studi AS/Kanada: 1.030 responden dari organisasi yang sudah menggunakan AI, termasuk uji coba. Angka integrasi 86% dan penerapan penuh 36% menggambarkan sampel ini; bukan tingkat adopsi semua bisnis atau Indonesia. Pengumpulan data 5–16 Maret 2026: 827 responden AS dan 203 Kanada, tingkat manajemen atau lebih tinggi dengan pengaruh terhadap investasi teknologi. Pemerintah dan organisasi nirlaba tidak disertakan. Semua organisasi peserta sudah menggunakan AI.",
-      "connection": "If more of us can build, how do we choose something people will actually use?"
+      "connection": "AI memperluas apa yang dapat kita gagas dan bangun. Penggunaan nyata tetap perlu dibuktikan."
     },
     "aib-adoption": {
       "context": "Studi AS/Kanada: 1.030 responden dari organisasi yang sudah menggunakan AI, termasuk uji coba. Angka integrasi 86% dan penerapan penuh 36% menggambarkan sampel ini; bukan tingkat adopsi semua bisnis atau Indonesia. Pengumpulan data 5–16 Maret 2026: 827 responden AS dan 203 Kanada, tingkat manajemen atau lebih tinggi dengan pengaruh terhadap investasi teknologi. Pemerintah dan organisasi nirlaba tidak disertakan. Semua organisasi peserta sudah menggunakan AI.",
@@ -1268,7 +1380,7 @@
     },
     "aib-section-ams": {
       "context": "",
-      "connection": "From annual priorities to a reviewed report—and a signal for the risk owner."
+      "connection": "Terapkan alur AI terkoordinasi dengan gerbang persetujuan manusia yang jelas."
     },
     "aib-annual-planning": {
       "context": "Edisi 2024, berlaku Januari 2025. Rujukan mencakup Standar 4.3, 11.5, 13.2, 14.1–14.4, dan 15.2. Materi ini merangkum implikasi tertentu bagi audit internal; tidak menggantikan Standar atau menetapkan persyaratan audit laporan keuangan.",
@@ -1296,15 +1408,15 @@
     },
     "aib-connect": {
       "context": "COSO menghubungkan manajemen risiko organisasi dengan penetapan strategi dan kinerja. Diagram umpan balik ini menjelaskan hubungan tersebut, bukan reproduksi kerangka resmi COSO atau dukungan terhadap metode penetapan skor tertentu. Edisi 2024, berlaku Januari 2025. Rujukan mencakup Standar 4.3, 11.5, 13.2, 14.1–14.4, dan 15.2. Materi ini merangkum implikasi tertentu bagi audit internal; tidak menggantikan Standar atau menetapkan persyaratan audit laporan keuangan.",
-      "connection": "Temuan adalah sinyal tentang tujuan—bukan sekadar item yang harus ditutup."
+      "connection": "Hubungkan temuan, keputusan risiko, dan tujuan organisasi."
     },
     "aib-three-signals": {
       "context": "COSO menghubungkan manajemen risiko organisasi dengan penetapan strategi dan kinerja. Diagram umpan balik ini menjelaskan hubungan tersebut, bukan reproduksi kerangka resmi COSO atau dukungan terhadap metode penetapan skor tertentu. Edisi 2024, berlaku Januari 2025. Rujukan mencakup Standar 4.3, 11.5, 13.2, 14.1–14.4, dan 15.2. Materi ini merangkum implikasi tertentu bagi audit internal; tidak menggantikan Standar atau menetapkan persyaratan audit laporan keuangan.",
-      "connection": "Hasil audit. Memo dan laporan internal. Berita dan petunjuk dari media sosial."
+      "connection": "Pilih industri. Tinjau tujuan dan tiga risiko awal yang sudah tersedia."
     },
     "aib-signal-framework": {
       "context": "COSO menghubungkan manajemen risiko organisasi dengan penetapan strategi dan kinerja. Diagram umpan balik ini menjelaskan hubungan tersebut, bukan reproduksi kerangka resmi COSO atau dukungan terhadap metode penetapan skor tertentu. Edisi 2024, berlaku Januari 2025. Rujukan mencakup Standar 4.3, 11.5, 13.2, 14.1–14.4, dan 15.2. Materi ini merangkum implikasi tertentu bagi audit internal; tidak menggantikan Standar atau menetapkan persyaratan audit laporan keuangan.",
-      "connection": "AI menyiapkan bukti dan saran. Keputusan dan tindak lanjut tetap pada manusia."
+      "connection": "Framework untuk assurance risiko berkelanjutan."
     },
     "aib-review-signals": {
       "context": "COSO menghubungkan manajemen risiko organisasi dengan penetapan strategi dan kinerja. Diagram umpan balik ini menjelaskan hubungan tersebut, bukan reproduksi kerangka resmi COSO atau dukungan terhadap metode penetapan skor tertentu.",
@@ -1316,7 +1428,7 @@
     },
     "aib-risk-demo": {
       "context": "",
-      "connection": "Terbitkan hasil audit, tangkap memo, lalu periksa berita historis dan petunjuk yang belum terverifikasi."
+      "connection": "Terima atau tolak relevansi, tinjau skor, dan sepakati mitigasi jika melewati toleransi."
     },
     "aib-next": {
       "context": "",
@@ -1368,7 +1480,23 @@
     },
     "aib-analytics-disruption": {
       "context": "Riset tentang mengubah pertanyaan bahasa alami menjadi program analisis. Mendukung perubahan cara interaksi, bukan klaim bahwa LLM menghapus pengujian statistik atau selalu akurat untuk setiap tugas analitis. Dokumentasi evaluasi model menggunakan data uji terpisah dan validasi silang. Mendukung pembedaan antara bantuan eksplorasi dengan LLM dan pemodelan prediktif yang tervalidasi.",
-      "connection": "Untuk banyak analisis sehari-hari, LLM pralatih mengubah titik awalnya."
+      "connection": "Dari menjalankan setiap langkah teknis menjadi memberi tugas kepada AI."
+    },
+    "aib-agentic-concepts": {
+      "context": "Panduan rekayasa yang membedakan alur kerja yang sudah ditentukan dari penggunaan alat yang diarahkan model. Digunakan untuk membedakan arsitektur, bukan tolok ukur, standar audit, atau klaim bahwa otonomi selalu lebih baik.",
+      "connection": "Dari menjawab pertanyaan menuju koordinasi pekerjaan untuk mencapai tujuan."
+    },
+    "aib-agentic-audit": {
+      "context": "Panduan rekayasa yang membedakan alur kerja yang sudah ditentukan dari penggunaan alat yang diarahkan model. Digunakan untuk membedakan arsitektur, bukan tolok ukur, standar audit, atau klaim bahwa otonomi selalu lebih baik. Edisi 2024, berlaku Januari 2025. Rujukan mencakup Standar 4.3, 11.5, 13.2, 14.1–14.4, dan 15.2. Materi ini merangkum implikasi tertentu bagi audit internal; tidak menggantikan Standar atau menetapkan persyaratan audit laporan keuangan.",
+      "connection": "AI mengotomasi persiapan dan tindak lanjut. Manusia menyetujui lingkup, bukti, simpulan, dan keputusan risiko."
+    },
+    "aib-tariff-case": {
+      "context": "Pemberitaan historis pengumuman tarif AS April 2025, bukan tarif yang berlaku saat ini. Nama perusahaan, proporsi portofolio dan dampak latihan adalah konteks fiktif; artikel tidak membuktikan kerugian pada kedua organisasi.",
+      "connection": "Satu berita nyata. Dua eksposur organisasi yang berbeda."
+    },
+    "aib-agentic-references": {
+      "context": "",
+      "connection": "Panduan arsitektur dan berita historis yang digunakan dalam latihan."
     }
   }
 }
