@@ -1,55 +1,59 @@
 # AI in Audit and Beyond
 
-44 slides, English and Bahasa Indonesia. RSM Indonesia. Updated 13 November 2026.
+48 slides. English and Bahasa Indonesia. RSM Indonesia. Updated 16 November 2026.
 
 ## Slide map
 
 | # | Slide | Section |
 |---|---|---|
-| 1 | AI in Audit / and Beyond | None |
+| 1 | AI in Audit / and Beyond | opening |
 | 2 | Presentation guide | opening |
-| 3 | Speakers | None |
-| 4 | Presentation agenda | None |
+| 3 | Speakers | opening |
+| 4 | Presentation agenda | opening |
 | 5 | General use of AI | capability |
 | 6 | How AI is generally used nowadays | capability |
 | 7 | The impact of AI on data analytics workflows | capability |
-| 8 | Data processing in chatbots and AI agents | capability |
-| 9 | Data protection when using AI | capability |
-| 10 | On-premises AI for sensitive information | capability |
-| 11 | AI in audit: roles and applications | audit-object |
-| 12 | Auditing AI systems | audit-object |
-| 13 | AI governance and audit frameworks | audit-object |
-| 14 | NIST characteristics of trustworthy AI | audit-object |
-| 15 | Case study: EchoLeak in Microsoft 365 Copilot | audit-object |
-| 16 | Security testing of AI-enabled systems | audit-object |
-| 17 | Using AI in audit | assistant |
-| 18 | AI for reports, presentations and data analysis | assistant |
-| 19 | Confidential data in AI-assisted audit work | assistant |
-| 20 | Human authority and human-in-the-loop controls | assistant |
-| 21 | AI for repeatable workflows and applications | assistant |
-| 22 | AI and the idea–execution–usage gap | assistant |
-| 23 | AI adoption and organisational integration | assistant |
-| 24 | AI-supported Assurance Management Systems | ams |
-| 25 | AI in annual audit planning | ams |
-| 26 | AI in audit fieldwork | ams |
-| 27 | Demo: risk-based annual audit planning | ams |
-| 28 | Demo: audit programmes and workpapers | ams |
-| 29 | AI-supported audit reporting | ams |
-| 30 | RSM Indonesia: audit transformation and AI-supported assessment | ams |
-| 31 | Audit reporting and management follow-up | ams |
-| 32 | Continuous risk assurance | beyond |
-| 33 | Risk oversight between audit projects | beyond |
-| 34 | Connecting risk-based audit and continuous risk assurance | beyond |
-| 35 | Signal sources for continuous risk assurance | beyond |
-| 36 | SIGNAL Framework | beyond |
-| 37 | Signal review and risk-response workflow | beyond |
-| 38 | Risk scoring, tolerance and mitigation | beyond |
-| 39 | Demo: audit, internal and external risk signals | beyond |
-| 40 | Implementation priorities and next steps | beyond |
-| 41 | Framework and professional references | beyond |
-| 42 | Research and case references | beyond |
-| 43 | Technical references for AI use and data protection | beyond |
-| 44 | Thank you | beyond |
+| 8 | Chatbots, AI agents and agentic AI | capability |
+| 9 | Data processing in chatbots and AI agents | capability |
+| 10 | Data protection when using AI | capability |
+| 11 | On-premises AI for sensitive information | capability |
+| 12 | AI in audit: roles and applications | audit-object |
+| 13 | Auditing AI systems | audit-object |
+| 14 | AI governance and audit frameworks | audit-object |
+| 15 | NIST characteristics of trustworthy AI | audit-object |
+| 16 | Case study: EchoLeak in Microsoft 365 Copilot | audit-object |
+| 17 | Security testing of AI-enabled systems | audit-object |
+| 18 | Using AI in audit | assistant |
+| 19 | AI for reports, presentations and data analysis | assistant |
+| 20 | Confidential data in AI-assisted audit work | assistant |
+| 21 | Human authority and human-in-the-loop controls | assistant |
+| 22 | AI for repeatable workflows and applications | assistant |
+| 23 | AI and the idea–execution–usage gap | assistant |
+| 24 | AI adoption and organisational integration | assistant |
+| 25 | Agentic AI in the audit process | ams |
+| 26 | Agentic AI in Assurance Management Systems | ams |
+| 27 | AI in annual audit planning | ams |
+| 28 | AI in audit fieldwork | ams |
+| 29 | Demo: risk-based annual audit planning | ams |
+| 30 | Demo: audit programmes and workpapers | ams |
+| 31 | AI-supported audit reporting | ams |
+| 32 | RSM Indonesia: audit transformation and AI-supported assessment | ams |
+| 33 | Audit reporting and management follow-up | ams |
+| 34 | Continuous risk assurance | beyond |
+| 35 | Risk oversight between audit projects | beyond |
+| 36 | Connecting risk-based audit and continuous risk assurance | beyond |
+| 37 | Two organisations for the risk exercise | beyond |
+| 38 | SIGNAL Framework | beyond |
+| 39 | Liberation Day tariff announcement | beyond |
+| 40 | Signal review and risk-response workflow | beyond |
+| 41 | Risk scoring, tolerance and mitigation | beyond |
+| 42 | Risk-manager response to the released signal | beyond |
+| 43 | Implementation priorities and next steps | beyond |
+| 44 | Framework and professional references | beyond |
+| 45 | Research and case references | beyond |
+| 46 | Technical references for AI use and data protection | beyond |
+| 47 | Agentic AI and case references | beyond |
+| 48 | Thank you | beyond |
 
 ## Evidence and limits
 
@@ -221,6 +225,10 @@ https://scikit-learn.org/stable/modules/cross_validation.html
 
 Documentation on evaluating models with held-out data and cross-validation. Supports the distinction between exploratory LLM assistance and validated predictive modelling.
 
-RSM-specific AI pentesting, internal-audit process reengineering, on-premises AI implementation and COBIT assessment capabilities are supplied by the presenters. No undisclosed client, outcome or success rate is implied.
+### ANTARA — Indonesia kena kenaikan tarif AS 32 persen
 
-RAG supplies selected context at inference time; it does not mean company text is never read by a model. The conservative location design keeps every processing component local. LLM-first ad-hoc exploration differs from a validated predictive modelling project.
+https://jabar.antaranews.com/berita/594405/indonesia-kena-kenaikan-tarif-as-32-persen
+
+Historical reporting of the April 2025 US tariff announcement. Not a current tariff rate. Company names, portfolio shares and impacts in the exercise are fictional context; the article does not establish a loss for either organisation.
+
+The AMS illustrates selected agentic workflow steps using prepared rules and human approval gates. No live model provider is connected. The risk exercise is a historical ANTARA case with two fictional organisations; company exposure figures are scenario assumptions. Participant state is isolated and stored server-side; only admins release the common news signal.

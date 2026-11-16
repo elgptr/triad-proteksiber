@@ -1,40 +1,19 @@
-# AI in Audit and Beyond — narrative
+# AI in Audit and Beyond - narrative
 
-RSM Indonesia · Dena Sucianandika and Teuku Raja Irfan Radarma.
+A short general AI refresher leads into auditing AI, using AI, agentic assurance workflows and continuous risk assurance. Headings name the topic directly.
 
-The 44-slide story asks: **What can AI help us do, who remains accountable, and how can the work change a real decision?**
+## Agentic AI
 
-| Section | Slides | Purpose |
-|---|---:|---|
-| Opening | 1–4 | Deck guide, speakers and the journey. |
-| General use of AI | 5–11 | Chatbot/agent → AI-led analytics → data exposure → safeguards → on-premises RAG → two audit perspectives. |
-| Auditing AI systems | 12–16 | Audit transition separator, recognised frameworks, NIST, EchoLeak and authorised AI security testing. |
-| Using AI in audit | 17–23 | Everyday work, confidentiality, human authority and useful applications. |
-| AI-supported Assurance Management Systems | 24–31 | Planning and fieldwork concepts, a simpler demo, reporting and assessment services. |
-| Continuous risk assurance | 32–40 | Connected risk decisions and SIGNAL. |
-| References and close | 41–44 | Primary evidence and closing. |
+The animated comparison distinguishes conversational responses, tool-using agents and systems coordinating work with feedback. These categories overlap; agentic systems may use one or multiple agents. The audit-cycle diagram explicitly separates AI preparation/automation from human approval of planning, evidence, report issuance and risk decisions.
 
-## Transitions
+## Continuous risk assurance exercise
 
-The tool is familiar; the accountability question depends on whether we examine an AI-supported process or use AI in our own work. The same concern about trustworthy outputs and protected information applies when the auditor uses the tool. Easier implementation does not prove value: test whether people keep using the application to make a better decision. The idea–execution–usage illustration is conceptual, not measured research.
+1. Choose a food exporter or an SME finance company.
+2. Review one given objective and three risks.
+3. Presenter shows the historical ANTARA Liberation Day tariff article.
+4. Admin releases that single article through Signals & participants.
+5. Exporters review their registered demand/margin risk. Finance participants approve or decline a newly suggested trade-policy concentration risk.
+6. Accept/decline relevance, review or customise the proposed score, approve a mitigation if tolerance is exceeded, then finish once.
+7. Current exposure remains separate from the projected effect of planned mitigation. State persists in the participant's private workspace. Reset seminar clears organisation selection and the release.
 
-An issued finding can challenge an earlier risk assessment. The report starts a management decision rather than ending the work. Useful evidence also arrives from internal observations and external developments between audits. Do not turn headline count into risk probability.
-
-## Demonstration
-
-1. Prepare the annual-plan proposal; inspect weights and capacity; approve with a rationale.
-2. Create **Customer credit & collections** from the approved plan. Suggest the programme, inspect and confirm criteria, then approve assignments.
-3. Load teaching evidence. Eight missing approval records out of forty sampled files do not prove that approval never occurred.
-4. Review the finding; generate the report and presentation from the same facts; issue the report.
-5. Open Continuous risk assurance. The issued finding is an audit signal for linked registered risks. Add the memo and news/social examples.
-6. Accept/decline the proposed relationships, inspect score movement and agree a response above tolerance. Save the whole review together.
-7. Compare assessed exposure with the target after planned action. Verify the effect before treating that target as achieved.
-
-The organisation and internal evidence are teaching examples. Suggestions are prepared rules, with no live model connected. Data is stored in this browser. ANTARA is a dated historical replay; the social post is explicitly unverified.
-
-## Links
-
-- [Deck](http://localhost/presentation/deck/?previewTopic=ai-audit-beyond)
-- [Assurance workspace](http://localhost/audience/?previewTopic=ai-audit-beyond&workspace=audit)
-- [Risk workspace](http://localhost/audience/?previewTopic=ai-audit-beyond&workspace=risk)
-- [Data-handling facilitation](ai-data-handling.md)
+The demo uses transparent rules and historical reporting, not a live autonomous model. Do not present the April 2025 tariff as a current rate or the fictional exposure shares as news facts.

@@ -221,6 +221,13 @@
       "url": "https://scikit-learn.org/stable/modules/cross_validation.html",
       "scope": "Documentation on evaluating models with held-out data and cross-validation. Supports the distinction between exploratory LLM assistance and validated predictive modelling.",
       "type": "Technical documentation"
+    },
+    "antara-tariff": {
+      "label": "ANTARA — Indonesia kena kenaikan tarif AS 32 persen",
+      "url": "https://jabar.antaranews.com/berita/594405/indonesia-kena-kenaikan-tarif-as-32-persen",
+      "type": "Historical news",
+      "year": 2025,
+      "scope": "Historical reporting of the April 2025 US tariff announcement. Not a current tariff rate. Company names, portfolio shares and impacts in the exercise are fictional context; the article does not establish a loss for either organisation."
     }
   },
   "slides": [
@@ -359,6 +366,24 @@
       "narrative": {
         "question": "The question comes first. The model-building can wait.",
         "transition": "For many everyday analyses, a pretrained LLM changes the starting point."
+      }
+    },
+    {
+      "key": "aib-agentic-concepts",
+      "title": "Chatbots, AI agents and agentic AI",
+      "kind": "story",
+      "chapter": "capability",
+      "visual": "agentic-comparison",
+      "lead": "From answering a question to coordinating work toward an objective.",
+      "items": [],
+      "refs": [
+        "agents"
+      ],
+      "notes": "Ini pembedaan praktis, bukan taksonomi universal. Chatbot merespons percakapan. Agent beralat dapat bertindak dan memeriksa hasil. Sistem agentic mengendalikan rencana lebih panjang, mengoordinasikan alat atau agent khusus dan menyesuaikan langkah berdasarkan umpan balik. Satu agent pun dapat bersifat agentic; banyak agent tidak otomatis bermanfaat atau andal. Arc animasi menunjukkan aliran informasi dan umpan balik, bukan kewenangan tanpa batas. Manusia tetap menetapkan akses, kondisi berhenti dan gerbang persetujuan. Diagram adalah sintesis pembelajaran, sedangkan Anthropic menjadi rujukan pembedaan arsitektur workflow dan agent.",
+      "notesEn": "These are practical distinctions, not a universally agreed taxonomy. A chatbot responds in conversation. A tool-using agent can take actions and inspect results. An agentic system controls a longer plan, coordinates tools or specialised agents and adapts from feedback. One agent can be agentic; several agents do not automatically make a useful or reliable system. The animated arcs show information and feedback, not unrestricted authority. People still define access, stop conditions and approval gates. The diagram is an original teaching synthesis inspired by the supplied visual; Anthropic provides the workflow/agent architectural distinction.",
+      "narrative": {
+        "question": "Chatbots, AI agents and agentic AI: what changes in the work?",
+        "transition": "From answering a question to coordinating work toward an objective."
       }
     },
     {
@@ -645,23 +670,6 @@
       "notesEn": "AI may prepare a draft or propose an action. A person must be able to inspect sources, challenge assumptions, change the result, reject it or stop. Approval without time, competence or genuine discretion is not meaningful human authority.\n\nThe IIA · Global Internal Audit Standards · 2024: 2024 edition, effective January 2025. References include Standards 4.3, 11.5, 13.2, 14.1–14.4 and 15.2. The deck paraphrases selected implications for internal audit; it does not replace the Standards or prescribe financial-statement audit requirements.\n\nNIST - Generative AI Profile - 2024: Cross-sector guidance on generative AI risks; not proof that a particular product is safe.\n\nOpenAI · Agent approvals & security: Product-specific guidance on agent permissions, sandboxing and command networking. Shell restrictions do not establish offline model inference or cover every hosted search, app or MCP path. Diagrams simplify these distinctions for general audiences; they do not reproduce the exact interface."
     },
     {
-      "key": "aib-hitl-practice",
-      "title": "Human-in-the-loop practice: find AI slop",
-      "lead": "Five AI outputs. Check the evidence before approving.",
-      "chapter": "assistant",
-      "kind": "story",
-      "items": [],
-      "refs": [],
-      "notes": "Presenter: buka Admin > Signals & participants untuk membuka sesi human-in-the-loop. Kemudian buka Demo aplikasi > Human-in-the-loop dan tayangkan walkthrough yang sama dengan alur peserta: isi nama, periksa dokumen, pasang penanda, lalu Finish. Lima konten meliputi slide strategi, report audit tiga halaman, dashboard, memo, dan brief. Tiga konten mengandung slop. Periksa semua halaman report. Nilai maksimal 20 per konten; penanda salah atau berulang mengurangi 5, minimum nol. Hasil walkthrough tidak masuk leaderboard. Tutup sesi dari Signals & participants untuk menampilkan peringkat dan pembahasan.",
-      "evidenceNote": "",
-      "visual": "hitl-practice",
-      "narrative": {
-        "question": "Can you spot what needs a human challenge?",
-        "transition": "Read the source. Mark the unsupported output. Keep sound work unmarked."
-      },
-      "notesEn": "Open the human-in-the-loop session from Admin > Signals & participants. Then broadcast the participant walkthrough from Demo Aplikasi. Enter a display name, inspect the strategy slide, three-page audit report, dashboard, memo and brief, place pins and finish. Three artifacts contain slop. Review every report page. Each artifact earns up to 20 points; wrong or duplicate pins cost 5 points, minimum zero. Presenter walkthrough attempts are excluded from the leaderboard. Close the session from Signals & participants to reveal results."
-    },
-    {
       "key": "aib-beyond-assistant",
       "title": "AI for repeatable workflows and applications",
       "lead": "The same capability can help build a dashboard, a repeatable programme or a whole application.",
@@ -731,11 +739,30 @@
       "notesEn": "The RSM survey distinguishes partial integration from AI embedded in core processes among organisations already using AI. The figures are not an adoption rate for all companies or Indonesia. A working application still needs evidence of useful adoption.\n\nRSM · Middle Market AI Survey · 2026: U.S./Canada study: 1,030 respondents from organisations already using AI, including pilots. The 86% integration and 36% fully-embedded figures describe this sample; they do not measure adoption across all businesses or in Indonesia.\n\nRSM · Survey methodology · 2026: Fieldwork 5–16 March 2026: 827 U.S. and 203 Canadian respondents, management level or above with influence over technology investment. Government and nonprofits excluded. All participating organisations already used AI."
     },
     {
+      "key": "aib-agentic-audit",
+      "title": "Agentic AI in the audit process",
+      "kind": "story",
+      "chapter": "ams",
+      "visual": "agentic-audit-map",
+      "lead": "AI automates preparation and follow-up. People approve scope, evidence, conclusions and risk decisions.",
+      "items": [],
+      "refs": [
+        "agents",
+        "gias"
+      ],
+      "notes": "Jelaskan tiap arc sebelum membuka AMS. AI mengusulkan prioritas dan program dalam akses yang disetujui; manusia menyetujui lingkup, kapasitas dan pengecualian. Agent mencari kriteria dan mengolah catatan; auditor memvalidasi bukti serta menelusuri anomali. AI menyusun draf temuan, tetapi hanya reviewer berwenang menerbitkan laporan. Tindak lanjut mengumpulkan bukti, sedangkan pemilik risiko memutuskan skor dan respons. Umpan balik mengubah perencanaan berikutnya. Node AI dapat memakai alat deterministik; otomasi tidak mengalihkan pertimbangan profesional ke mesin. AMS berikut mendemonstrasikan beberapa langkah dengan aturan yang disiapkan dan persetujuan manusia, bukan model otonom terhubung.",
+      "notesEn": "Explain each arc before opening the AMS. AI proposes priorities and programme steps within approved access; a person approves scope, capacity and exclusions. Agents retrieve criteria and work with records; auditors validate evidence and investigate exceptions. AI drafts a finding, but only an authorised reviewer issues the report. Follow-up collects evidence, while the risk owner decides the score and response. Feedback changes the next planning cycle. AI-labelled nodes can include deterministic tools; automation does not imply that professional judgments become machine decisions. The subsequent AMS demonstrates selected steps with prepared rules and human approvals, not a connected autonomous model.",
+      "narrative": {
+        "question": "Agentic AI in the audit process: what changes in the work?",
+        "transition": "AI automates preparation and follow-up. People approve scope, evidence, conclusions and risk decisions."
+      }
+    },
+    {
       "key": "aib-section-ams",
-      "title": "AI-supported Assurance Management Systems",
+      "title": "Agentic AI in Assurance Management Systems",
       "kind": "section",
       "chapter": "ams",
-      "lead": "One idea to test: an AI-supported assurance system, from annual priorities to a reviewed finding.",
+      "lead": "Apply coordinated AI workflows with explicit human approval gates.",
       "items": [],
       "notes": "Satu ide yang akan diuji: AMS untuk PT Aruna Distribusi Nusantara, organisasi contoh yang menjual secara kredit dan perlu menjaga penerimaan kas. Ikuti perencanaan tahunan, fieldwork, dan reporting. Buka aplikasi dari slide perencanaan, kerjakan objek Customer credit & collections, lalu terbitkan temuan sebagai sinyal risiko. Saran berupa contoh tersiap dengan aturan transparan, bukan model live. Human authority berlaku pada rencana, programme, temuan, dan keputusan risiko.",
       "refs": [],
@@ -963,8 +990,8 @@
     },
     {
       "key": "aib-three-signals",
-      "title": "Signal sources for continuous risk assurance",
-      "lead": "Audit results. Internal memos and reports. News and social-media leads.",
+      "title": "Two organisations for the risk exercise",
+      "lead": "Choose an industry. Review its given objective and three registered risks.",
       "chapter": "beyond",
       "kind": "story",
       "items": [],
@@ -972,14 +999,14 @@
         "coso",
         "gias"
       ],
-      "notes": "Demo fokus hanya tiga kelompok. Pertama hasil audit approved/issued dari AMS yang benar-benar terhubung ke registered risk Aruna dalam browser yang sama. Kedua internal memo/report yang merupakan teaching record dengan source content. Ketiga external news memakai artikel ANTARA nyata bertanggal 3 April 2025 sebagai historical replay; link sumber dapat dibuka. Social-media lead merupakan teaching example yang jelas belum diverifikasi, tanpa atribusi ke orang/akun nyata. Tanyakan relevansi ke objective dan konteks; jangan menganggap topik cocok berarti exposure terbukti. Dalam cerita Aruna melayani pelanggan manufaktur ekspor, sehingga dependensi perlu diverifikasi sebelum mengaitkan tarif dengan collection. Continuous assurance dapat memakai sumber lain; tiga ini bukan batas framework.\n\nPertanyaan: Three sources for this demonstration. Penghubung: Audit results. Internal memos and reports. News and social-media leads.",
+      "notes": "Peserta memilih eksportir pangan atau pembiayaan UKM. Masing-masing memulai dengan satu tujuan dan tiga risiko. Eksposur diberikan: ketergantungan pembeli AS atau konsentrasi debitur eksportir. Sinyal baru muncul setelah presenter merilis kasus historis ANTARA. Satu perusahaan menilai ulang risiko terdaftar, sedangkan yang lain dapat menambah risiko yang disarankan sebelum menilai. Keputusan bersifat privat dan tersimpan di server.",
       "evidenceNote": "",
-      "visual": "three-signals",
+      "visual": "cra-contexts",
       "narrative": {
         "question": "Three sources for this demonstration.",
         "transition": "Audit results. Internal memos and reports. News and social-media leads."
       },
-      "notesEn": "Use three source groups: a reviewed audit result, an internal memo or report, and news or social-media leads. Different sources have different evidential weight. Inspect dates and originals; an unverified post is a lead, not an established fact.\n\nCOSO · ERM: Strategy & Performance · 2017: COSO connects enterprise risk management with strategy setting and performance. The feedback diagram is an RSM seminar explanation of that connection, not a reproduction of COSO’s official framework or an endorsement of a scoring method.\n\nThe IIA · Global Internal Audit Standards · 2024: 2024 edition, effective January 2025. References include Standards 4.3, 11.5, 13.2, 14.1–14.4 and 15.2. The deck paraphrases selected implications for internal audit; it does not replace the Standards or prescribe financial-statement audit requirements."
+      "notesEn": "Participants choose a food exporter or an SME finance company. Each starts with one objective and three risks. Exposure context is given: US buyer dependence for exports, export-borrower concentration for finance. No signal appears until the presenter releases the historical ANTARA case. One company reassesses a registered risk; the other can add the suggested missing risk before assessment. Decisions are private and persist on the server."
     },
     {
       "key": "aib-signal-framework",
@@ -1000,6 +1027,24 @@
         "transition": "AI prepares the evidence and advice. People retain the decision and the follow-through."
       },
       "notesEn": "SIGNAL means Sense, Interpret, Gauge, Notify, Act and Learn. AI supports the first four activities. People can challenge every stage and retain responsibility for relevance, assessment, response and verification of actual effects.\n\nCOSO · ERM: Strategy & Performance · 2017: COSO connects enterprise risk management with strategy setting and performance. The feedback diagram is an RSM seminar explanation of that connection, not a reproduction of COSO’s official framework or an endorsement of a scoring method.\n\nThe IIA · Global Internal Audit Standards · 2024: 2024 edition, effective January 2025. References include Standards 4.3, 11.5, 13.2, 14.1–14.4 and 15.2. The deck paraphrases selected implications for internal audit; it does not replace the Standards or prescribe financial-statement audit requirements."
+    },
+    {
+      "key": "aib-tariff-case",
+      "title": "Liberation Day tariff announcement",
+      "kind": "story",
+      "chapter": "beyond",
+      "visual": "cra-news",
+      "lead": "One real article. Two different organisational exposures.",
+      "items": [],
+      "refs": [
+        "antara-tariff"
+      ],
+      "notes": "Tampilkan berita historis ANTARA sebelum merilisnya. Tanyakan dampaknya pada eksportir pangan dan perusahaan pembiayaan UKM. Eksportir sudah mencatat risiko permintaan dan margin; pembiayaan memiliki debitur eksportir tetapi belum mencatat konsentrasi kebijakan perdagangan. Buka Admin > Sinyal & peserta lalu rilis sinyal tarif ANTARA. Peserta menerima sumber sesuai organisasi pilihannya. Angka 32% adalah pengumuman historis, bukan tarif terkini. Periksa cakupan produk dan ketergantungan riil; jangan mengubah judul berita menjadi asumsi kerugian perusahaan.",
+      "notesEn": "Show the historical ANTARA news before releasing it. Ask what changes for the food exporter and for the SME lender. The exporter already registered demand and margin risk; the lender has export-linked borrowers but no registered trade-policy concentration. Open Admin > Signals & participants and release the ANTARA tariff signal. Participants receive the source in their own selected organisation. The 32% figure describes the historical announcement, not the current rate. Check product coverage and the actual dependency rather than automatically extrapolating a headline into company losses.",
+      "narrative": {
+        "question": "Liberation Day tariff announcement: what changes in the work?",
+        "transition": "One real article. Two different organisational exposures."
+      }
     },
     {
       "key": "aib-review-signals",
@@ -1052,10 +1097,10 @@
     },
     {
       "key": "aib-risk-demo",
-      "title": "Demo: audit, internal and external risk signals",
+      "title": "Risk-manager response to the released signal",
       "kind": "demo",
       "chapter": "beyond",
-      "lead": "Issue an audit result, capture a memo, then inspect the historical news and the unverified lead.",
+      "lead": "Accept or decline relevance, review the score and agree mitigation above tolerance.",
       "items": [
         [
           "01",
@@ -1070,14 +1115,14 @@
           "Save a reasoned score and mitigation; review the dashboard."
         ]
       ],
-      "notes": "Gunakan tab Risk workspace di aplikasi topik ini. Risiko dan sumber berasal dari paket Beyond Compliance sebelumnya, sebagai contoh kedua yang berbeda dari kasus Aruna. Jangan menyebut kasus berita historis sebagai berita hari ini. Selesaikan review sinyal, penyesuaian skor dan rencana mitigasi sebagai satu rangkaian. Dalam versi ini AMS dan workspace risiko adalah dua demo; tidak ada transfer temuan otomatis antar keduanya.\n\nPertanyaan: Try the three signal sources. Penghubung: Issue an audit result, capture a memo, then inspect the historical news and the unverified lead.",
+      "notes": "Rilis satu sumber melalui kontrol admin khusus. Eksportir membuka alert pada risiko pertamanya. Pembiayaan menerima atau menolak usulan risiko baru dahulu. Pemetaan yang diterima masuk ke alur reviu berkesinambungan: putuskan sinyal, pilih penilaian, setujui respons di atas toleransi, lalu selesaikan sekali. Eksposur saat ini terpisah dari target setelah mitigasi. Muat ulang mempertahankan keputusan tersimpan. Reset seminar membersihkan latihan melalui reset epoch.",
       "refs": [],
-      "visual": "risk-demo-v2",
+      "visual": "cra-contexts",
       "narrative": {
         "question": "Try the three signal sources.",
         "transition": "Issue an audit result, capture a memo, then inspect the historical news and the unverified lead."
       },
-      "notesEn": "Issue the reviewed AMS finding, then add the memo and news/social examples. Read the dated historical ANTARA article and verify the unconfirmed social lead. Review a linked risk, choose relevance and the score, and approve or customise the response above tolerance."
+      "notesEn": "Release exactly one source using the dedicated admin control. The exporter opens the alert on its first risk. Finance first accepts or declines the suggested new risk. The accepted mapping leads to the same continuous review: decide each signal, select the assessment, approve a response above tolerance and finish once. Current assessed exposure remains separate from the planned target after mitigation. Refreshing retains the participant’s saved decisions. Global seminar reset clears the exercise using its reset epoch."
     },
     {
       "key": "aib-next",
@@ -1186,6 +1231,24 @@
         "transition": "Primary product documentation and data-disclosure guidance, reviewed 7 November 2026."
       },
       "notesEn": "Provider terms depend on the account, feature and service. API training defaults must not be applied to all personal chatbot accounts. Retention, inference location, tools and permission to share remain separate controls.\n\nOpenAI · Agent approvals & security: Product-specific guidance on agent permissions, sandboxing and command networking. Shell restrictions do not establish offline model inference or cover every hosted search, app or MCP path. Diagrams simplify these distinctions for general audiences; they do not reproduce the exact interface.\n\nOpenAI · ChatGPT Work enterprise overview: Enterprise/Edu Work documentation: conversations, uploaded files, memory and connected sources can have distinct retention and deletion lifecycles. Not a universal consumer ChatGPT or API policy.\n\nOpenAI · API data controls: API-specific documentation reviewed 13 November 2026: API data is not used for training by default unless opted in. Retention and processing controls are separate. Do not apply this statement to every personal chatbot account or feature.\n\nAnthropic · Claude Code data usage: Claude Code documentation distinguishes consumer and commercial data use, model-improvement choices and feedback/session-sharing. Conditions depend on the account and feature; not a statement of every provider’s terms.\n\nAnthropic · Claude Code permissions: Supported tool permissions, file-read restrictions and scopes. Read-only, working directory and gitignore are not interchangeable privacy boundaries; verify the actual tool configuration.\n\nAnthropic · Claude Code user FAQ: Primary product explanation: CLI tools can read local source content and send it to hosted inference. This is specific to cloud-backed Claude Code use, not every local agent or offline model.\n\nOWASP · Sensitive data disclosure · 2025: LLM02:2025. Data sanitisation, least privilege, source restriction and disclosure risk. A control in a prompt or a redaction step is not a complete privacy guarantee.\n\nOWASP · Prompt injection · 2025: LLM01:2025. Untrusted content can redirect an LLM application; controls must address the application, tools and permissions rather than relying on a system prompt alone."
+    },
+    {
+      "key": "aib-agentic-references",
+      "title": "Agentic AI and case references",
+      "kind": "references",
+      "chapter": "beyond",
+      "lead": "Architecture guidance and the historical article used in the exercise.",
+      "items": [],
+      "refs": [
+        "agents",
+        "antara-tariff"
+      ],
+      "notes": "Baca panduan arsitektur asli dan berita bertanggal. Diagram merupakan sintesis pembelajaran; angka eksposur perusahaan adalah asumsi skenario, bukan fakta yang dibuktikan berita.",
+      "notesEn": "Read the original architectural guidance and the dated article. The diagrams are teaching syntheses; the company exposure figures are scenario assumptions, not facts established by the news.",
+      "narrative": {
+        "question": "Agentic AI and case references: what changes in the work?",
+        "transition": "Architecture guidance and the historical article used in the exercise."
+      }
     },
     {
       "key": "aib-closing",

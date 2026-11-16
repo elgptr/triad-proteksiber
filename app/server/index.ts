@@ -1,3 +1,4 @@
+import {continuousRisk} from './continuousRisk.js';
 import {hitl} from './hitl.js';
 import {checkDatabase} from './startup.js';
 import {topicAdmin} from './topics.js';
@@ -38,7 +39,7 @@ app.use('/api',hitl);
 app.use('/api',demoAdmin);
 app.use('/api',presentationHost);
 app.use('/api',contentAdmin);app.use('/api',topicAdmin);
-app.use('/api',workshop);
+app.use('/api',workshop);app.use('/api',continuousRisk);
 app.use((err:unknown,_req:express.Request,res:express.Response,_next:express.NextFunction)=>{if(err instanceof z.ZodError)return res.status(400).json({error:err.issues.map(i=>`${i.path.join('.')}: ${i.message}`).join('; ')});if(err instanceof SyntaxError)return res.status(400).json({error:'Invalid JSON request.'});console.error('Request failed:',err instanceof Error?err.name:'Error');res.status(500).json({error:'Unable to complete this request. Check the local database connection.'});});
 if(process.env.NODE_ENV!=='test'){
  await checkDatabase(migrate);

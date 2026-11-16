@@ -7,12 +7,12 @@ import {renderAssuranceStory,trustQualities} from '../assets/keynote/assurance-s
 import {renderNarrativeSlide} from '../assets/keynote/audit-story.mjs';
 const material=JSON.parse(fs.readFileSync(new URL('../assets/keynote/audit-beyond-topic.json',import.meta.url),'utf8'));
 test('audit topic follows familiar work, practical assistance, business AI assurance, connected AMS, then risk action',()=>{
- assert.equal(material.slides.length,45);
+ assert.equal(material.slides.length,48);
  assert.deepEqual(material.sections.map(s=>s.id),['capability','audit-object','assistant','ams','beyond']);
  const designs=auditDesigns(material,{appUrl:'https://example.test/grc50',assetsUrl:'https://example.test/assets/',preview:true});
  const original=JSON.parse(fs.readFileSync(new URL('../assets/keynote/reference.json',import.meta.url),'utf8'));
  const built=composeModules(auditContent(material),{...original,slides:[...original.slides,...designs.entries]},designs.renderers,{revision:8});
- assert.equal(built.reference.slides.length,45);assert(!built.reference.slides.some(s=>s.key==='cover'));
+ assert.equal(built.reference.slides.length,48);assert(!built.reference.slides.some(s=>s.key==='cover'));
  for(const entry of built.reference.slides){const design=built.renderers[entry.key];assert(design.kind.includes('audit-beyond'));assert(!/undefined|NaN|\[object Object\]/.test(design.html),entry.key);assert(entry.note.length>80,entry.key);assert(design.html.includes('brand/rsm/logo.png'),entry.key);assert(design.html.includes('alt="RSM"'),entry.key);}
  for(const section of material.sections)assert.equal(material.slides.filter(s=>s.chapter===section.id&&s.kind==='section').length,1);
  assert(designs.renderers['aib-annual-planning'].html.includes('workspace=audit&amp;previewTopic=ai-audit-beyond'));
@@ -22,7 +22,7 @@ test('audit topic follows familiar work, practical assistance, business AI assur
 test('the concise refresher leads into auditing AI, using AI, useful products and continuous risk assurance',()=>{
  const pos=key=>material.slides.findIndex(s=>s.key===key);
  for(const [a,b] of [['aib-ai-modes','aib-document-journey'],['aib-general-safeguards','aib-section-audit-object'],['aib-trustworthy','aib-section-assistant'],['aib-human-authority','aib-idea-execution-usage'],['aib-annual-planning','aib-fieldwork-flow'],['aib-fieldwork-flow','aib-reporting-pack'],['aib-reporting-pack','aib-three-signals'],['aib-three-signals','aib-risk-demo']])assert(pos(a)>=0&&pos(a)<pos(b),a+' ? '+b);
- assert.equal(material.slides.filter(s=>s.chapter==='capability'&&s.kind!=='section').length,5);
+ assert.equal(material.slides.filter(s=>s.chapter==='capability'&&s.kind!=='section').length,6);
  for(const s of material.slides){assert(s.narrative.question.length>10,s.key);assert(s.narrative.transition.length>10,s.key);}
  assert.deepEqual(auditContent(material).modules.slice(1).map(m=>m.id),material.sections.map(s=>s.id));
 });
@@ -31,7 +31,7 @@ test('all teaching visuals render and describe human authority, evidence and the
  for(const s of material.slides.filter(s=>s.visual)){const html=renderAssuranceStory(s,{appUrl:'https://example.test',preview:true})??renderNarrativeSlide(s,{sections:material.sections});assert(html,s.key);assert(!/undefined|NaN/.test(html),s.key);}
  const trust=renderAssuranceStory(material.slides.find(s=>s.key==='aib-trustworthy'));assert.equal(trustQualities.length,7);assert.equal((trust.match(/data-trust-quality=/g)||[]).length,7);assert(trust.includes('Valid & reliable'));assert(trust.includes('Accountable & transparent'));
  const controls=renderAssuranceStory(material.slides.find(s=>s.key==='aib-general-safeguards'));assert(controls.includes('not a product screenshot'));assert(controls.includes('not sent online'));assert(controls.includes('where offered'));
- const risk=renderAssuranceStory(material.slides.find(s=>s.key==='aib-risk-demo'),{appUrl:'https://example.test',preview:true});assert(risk.includes('workspace=risk&amp;previewTopic=ai-audit-beyond'));assert(risk.includes('Issue the reviewed AMS report'));
+ const risk=renderAssuranceStory(material.slides.find(s=>s.key==='aib-risk-demo'),{appUrl:'https://example.test',preview:true});assert(risk.includes('workspace=risk&amp;previewTopic=ai-audit-beyond'));assert(risk.includes('Choose your organisation'));
  const framework=renderAssuranceStory(material.slides.find(s=>s.key==='aib-signal-framework'));assert.equal((framework.match(/HUMAN AUTHORITY/g)||[]).length,2);assert.equal((framework.match(/AI SUPPORT/g)||[]).length,4);
  const agenda=renderNarrativeSlide(material.slides.find(s=>s.key==='aib-journey'),{sections:material.sections});for(const section of material.sections)assert(agenda.includes('data-chapter="'+section.id+'"'));
 });

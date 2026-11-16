@@ -265,7 +265,27 @@ test('complete workshop: private organizations, guided case, mitigation, externa
  assert.equal((await req('/workshop/host/'+code+'/reset','POST',host,{confirmation:'RESET',epoch:1})).status,200);assert.equal((await(await req('/content')).json()).topicId,'beyond-compliance','Workshop reset keeps the topic library');assert.equal((await(await req('/admin/topics','GET',host)).json()).topics.length,3);
 
  assert.equal((await req('/admin/topics/ai-audit-beyond/activate','POST',host,{expectedRevision:6})).status,200);
- const auditTopic=await(await req('/content')).json();assert.equal(auditTopic.application.kind,'audit-suite');assert.equal((await(await liveState()).json()).total,45);assert.equal((await req('/workshop/join','POST',a)).status,200);
+ const auditTopic=await(await req('/content')).json();assert.equal(auditTopic.application.kind,'audit-suite');assert.equal((await(await liveState()).json()).total,48);assert.equal((await req('/workshop/join','POST',a)).status,200);
+
+ // The new exercise uses private server state and an admin-only, shared release.
+ const craA=await(await req('/cra/state','GET',a)).json(),craB=await(await req('/cra/state','GET',b)).json();
+ assert.equal(craA.state,undefined);assert.equal(craB.state,undefined);const craEpoch=craA.release.epoch;
+ assert.equal((await req('/cra/setup','POST',a,{organizationId:'exporter',epoch:craEpoch})).status,200);
+ assert.equal((await req('/cra/setup','POST',b,{organizationId:'finance',epoch:craEpoch})).status,200);
+ assert.equal((await req('/admin/cra/release','POST',a,{epoch:craEpoch,revision:0})).status,403);
+ assert.equal((await req('/admin/cra/release','POST',host,{epoch:craEpoch,revision:0})).status,200);
+ let exportView=await(await req('/cra/state','GET',a)).json(),financeView=await(await req('/cra/state','GET',b)).json();
+ assert.equal(exportView.state.data.risks.length,3);assert.equal(exportView.state.data.signals.length,1);assert(financeView.newRisk);assert.equal(financeView.state.data.signals.length,0);
+ assert.equal((await req('/cra/new-risk','POST',b,{decision:'accept',epoch:craEpoch})).status,200);
+ financeView=await(await req('/cra/state','GET',b)).json();assert.equal(financeView.state.data.risks.length,4);assert.equal((await(await req('/cra/state','GET',a)).json()).state.data.risks.length,3);
+ const risk=exportView.state.data.risks[0],news=exportView.state.data.signals[0];const review={epoch:craEpoch,riskId:risk.id,revision:0,decisions:{[news.id]:'accept'},likelihood:4,impact:4,reason:'US customer exposure affects the margin objective.'};
+ assert.equal((await req('/cra/respond','POST',a,review)).status,409,'Above tolerance requires a mitigation');
+ assert.equal((await req('/cra/respond','POST',a,{...review,mitigation:{action:'Diversify destination markets',owner:'Risk Manager',due:'2027-01-30',likelihoodReduction:1,impactReduction:0}})).status,200);
+ exportView=await(await req('/cra/state','GET',a)).json();assert.equal(exportView.state.data.risks[0].likelihood,4);assert.equal(exportView.state.data.risks[0].mitigations.length,1);assert.equal(exportView.state.data.signals[0].decisions[risk.id],'accept');
+ assert.equal((await req('/cra/respond','POST',b,review)).status,409,'A workspace cannot decide another organisation?s signal mapping');
+ assert.equal((await req('/workshop/host/'+code+'/reset','POST',host,{confirmation:'RESET',epoch:craEpoch})).status,200);
+ const resetCra=await(await req('/cra/state','GET',a)).json();assert.equal(resetCra.state,undefined);assert.equal(resetCra.release.released,false);
+ assert.equal((await req('/admin/cra/release','POST',host,{epoch:resetCra.release.epoch,revision:0})).status,200,'Release works after global reset');
  assert.equal((await req('/admin/topics/beyond-compliance/activate','POST',host,{expectedRevision:7})).status,200);
  nextConfig.modules[0].demo.config.title='Updated practice application';
  assert.equal((await req('/admin/topics/'+nextId,'PUT',host,{expectedRevision:8,topic:{...nextTopic,title:'Edited future topic',config:nextConfig}})).status,200);
