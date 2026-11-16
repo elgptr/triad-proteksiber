@@ -163,3 +163,16 @@
 @media(max-width:800px){.rsm-template[class*="ab-story-agentic-"] .ab-heading h1{font-size:34px}.rsm-template[class*="ab-story-agentic-"] .ab-heading>p{font-size:18px}.ag-map{width:1050px;max-width:none;max-height:none}.rsm-template[class*="ab-story-agentic-"] .frame-content{overflow:auto}.ag-comparison-labels,.ag-comparison-notes{width:1050px;max-width:none}.ag-comparison-labels h2{font-size:23px!important}.ag-contexts{grid-template-columns:1fr;gap:20px}.ag-contexts h2{font-size:27px}.ag-contexts p{font-size:21px}.ag-contexts strong,.ag-contexts span{font-size:18px}.ag-legend{font-size:15px;gap:14px}.ag-note{font-size:15px}}
 
 .rsm-template[class*="ab-story-agentic-"]{background-image:linear-gradient(#00153dc9,#00153de6),url('../brand/rsm/template-dark.png')}
+
+/* Clean canvas for the agentic teaching diagrams. */
+.rsm-template.ab-story-agentic-comparison,.rsm-template.ab-story-agentic-audit-map,.rsm-template.ab-story-agentic-risk-map{background:#00153d!important;background-image:none!important}
+.ag-context rect{fill:#092b50;stroke:#69d0ef;stroke-width:1.5}.ag-context .ag-label{font-size:21px}.ag-context .ag-sub{font-size:14px}
+.ab-story-agentic-risk-map .ag-note{max-width:100%;text-align:center}
+
+.ag-context .ag-label{fill:#fff}.ag-context .ag-sub{fill:#c4d4e7}
+
+.rsm-template.ab-story-agentic-human-gates{background:#00153d!important;background-image:none!important}
+
+.rsm-template.ab-story-agentic-integrated-map{background:#00153d!important;background-image:none!important}
+.ag-survey{display:grid;grid-template-columns:1.15fr 1fr;gap:7%;align-items:center}.ag-survey-copy>strong{font-size:clamp(90px,10vw,165px);line-height:1;color:#009cde;letter-spacing:-.06em}.ag-survey-copy h2{font-size:clamp(24px,2.4vw,38px);line-height:1.12;max-width:650px;margin:16px 0}.ag-survey-copy p{font-size:24px}.ag-survey-copy small{display:block;font-size:15px;line-height:1.5;max-width:580px;color:#5c6570}.ag-survey-dots{display:grid;grid-template-columns:repeat(10,1fr);gap:13px;max-width:440px}.ag-survey-dots i{aspect-ratio:1;border-radius:50%;background:#d9e4eb}.ag-survey-dots i.filled{background:#009cde}.ab-story-survey-dot-field .ab-heading>p{max-width:100%}.ab-story-survey-dot-field .frame-content{gap:24px}
+@media(max-width:800px){.ag-survey{gap:22px;grid-template-columns:1fr}.ag-survey-copy>strong{font-size:90px}.ag-survey-copy h2{font-size:25px}.ag-survey-copy p{font-size:19px}.ag-survey-dots{max-width:250px;gap:7px}}
