@@ -1,7 +1,7 @@
-import {renderAgentic} from './agentic-audit.mjs?v=agentic-cra-20261116';
-import {icon,rail,footer,simplePaper} from './audit-story.mjs?v=agentic-cra-20261116';
-import {renderAdoptionIllustration} from './adoption-illustration.mjs?v=agentic-cra-20261116';
-import {renderRsmFramework} from './rsm-frameworks.mjs?v=agentic-cra-20261116';
+import {renderAgentic} from './agentic-audit.mjs?v=connected-audit-20261116';
+import {icon,rail,footer,simplePaper} from './audit-story.mjs?v=connected-audit-20261116';
+import {renderAdoptionIllustration} from './adoption-illustration.mjs?v=connected-audit-20261116';
+import {renderRsmFramework} from './rsm-frameworks.mjs?v=connected-audit-20261116';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const trustQualities=[
  ['Valid & reliable','Does it work for the intended use?','Inspect relevant test data, acceptance thresholds and failures under expected conditions.','model'],
