@@ -20,13 +20,8 @@
     },
     {
       "id": "ams",
-      "title": "AI-supported Assurance Management Systems",
-      "caption": "Annual planning, fieldwork and reporting in one reviewed workflow."
-    },
-    {
-      "id": "beyond",
-      "title": "Continuous risk assurance",
-      "caption": "Continuous risk assurance using audit results, internal reports and external signals."
+      "title": "Agentic AI in audit and continuous risk assurance",
+      "caption": "Evidence, a connected workflow, human authority and a staged demonstration."
     }
   ],
   "sources": {
@@ -61,7 +56,7 @@
     "erm": {
       "label": "NC State / AICPA - State of Risk Oversight - 2026",
       "url": "https://erm.ncsu.edu/resource-center/2026-state-of-risk-oversight-enterprise-risk-management-trends-and-key-findings/",
-      "scope": "Executive survey: 69% report increased risk volume/complexity over five years; 30% describe oversight as mature/robust. These are different questions, not complementary percentages.",
+      "scope": "Among 331 executive and board-level respondents, 11% reported a unique strategic or competitive advantage from risk management. The 89% is its rounded complement, not a measure of failure or causal impact.",
       "type": "Executive survey",
       "year": 2026
     },
@@ -228,6 +223,13 @@
       "type": "Historical news",
       "year": 2025,
       "scope": "Historical reporting of the April 2025 US tariff announcement. Not a current tariff rate. Company names, portfolio shares and impacts in the exercise are fictional context; the article does not establish a loss for either organisation."
+    },
+    "pwc-alignment": {
+      "label": "PwC - Global Internal Audit Study 2023",
+      "url": "https://www.pwc.com/gx/en/services/audit-assurance/internal-audit/global-internal-audit-study.html",
+      "type": "Global survey",
+      "year": 2023,
+      "scope": "49% of business executives perceived a lack of strong alignment between internal audit and other lines on key risks and problems. The overall study covered 4,680 respondents in 81 countries; that total is not the denominator for this subgroup percentage."
     }
   },
   "slides": [
@@ -739,38 +741,89 @@
       "notesEn": "The RSM survey distinguishes partial integration from AI embedded in core processes among organisations already using AI. The figures are not an adoption rate for all companies or Indonesia. A working application still needs evidence of useful adoption.\n\nRSM · Middle Market AI Survey · 2026: U.S./Canada study: 1,030 respondents from organisations already using AI, including pilots. The 86% integration and 36% fully-embedded figures describe this sample; they do not measure adoption across all businesses or in Indonesia.\n\nRSM · Survey methodology · 2026: Fieldwork 5–16 March 2026: 827 U.S. and 203 Canadian respondents, management level or above with influence over technology investment. Government and nonprofits excluded. All participating organisations already used AI."
     },
     {
+      "key": "aib-section-ams",
+      "title": "Agentic AI in audit and continuous risk assurance",
+      "kind": "section",
+      "chapter": "ams",
+      "lead": "From survey evidence to a human-governed model, then a practical demonstration.",
+      "items": [],
+      "notes": "Perkenalkan satu usulan terintegrasi: agentic AI mendukung perencanaan, fieldwork dan pelaporan audit; hasil audit dan sinyal lain menjadi masukan assurance risiko berkelanjutan. Mulai dari survei, jelaskan model terintegrasi serta persetujuan manusia, lalu demonstrasikan langkah terpilih di dua ruang kerja contoh. Saran disiapkan sebelumnya, bukan sistem otonom yang terhubung.",
+      "refs": [],
+      "narrative": {
+        "question": "Agentic AI in audit and continuous risk assurance",
+        "transition": "From survey evidence to a human-governed model, then a practical demonstration."
+      },
+      "notesEn": "Introduce one integrated proposal: agentic AI supports audit planning, fieldwork and reporting, while audit results and other signals feed continuous risk assurance. Begin with the strategic-value and audit-alignment surveys, explain the connected model and human approval gates, then demonstrate selected steps in the two dummy workspaces. The workspaces use prepared suggestions rather than a connected autonomous system."
+    },
+    {
+      "key": "aib-risk-gap",
+      "title": "Strategic value of risk management",
+      "kind": "stats",
+      "chapter": "ams",
+      "lead": "Risk reporting is not the same as strategic value.",
+      "items": [
+        [
+          "89%",
+          "did not report a unique strategic advantage from risk management."
+        ]
+      ],
+      "notes": "Hanya 11% melaporkan keunggulan strategis atau kompetitif yang unik dari manajemen risiko. Komplemen yang dibulatkan adalah 89%; bukan berarti 89% gagal atau tidak memperoleh manfaat sama sekali. Ini persepsi responden, bukan uji kausal dan bukan bukti khusus Indonesia. Tanyakan apakah bukti baru benar-benar mengubah prioritas, keputusan risiko dan tindakan di antara siklus pelaporan.",
+      "refs": [
+        "erm"
+      ],
+      "narrative": {
+        "question": "Strategic value of risk management",
+        "transition": "Risk reporting is not the same as strategic value."
+      },
+      "notesEn": "Only 11% reported a unique strategic or competitive advantage from risk management. The rounded complement is 89%; it does not mean that 89% failed or obtained no benefit. This is self-reported survey evidence, not a causal test and not evidence specific to Indonesia. Ask whether new evidence actually changes priorities, risk decisions and action between reporting cycles.",
+      "visual": "survey-dot-field",
+      "surveyContrast": "Only 11% reported a unique strategic or competitive advantage.",
+      "surveyScope": "331 executive / board respondents · Q2 2026. Rounded complement of 11%; self-reported perceptions, not a failure rate."
+    },
+    {
+      "key": "aib-audit-alignment",
+      "title": "Alignment of internal audit and risk management",
+      "kind": "stats",
+      "chapter": "ams",
+      "lead": "An audit finding should inform a shared view of risk.",
+      "items": [
+        [
+          "49%",
+          "of business executives perceived an alignment gap."
+        ]
+      ],
+      "refs": [
+        "pwc-alignment"
+      ],
+      "notesEn": "PwC reports that 49% of business executives perceived a lack of strong alignment between internal audit and other lines on key risks and problems. The overall study includes 4,680 respondents across 81 countries, but that total is not the denominator for this subgroup result. It measures perceived alignment, not audit failure. The practical question is whether a reviewed finding reaches the risk owner and changes a decision about the objective.",
+      "notes": "PwC melaporkan bahwa 49% eksekutif bisnis menilai audit internal belum selaras kuat dengan lini lain dalam risiko dan masalah utama. Studi keseluruhan mencakup 4.680 responden di 81 negara, tetapi jumlah itu bukan penyebut hasil subkelompok ini. Ukurannya adalah persepsi keselarasan, bukan kegagalan audit. Pertanyaan praktisnya: apakah temuan yang direviu sampai kepada pemilik risiko dan mengubah keputusan terkait tujuan?",
+      "narrative": {
+        "question": "Alignment of internal audit and risk management",
+        "transition": "An audit finding should inform a shared view of risk."
+      },
+      "visual": "survey-dot-field",
+      "surveyContrast": "Internal audit and the other lines: a shared view of key risks is not assured.",
+      "surveyScope": "Business-executive subgroup · PwC 2023. Perceived alignment, not audit failure; the overall sample is not this percentage's denominator."
+    },
+    {
       "key": "aib-agentic-audit",
-      "title": "Agentic AI in the audit process",
+      "title": "Proposed agentic audit and risk-assurance workflow",
       "kind": "story",
       "chapter": "ams",
-      "visual": "agentic-audit-map",
-      "lead": "AI automates preparation and follow-up. People approve scope, evidence, conclusions and risk decisions.",
+      "visual": "agentic-integrated-map",
+      "lead": "One evidence loop: audit work, live signals, risk decisions and the next audit plan.",
       "items": [],
       "refs": [
         "agents",
-        "gias"
+        "gias",
+        "coso"
       ],
-      "notes": "Jelaskan tiap arc sebelum membuka AMS. AI mengusulkan prioritas dan program dalam akses yang disetujui; manusia menyetujui lingkup, kapasitas dan pengecualian. Agent mencari kriteria dan mengolah catatan; auditor memvalidasi bukti serta menelusuri anomali. AI menyusun draf temuan, tetapi hanya reviewer berwenang menerbitkan laporan. Tindak lanjut mengumpulkan bukti, sedangkan pemilik risiko memutuskan skor dan respons. Umpan balik mengubah perencanaan berikutnya. Node AI dapat memakai alat deterministik; otomasi tidak mengalihkan pertimbangan profesional ke mesin. AMS berikut mendemonstrasikan beberapa langkah dengan aturan yang disiapkan dan persetujuan manusia, bukan model otonom terhubung.",
-      "notesEn": "Explain each arc before opening the AMS. AI proposes priorities and programme steps within approved access; a person approves scope, capacity and exclusions. Agents retrieve criteria and work with records; auditors validate evidence and investigate exceptions. AI drafts a finding, but only an authorised reviewer issues the report. Follow-up collects evidence, while the risk owner decides the score and response. Feedback changes the next planning cycle. AI-labelled nodes can include deterministic tools; automation does not imply that professional judgments become machine decisions. The subsequent AMS demonstrates selected steps with prepared rules and human approvals, not a connected autonomous model.",
+      "notes": "Dua survei menunjukkan celah berbeda: nilai strategis manajemen risiko dan keselarasan audit internal dengan lini lain. Usulan ini menghubungkan pekerjaan, bukan menambah lapisan laporan. Mulai dari tujuan, register risiko dan toleransi. AI mengusulkan prioritas audit; pimpinan audit menyetujui lingkup. AI membantu pelaksanaan program, tetapi auditor memvalidasi bukti dan reviewer mengesahkan laporan. Laporan yang direviu menjadi satu sinyal bersama memo atau risalah serta berita atau media sosial. AI menilai relevansi dan mengusulkan respons; pemilik risiko menerima, mengubah atau menolaknya. Pantau dampak aktual dan gunakan bukti risiko terbaru untuk rencana audit berikutnya. Mitigasi yang direncanakan belum berarti penurunan yang tercapai. Dua slide berikut merinci perencanaan dan fieldwork; setelah itu perjelas hak keputusan manusia sebelum demo langkah terpilih di ruang kerja contoh yang terpisah. Ini model operasi usulan, bukan integrasi otonom yang sudah berjalan.",
+      "notesEn": "The two surveys expose different gaps: strategic value from risk management and alignment of internal audit with other lines. This proposal connects the work rather than adding another reporting layer. Start with objectives, registered risks and tolerance. AI proposes audit priorities; the audit lead approves scope. AI supports programme execution, but auditors validate evidence and the reviewer authorises reporting. The reviewed report becomes one signal alongside memos or minutes and news or social media. AI checks relevance and proposes a risk response; the risk owner accepts, changes or rejects it. Monitor actual effects and feed updated risk evidence into the next audit plan. A planned mitigation is not an achieved reduction. The next two slides unpack planning and fieldwork; then clarify human decision rights before demonstrating selected steps in separate dummy workspaces. This is a proposed operating model, not a claim of a live autonomous integration.",
       "narrative": {
-        "question": "Agentic AI in the audit process: what changes in the work?",
-        "transition": "AI automates preparation and follow-up. People approve scope, evidence, conclusions and risk decisions."
+        "question": "Proposed agentic audit and risk-assurance workflow",
+        "transition": "One evidence loop: audit work, live signals, risk decisions and the next audit plan."
       }
-    },
-    {
-      "key": "aib-section-ams",
-      "title": "Agentic AI in Assurance Management Systems",
-      "kind": "section",
-      "chapter": "ams",
-      "lead": "Apply coordinated AI workflows with explicit human approval gates.",
-      "items": [],
-      "notes": "Satu ide yang akan diuji: AMS untuk PT Aruna Distribusi Nusantara, organisasi contoh yang menjual secara kredit dan perlu menjaga penerimaan kas. Ikuti perencanaan tahunan, fieldwork, dan reporting. Buka aplikasi dari slide perencanaan, kerjakan objek Customer credit & collections, lalu terbitkan temuan sebagai sinyal risiko. Saran berupa contoh tersiap dengan aturan transparan, bukan model live. Human authority berlaku pada rencana, programme, temuan, dan keputusan risiko.",
-      "refs": [],
-      "narrative": {
-        "question": "An AI-supported AMS.",
-        "transition": "From annual priorities to a reviewed report—and a signal for the risk owner."
-      },
-      "notesEn": "Test one idea: an AI-supported AMS for the teaching organisation PT Aruna Distribusi Nusantara, which sells on credit and needs timely cash collection. Follow annual planning, fieldwork and reporting. Suggestions are prepared transparent examples, not live model output."
     },
     {
       "key": "aib-planning-concept",
@@ -809,45 +862,6 @@
       }
     },
     {
-      "key": "aib-annual-planning",
-      "title": "Demo: risk-based annual audit planning",
-      "lead": "Aggregate registered risks and other planning parameters; let the accountable person approve the plan.",
-      "chapter": "ams",
-      "kind": "story",
-      "items": [],
-      "refs": [
-        "gias"
-      ],
-      "notes": "Demo menggunakan mean skor risiko terdaftar per objek, change, coverage gap dan importance. Bobot default 55/20/15/10 dapat ditinjau dan harus total 100. Formula adalah contoh transparan, bukan metode scoring resmi IIA atau probability model. Mandatory work masuk dahulu; sisa objek dipilih berurutan menurut priority bila sesuai kapasitas hari audit. Tidak mengklaim optimasi matematis. User meninjau parameter, coverage, risiko yang belum terpilih, kapasitas, alasan dan approver. Perubahan asumsi membatalkan approval plan; project yang sudah dibuat tetap terjaga.\n\nPertanyaan: Start with the audit universe. Penghubung: Aggregate registered risks and other planning parameters; let the accountable person approve the plan. Buka workspace dari tombol pada slide ini; usulkan prioritas dan setujui rencana sebelum masuk fieldwork.",
-      "evidenceNote": "",
-      "visual": "annual-planning",
-      "narrative": {
-        "question": "Start with the audit universe.",
-        "transition": "Aggregate registered risks and other planning parameters; let the accountable person approve the plan."
-      },
-      "notesEn": "Open the assurance workspace. Inspect the audit universe, visible risk aggregation, other parameters and audit-day capacity. Include mandatory work, prepare the proposal and approve the plan with a reason. Choose Customer credit and collections for the engagement.\n\nThe IIA · Global Internal Audit Standards · 2024: 2024 edition, effective January 2025. References include Standards 4.3, 11.5, 13.2, 14.1–14.4 and 15.2. The deck paraphrases selected implications for internal audit; it does not replace the Standards or prescribe financial-statement audit requirements."
-    },
-    {
-      "key": "aib-fieldwork-flow",
-      "title": "Demo: audit programmes and workpapers",
-      "lead": "Suggest the programme and relevant references, validate the criteria, then assign the auditor in charge.",
-      "chapter": "ams",
-      "kind": "story",
-      "items": [],
-      "refs": [
-        "gias",
-        "iia"
-      ],
-      "notes": "Engagement dibuat dari objek yang dipilih pada annual plan yang sudah disetujui, bukan daftar tidak terkait. Library internal berisi kebijakan Aruna untuk pembelajaran; external references menyertakan URL dan versi yang harus dibuka serta diuji applicability-nya. Saran AI tidak otomatis merupakan kriteria resmi. Reviewer mengonfirmasi referensi dan assignee perprosedur sebelum programme approved. Bukti, result dan gap direkam dalam workpaper. Perubahan program atau kriteria membatalkan approval programme. Bukti tidak boleh diciptakan hanya untuk melengkapi laporan.\n\nPertanyaan: Turn the approved object into fieldwork. Penghubung: Suggest the programme and relevant references, validate the criteria, then assign the auditor in charge.",
-      "evidenceNote": "",
-      "visual": "fieldwork-flow",
-      "narrative": {
-        "question": "Turn the approved object into fieldwork.",
-        "transition": "Suggest the programme and relevant references, validate the criteria, then assign the auditor in charge."
-      },
-      "notesEn": "Create fieldwork from an approved object. Suggest the programme, inspect the original criteria and confirm applicability before approving assignments. Record the evidence and test results, including uncertainty. The reviewer owns the conclusion.\n\nThe IIA · Global Internal Audit Standards · 2024: 2024 edition, effective January 2025. References include Standards 4.3, 11.5, 13.2, 14.1–14.4 and 15.2. The deck paraphrases selected implications for internal audit; it does not replace the Standards or prescribe financial-statement audit requirements.\n\nThe IIA - AI Auditing Framework - 2024: Professional guidance. The audit canvas and examples in this deck are teaching syntheses, not a reproduction of the official framework."
-    },
-    {
       "key": "aib-reporting-pack",
       "title": "AI-supported audit reporting",
       "lead": "Generate the report and presentation from the same approved evidence and management response.",
@@ -868,30 +882,11 @@
       "notesEn": "Review the finding, its limitations and management response. Generate the report and presentation from the same facts, inspect both, then issue. In the app, issuing the report creates an audit signal for the linked registered risk.\n\nThe IIA · Global Internal Audit Standards · 2024: 2024 edition, effective January 2025. References include Standards 4.3, 11.5, 13.2, 14.1–14.4 and 15.2. The deck paraphrases selected implications for internal audit; it does not replace the Standards or prescribe financial-statement audit requirements.\n\nPCAOB staff · GenAI outreach · 2024: July 2024 staff observations from limited U.S. audit-firm and preparer outreach, especially pp. 4–5. Historical practice evidence, not a Board rule, a current adoption survey, or Indonesian audit requirements."
     },
     {
-      "key": "aib-rsm-assessment",
-      "title": "RSM Indonesia: audit transformation and AI-supported assessment",
-      "lead": "RSM Indonesia supports internal audit transformation and AI-supported assessment.",
-      "chapter": "ams",
-      "kind": "story",
-      "visual": "rsm-assessment",
-      "items": [],
-      "refs": [
-        "rsm-ia",
-        "gias"
-      ],
-      "notes": "RSM Indonesia menyediakan business process reengineering audit internal: memperjelas keputusan, peran, bukti dan gerbang reviu sebelum digitalisasi. Pembicara juga menyampaikan bahwa sistem asesmen COBIT berbantuan AI sudah dikembangkan. Jelaskan pemetaan kriteria, pengorganisasian bukti, usulan simpulan dan reviu yang bertanggung jawab. Ini dapat diperluas ke ISO dan kepatuhan regulasi rutin dengan menyesuaikan kriteria, lisensi, metodologi serta validasinya. Implementasi COBIT tidak otomatis memenuhi ISO atau regulasi. Demo merupakan alur kecil yang representatif, bukan klaim sebagai platform operasional klien RSM.",
-      "notesEn": "RSM Indonesia offers business process reengineering for internal audit: clarify decisions, roles, evidence and review gates before digitising the workflow. The presenters also confirm development of AI-supported COBIT assessment systems. Explain criteria mapping, evidence organisation, suggested conclusions and accountable review. This can be expanded to ISO and recurring regulatory compliance assessments, provided each criteria set, licence, methodology and validation requirement is addressed. It does not mean one COBIT implementation automatically satisfies ISO or regulation. The demonstration is a small representative workflow, not a claim that it is an operational RSM client platform.",
-      "narrative": {
-        "question": "Redesign the process. Reuse the assessment capability.",
-        "transition": "RSM Indonesia supports internal audit transformation and AI-supported assessment."
-      }
-    },
-    {
       "key": "aib-endpoint",
-      "title": "Audit reporting and management follow-up",
+      "title": "From audit reporting to continuous risk assurance",
       "kind": "question",
       "chapter": "ams",
-      "lead": "The finding only becomes useful when someone decides what to do.",
+      "lead": "A reviewed audit finding becomes an input to the risk owner, alongside other signals.",
       "items": [
         [
           "Audit asks",
@@ -909,90 +904,35 @@
       ],
       "visual": "handoff",
       "narrative": {
-        "question": "The report is issued. What changes on Monday?",
-        "transition": "The finding only becomes useful when someone decides what to do."
+        "question": "From audit reporting to continuous risk assurance",
+        "transition": "A reviewed audit finding becomes an input to the risk owner, alongside other signals."
       },
       "notesEn": "An issued report is evidence for a management decision, not proof that the goal is protected. Ask what changes after issue: who acts, which risk assumption is challenged, and how the effect of the response is checked.\n\nThe IIA · Global Internal Audit Standards · 2024: 2024 edition, effective January 2025. References include Standards 4.3, 11.5, 13.2, 14.1–14.4 and 15.2. The deck paraphrases selected implications for internal audit; it does not replace the Standards or prescribe financial-statement audit requirements.\n\nCOSO · ERM: Strategy & Performance · 2017: COSO connects enterprise risk management with strategy setting and performance. The feedback diagram is an RSM seminar explanation of that connection, not a reproduction of COSO’s official framework or an endorsement of a scoring method."
     },
     {
-      "key": "aib-section-beyond",
-      "title": "Continuous risk assurance",
-      "kind": "section",
-      "chapter": "beyond",
-      "lead": "Connect assurance evidence to the objective and the risk decision.",
+      "key": "aib-annual-planning",
+      "title": "Demo, part 1: the agentic audit workflow",
+      "lead": "Start in Assurance: review the proposed annual priorities and approve the audit scope.",
+      "chapter": "ams",
+      "kind": "story",
       "items": [],
-      "notes": "Setelah pertanyaan apa yang berubah setelah laporan terbit, kembali ke tujuan penjualan sehat dan penerimaan kas. Tanyakan apa arti evidence baru bagi exposure saat ini dan respons management. Berita, laporan internal dan warning kontrol memperluas sumber informasi. AI membantu membawa dan menjelaskan sinyal; manusia memeriksa relevansi, menetapkan assessment dan memantau action.\n\nPertanyaan: Go beyond audit. Penghubung: Connect assurance evidence to the objective and the risk decision.",
-      "refs": [],
-      "narrative": {
-        "question": "Go beyond audit.",
-        "transition": "Connect assurance evidence to the objective and the risk decision."
-      },
-      "notesEn": "Return to the objective and the risk owner. Audit evidence is useful beyond closing the audit project when it supports reassessment and a response. Other relevant information also arrives between projects."
-    },
-    {
-      "key": "aib-risk-gap",
-      "title": "Risk oversight between audit projects",
-      "kind": "stats",
-      "chapter": "beyond",
-      "lead": "New information can challenge yesterday’s assessment.",
-      "items": [
-        [
-          "69%",
-          "report increasing risk volume and complexity"
-        ],
-        [
-          "30%",
-          "describe risk oversight as mature or robust"
-        ]
-      ],
-      "notes": "NC State/AICPA 2026 State of Risk Oversight. Dua angka berasal dari pertanyaan berbeda, bukan angka komplementer yang dijumlahkan. Ini persepsi eksekutif dalam survei tersebut, bukan bukti setiap organisasi gagal. Gunakan sebagai pembuka pertanyaan: apakah temuan assurance memperbarui penilaian risiko dan prioritas manajemen secara tepat waktu?\n\nPertanyaan: The risk picture changes between audit projects. Penghubung: New information can challenge yesterday’s assessment.",
       "refs": [
-        "erm"
-      ],
-      "evidenceNote": "NC State/AICPA · 2026 executive survey · different questions, not complementary percentages.",
-      "narrative": {
-        "question": "The risk picture changes between audit projects.",
-        "transition": "New information can challenge yesterday’s assessment."
-      },
-      "notesEn": "The survey asks separate questions about rising risk complexity and maturity of oversight. Do not subtract one percentage from the other. The point is why a risk assessment needs context and new information between audit projects.\n\nNC State / AICPA - State of Risk Oversight - 2026: Executive survey: 69% report increased risk volume/complexity over five years; 30% describe oversight as mature/robust. These are different questions, not complementary percentages."
-    },
-    {
-      "key": "aib-connect",
-      "title": "Connecting risk-based audit and continuous risk assurance",
-      "kind": "loop",
-      "chapter": "beyond",
-      "lead": "Connect the finding, the risk decision and the objective.",
-      "items": [
-        [
-          "Objective",
-          "Grow credit sales with healthy cash collection."
-        ],
-        [
-          "Risk",
-          "Uncontrolled credit exposure threatens collections."
-        ],
-        [
-          "Assurance",
-          "Override exceptions challenge control effectiveness."
-        ]
-      ],
-      "notes": "Tujuan menuntun identifikasi risiko; risiko menuntun assurance; assurance mengembalikan bukti ke penilaian risiko dan keputusan tindakan. Tidak semua temuan mengubah skor: manajemen bisa mempertahankannya jika bukti kurang relevan atau kontrol kompensasi efektif. Rekam alasan agar tidak menjadi sekadar ritual update register.\n\nPertanyaan: Risk-based audit can feed continuous risk assurance. Penghubung: A finding is a signal about the objective—not only an item to close.",
-      "refs": [
-        "coso",
         "gias"
       ],
-      "visual": "risk-feedback-balanced",
+      "notes": "Demo menggunakan mean skor risiko terdaftar per objek, change, coverage gap dan importance. Bobot default 55/20/15/10 dapat ditinjau dan harus total 100. Formula adalah contoh transparan, bukan metode scoring resmi IIA atau probability model. Mandatory work masuk dahulu; sisa objek dipilih berurutan menurut priority bila sesuai kapasitas hari audit. Tidak mengklaim optimasi matematis. User meninjau parameter, coverage, risiko yang belum terpilih, kapasitas, alasan dan approver. Perubahan asumsi membatalkan approval plan; project yang sudah dibuat tetap terjaga.\n\nPertanyaan: Start with the audit universe. Penghubung: Aggregate registered risks and other planning parameters; let the accountable person approve the plan. Buka workspace dari tombol pada slide ini; usulkan prioritas dan setujui rencana sebelum masuk fieldwork.",
+      "evidenceNote": "",
+      "visual": "annual-planning",
       "narrative": {
-        "question": "Risk-based audit can feed continuous risk assurance.",
-        "transition": "A finding is a signal about the objective—not only an item to close."
+        "question": "Demo, part 1: the agentic audit workflow",
+        "transition": "Start in Assurance: review the proposed annual priorities and approve the audit scope."
       },
-      "notesEn": "Connect the reviewed finding to the same business objective and registered risk. Evidence can challenge an earlier assumption, but the risk owner must evaluate relevance, uncertainty, the score and the response.\n\nCOSO · ERM: Strategy & Performance · 2017: COSO connects enterprise risk management with strategy setting and performance. The feedback diagram is an RSM seminar explanation of that connection, not a reproduction of COSO’s official framework or an endorsement of a scoring method.\n\nThe IIA · Global Internal Audit Standards · 2024: 2024 edition, effective January 2025. References include Standards 4.3, 11.5, 13.2, 14.1–14.4 and 15.2. The deck paraphrases selected implications for internal audit; it does not replace the Standards or prescribe financial-statement audit requirements."
+      "notesEn": "Open the assurance workspace. Inspect the audit universe, visible risk aggregation, other parameters and audit-day capacity. Include mandatory work, prepare the proposal and approve the plan with a reason. Choose Customer credit and collections for the engagement.\n\nThe IIA · Global Internal Audit Standards · 2024: 2024 edition, effective January 2025. References include Standards 4.3, 11.5, 13.2, 14.1–14.4 and 15.2. The deck paraphrases selected implications for internal audit; it does not replace the Standards or prescribe financial-statement audit requirements."
     },
     {
       "key": "aib-three-signals",
-      "title": "Two organisations for the risk exercise",
-      "lead": "Choose an industry. Review its given objective and three registered risks.",
-      "chapter": "beyond",
+      "title": "Demo, part 2: continuous risk assurance",
+      "lead": "Switch to the risk workspace. Choose an organisation and review its objective and risks.",
+      "chapter": "ams",
       "kind": "story",
       "items": [],
       "refs": [
@@ -1003,36 +943,16 @@
       "evidenceNote": "",
       "visual": "cra-contexts",
       "narrative": {
-        "question": "Three sources for this demonstration.",
-        "transition": "Audit results. Internal memos and reports. News and social-media leads."
+        "question": "Demo, part 2: continuous risk assurance",
+        "transition": "Switch to the risk workspace. Choose an organisation and review its objective and risks."
       },
       "notesEn": "Participants choose a food exporter or an SME finance company. Each starts with one objective and three risks. Exposure context is given: US buyer dependence for exports, export-borrower concentration for finance. No signal appears until the presenter releases the historical ANTARA case. One company reassesses a registered risk; the other can add the suggested missing risk before assessment. Decisions are private and persist on the server."
-    },
-    {
-      "key": "aib-signal-framework",
-      "title": "SIGNAL Framework",
-      "lead": "A framework for continuous risk assurance.",
-      "chapter": "beyond",
-      "kind": "story",
-      "items": [],
-      "refs": [
-        "coso",
-        "gias"
-      ],
-      "notes": "SIGNAL adalah framework pengajaran dari materi presenter, bukan standar eksternal. S Sense: tangkap sumber beserta asal dan tanggal; I Interpret: kaitkan objective dan registered risk; G Gauge: jelaskan asumsi yang mungkin berubah dan ketidakpastian; N Notify: sampaikan kepada owner yang tepat; A Act: manusia menerima/menolak, merevisi assessment dan memutuskan response; L Learn: periksa pelaksanaan dan efektivitas serta gunakan bukti berikutnya. AI dapat mendukung S I G N; manusia dapat menantang semua tahap dan mempunyai authority pada A L. Jangan membuat notifikasi menjadi auto-update skor tanpa persetujuan. Sistem demo menggunakan prepared examples dan rule transparan, bukan live model atau stream terjadwal.\n\nPertanyaan: SIGNAL Penghubung: AI prepares the evidence and advice. People retain the decision and the follow-through.",
-      "evidenceNote": "",
-      "visual": "signal-six",
-      "narrative": {
-        "question": "How can sources inform a timely human risk decision?",
-        "transition": "AI prepares the evidence and advice. People retain the decision and the follow-through."
-      },
-      "notesEn": "SIGNAL means Sense, Interpret, Gauge, Notify, Act and Learn. AI supports the first four activities. People can challenge every stage and retain responsibility for relevance, assessment, response and verification of actual effects.\n\nCOSO · ERM: Strategy & Performance · 2017: COSO connects enterprise risk management with strategy setting and performance. The feedback diagram is an RSM seminar explanation of that connection, not a reproduction of COSO’s official framework or an endorsement of a scoring method.\n\nThe IIA · Global Internal Audit Standards · 2024: 2024 edition, effective January 2025. References include Standards 4.3, 11.5, 13.2, 14.1–14.4 and 15.2. The deck paraphrases selected implications for internal audit; it does not replace the Standards or prescribe financial-statement audit requirements."
     },
     {
       "key": "aib-tariff-case",
       "title": "Liberation Day tariff announcement",
       "kind": "story",
-      "chapter": "beyond",
+      "chapter": "ams",
       "visual": "cra-news",
       "lead": "One real article. Two different organisational exposures.",
       "items": [],
@@ -1050,7 +970,7 @@
       "key": "aib-review-signals",
       "title": "Signal review and risk-response workflow",
       "lead": "Accept or decline relevance, review the proposed score, and agree a response when exposure exceeds tolerance.",
-      "chapter": "beyond",
+      "chapter": "ams",
       "kind": "story",
       "items": [],
       "refs": [
@@ -1069,7 +989,7 @@
       "key": "aib-score",
       "title": "Risk scoring, tolerance and mitigation",
       "kind": "score",
-      "chapter": "beyond",
+      "chapter": "ams",
       "lead": "The action’s expected effect is a plan—not evidence that the risk has already fallen.",
       "items": [
         [
@@ -1096,39 +1016,10 @@
       "notesEn": "The teaching assessment moves from likelihood 3 and impact 4 to likelihood 4 and impact 4: 12 to 16. Tolerance is 12. A planned reduction in likelihood targets 12; the plan does not prove an achieved reduction or a numerical probability."
     },
     {
-      "key": "aib-risk-demo",
-      "title": "Risk-manager response to the released signal",
-      "kind": "demo",
-      "chapter": "beyond",
-      "lead": "Accept or decline relevance, review the score and agree mitigation above tolerance.",
-      "items": [
-        [
-          "01",
-          "Choose an organisation and objective."
-        ],
-        [
-          "02",
-          "Inspect the signals and accept or decline their relevance."
-        ],
-        [
-          "03",
-          "Save a reasoned score and mitigation; review the dashboard."
-        ]
-      ],
-      "notes": "Rilis satu sumber melalui kontrol admin khusus. Eksportir membuka alert pada risiko pertamanya. Pembiayaan menerima atau menolak usulan risiko baru dahulu. Pemetaan yang diterima masuk ke alur reviu berkesinambungan: putuskan sinyal, pilih penilaian, setujui respons di atas toleransi, lalu selesaikan sekali. Eksposur saat ini terpisah dari target setelah mitigasi. Muat ulang mempertahankan keputusan tersimpan. Reset seminar membersihkan latihan melalui reset epoch.",
-      "refs": [],
-      "visual": "cra-contexts",
-      "narrative": {
-        "question": "Try the three signal sources.",
-        "transition": "Issue an audit result, capture a memo, then inspect the historical news and the unverified lead."
-      },
-      "notesEn": "Release exactly one source using the dedicated admin control. The exporter opens the alert on its first risk. Finance first accepts or declines the suggested new risk. The accepted mapping leads to the same continuous review: decide each signal, select the assessment, approve a response above tolerance and finish once. Current assessed exposure remains separate from the planned target after mitigation. Refreshing retains the participant’s saved decisions. Global seminar reset clears the exercise using its reset epoch."
-    },
-    {
       "key": "aib-next",
       "title": "Implementation priorities and next steps",
       "kind": "cards",
-      "chapter": "beyond",
+      "chapter": "ams",
       "lead": "Choose the decision, the user, the evidence and the outcome—not only the application.",
       "items": [
         [
@@ -1161,7 +1052,7 @@
       "key": "aib-sources",
       "title": "Framework and professional references",
       "kind": "references",
-      "chapter": "beyond",
+      "chapter": "ams",
       "lead": "Professional standards and established frameworks.",
       "items": [],
       "notes": "Bedakan fungsi sumber: standar profesi, kerangka risiko dan guidance teknis. Diagram pada materi adalah penjelasan yang dirancang untuk seminar, bukan reproduksi grafis resmi. Pilih kriteria engagement yang berlaku; daftar referensi tidak menggantikan pembacaan standar atau penilaian konformitas.\n\nPertanyaan: The references behind the framework. Penghubung: Professional standards and established frameworks.",
@@ -1186,7 +1077,7 @@
       "key": "aib-research",
       "title": "Research and case references",
       "kind": "references",
-      "chapter": "beyond",
+      "chapter": "ams",
       "lead": "Study design, population and context matter.",
       "items": [],
       "notes": "Riset HBS/BCG menunjukkan efek pada tugas yang diuji, bukan akurasi audit. Survei RSM adalah organisasi AI-using Amerika Serikat/Kanada; jangan menggeneralisasi ke seluruh pasar atau Indonesia. NC State/AICPA menilai persepsi eksekutif. PCAOB adalah observasi staff historis. Sumber teknis Anthropic dipakai untuk pembedaan arsitektur, bukan standar assurance.\n\nPertanyaan: The evidence behind the claims. Penghubung: Study design, population and context matter.",
@@ -1211,7 +1102,7 @@
       "key": "aib-data-technical-references",
       "title": "Technical references for AI use and data protection",
       "kind": "references",
-      "chapter": "beyond",
+      "chapter": "ams",
       "lead": "Primary product documentation and data-disclosure guidance, reviewed 7 November 2026.",
       "items": [],
       "notes": "Dokumentasi ini menjelaskan penggunaan sehari-hari pada layanan tertentu. OpenAI agent security menjelaskan permission dan network control; ChatGPT Work enterprise membedakan retensi per fitur. Claude Code membedakan local execution dan remote inference, consumer/commercial data use serta read permissions. OWASP mendukung lensa disclosure dan prompt injection. Jangan menggunakan ketentuan satu produk untuk produk lain atau menyebut ilustrasi sebagai kebijakan RSM. Ketentuan, fitur dan setting harus diverifikasi pada saat penggunaan.\n\nPertanyaan: The references behind everyday AI use. Penghubung: Primary product documentation and data-disclosure guidance, reviewed 7 November 2026.",
@@ -1236,12 +1127,13 @@
       "key": "aib-agentic-references",
       "title": "Agentic AI and case references",
       "kind": "references",
-      "chapter": "beyond",
+      "chapter": "ams",
       "lead": "Architecture guidance and the historical article used in the exercise.",
       "items": [],
       "refs": [
         "agents",
-        "antara-tariff"
+        "antara-tariff",
+        "pwc-alignment"
       ],
       "notes": "Baca panduan arsitektur asli dan berita bertanggal. Diagram merupakan sintesis pembelajaran; angka eksposur perusahaan adalah asumsi skenario, bukan fakta yang dibuktikan berita.",
       "notesEn": "Read the original architectural guidance and the dated article. The diagrams are teaching syntheses; the company exposure figures are scenario assumptions, not facts established by the news.",
@@ -1254,7 +1146,7 @@
       "key": "aib-closing",
       "title": "Thank you",
       "kind": "closing",
-      "chapter": "beyond",
+      "chapter": "ams",
       "lead": "Thank you. What will you put to work?",
       "items": [],
       "notes": "Tutup dengan pertanyaan praktis tentang hal yang akan dilakukan berbeda pada hari kerja berikutnya. Ringkas hubungan bantuan AI, pemeriksaan bukti dan tindakan manusia. Ucapkan terima kasih atas nama Dena Sucianandika dan Teuku Raja Irfan Radarma, RSM Indonesia. Jangan mengklaim semua manfaat sudah terbukti dalam aplikasi contoh; minta peserta memulai satu tugas yang terkontrol dan menilai hasilnya.\n\nPertanyaan: Useful AI. Human authority. Better decisions. Penghubung: Thank you. What will you put to work?",

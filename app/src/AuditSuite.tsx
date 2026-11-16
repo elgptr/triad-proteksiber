@@ -1,3 +1,4 @@
+import AgenticAuditJourney from './AgenticAuditJourney';
 import React,{useEffect,useState} from 'react';
 import {browserPath} from '../shared/deployment';
 import {initialAssurance,restoreAssurance,rankUniverse,recommendPlan,approvePlan,createEngagement,draftProgram,patchProject,approveProgram,exampleEvidence,draftFinding,reviewFinding,generateOutputs,issueReport,criteria,auditors,slidesHtml,type AssuranceState,type Project} from '../shared/assurance';
@@ -5,7 +6,7 @@ import ContinuousRiskExercise from './ContinuousRiskExercise';
 import './audit-suite.css';
 import {useAssuranceLanguage} from './assurance-language';
 function download(name:string,text:string,type='text/markdown'){const url=URL.createObjectURL(new Blob([text],{type}));const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
-export default function AuditSuite({children,storageKey,preview=false,fixedWorkspace}:{children?:React.ReactNode;storageKey:string;preview?:boolean;fixedWorkspace?:'audit'|'risk'}){
+export function LegacyAuditSuite({children,storageKey,preview=false,fixedWorkspace}:{children?:React.ReactNode;storageKey:string;preview?:boolean;fixedWorkspace?:'audit'|'risk'}){
  const {root,language,setLanguage,copy}=useAssuranceLanguage();
  const [chosenWorkspace,setWorkspace]=useState(new URLSearchParams(location.search).get('workspace')==='risk'?'risk':'audit');
  const workspace=fixedWorkspace||chosenWorkspace;
@@ -52,3 +53,5 @@ export default function AuditSuite({children,storageKey,preview=false,fixedWorks
  {new URLSearchParams(location.search).get('legacyRisk')==='1'&&children}
  </div>;
 }
+
+export default function AuditSuite({storageKey}:{storageKey:string;children?:React.ReactNode;preview?:boolean;fixedWorkspace?:'audit'|'risk'}){return <AgenticAuditJourney storageKey={storageKey}/>;}

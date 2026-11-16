@@ -1,6 +1,6 @@
 # AI in Audit and Beyond
 
-48 slides. English and Bahasa Indonesia. RSM Indonesia. Updated 16 November 2026.
+43 slides. English and Bahasa Indonesia. RSM Indonesia. Updated 16 November 2026.
 
 ## Slide map
 
@@ -30,30 +30,25 @@
 | 22 | AI for repeatable workflows and applications | assistant |
 | 23 | AI and the idea–execution–usage gap | assistant |
 | 24 | AI adoption and organisational integration | assistant |
-| 25 | Agentic AI in the audit process | ams |
-| 26 | Agentic AI in Assurance Management Systems | ams |
-| 27 | AI in annual audit planning | ams |
-| 28 | AI in audit fieldwork | ams |
-| 29 | Demo: risk-based annual audit planning | ams |
-| 30 | Demo: audit programmes and workpapers | ams |
+| 25 | Agentic AI in audit and continuous risk assurance | ams |
+| 26 | Strategic value of risk management | ams |
+| 27 | Alignment of internal audit and risk management | ams |
+| 28 | Proposed agentic audit and risk-assurance workflow | ams |
+| 29 | AI in annual audit planning | ams |
+| 30 | AI in audit fieldwork | ams |
 | 31 | AI-supported audit reporting | ams |
-| 32 | RSM Indonesia: audit transformation and AI-supported assessment | ams |
-| 33 | Audit reporting and management follow-up | ams |
-| 34 | Continuous risk assurance | beyond |
-| 35 | Risk oversight between audit projects | beyond |
-| 36 | Connecting risk-based audit and continuous risk assurance | beyond |
-| 37 | Two organisations for the risk exercise | beyond |
-| 38 | SIGNAL Framework | beyond |
-| 39 | Liberation Day tariff announcement | beyond |
-| 40 | Signal review and risk-response workflow | beyond |
-| 41 | Risk scoring, tolerance and mitigation | beyond |
-| 42 | Risk-manager response to the released signal | beyond |
-| 43 | Implementation priorities and next steps | beyond |
-| 44 | Framework and professional references | beyond |
-| 45 | Research and case references | beyond |
-| 46 | Technical references for AI use and data protection | beyond |
-| 47 | Agentic AI and case references | beyond |
-| 48 | Thank you | beyond |
+| 32 | From audit reporting to continuous risk assurance | ams |
+| 33 | Demo, part 1: the agentic audit workflow | ams |
+| 34 | Demo, part 2: continuous risk assurance | ams |
+| 35 | Liberation Day tariff announcement | ams |
+| 36 | Signal review and risk-response workflow | ams |
+| 37 | Risk scoring, tolerance and mitigation | ams |
+| 38 | Implementation priorities and next steps | ams |
+| 39 | Framework and professional references | ams |
+| 40 | Research and case references | ams |
+| 41 | Technical references for AI use and data protection | ams |
+| 42 | Agentic AI and case references | ams |
+| 43 | Thank you | ams |
 
 ## Evidence and limits
 
@@ -85,7 +80,7 @@ Cross-sector guidance on generative AI risks; not proof that a particular produc
 
 https://erm.ncsu.edu/resource-center/2026-state-of-risk-oversight-enterprise-risk-management-trends-and-key-findings/
 
-Executive survey: 69% report increased risk volume/complexity over five years; 30% describe oversight as mature/robust. These are different questions, not complementary percentages.
+Among 331 executive and board-level respondents, 11% reported a unique strategic or competitive advantage from risk management. The 89% is its rounded complement, not a measure of failure or causal impact.
 
 ### RSM · Middle Market AI Survey · 2026
 
@@ -232,3 +227,9 @@ https://jabar.antaranews.com/berita/594405/indonesia-kena-kenaikan-tarif-as-32-p
 Historical reporting of the April 2025 US tariff announcement. Not a current tariff rate. Company names, portfolio shares and impacts in the exercise are fictional context; the article does not establish a loss for either organisation.
 
 The AMS illustrates selected agentic workflow steps using prepared rules and human approval gates. No live model provider is connected. The risk exercise is a historical ANTARA case with two fictional organisations; company exposure figures are scenario assumptions. Participant state is isolated and stored server-side; only admins release the common news signal.
+
+### PwC - Global Internal Audit Study 2023
+
+https://www.pwc.com/gx/en/services/audit-assurance/internal-audit/global-internal-audit-study.html
+
+49% of business executives perceived a lack of strong alignment between internal audit and other lines on key risks and problems. The overall 4,680 respondents are not the denominator for this subgroup percentage. This measures perceived alignment, not audit failure.
