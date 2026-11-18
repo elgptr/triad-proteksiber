@@ -98,7 +98,10 @@ export function installDeckLanguage({catalogue,reference}) {
   document.dispatchEvent(new CustomEvent('signal:languagechange',{detail:{language:next}}));
  }
  document.querySelectorAll('[data-deck-language]').forEach(button=>button.addEventListener('click',()=>choose(button.dataset.deckLanguage)));
- const observer=new MutationObserver(()=>localize());
+ const observer=new MutationObserver(records=>{
+  // Animated, self-localized scenes must not trigger a full-deck translation pass per character.
+  if(records.some(record=>!(record.target.nodeType===1?record.target:record.target.parentElement)?.closest('[data-language-fixed]')))localize();
+ });
  choose(language);
  observer.observe(document.body,{subtree:true,childList:true,characterData:true,attributes:true,attributeFilter:['aria-label','title','alt']});
  return {choose,get language(){return language;}};

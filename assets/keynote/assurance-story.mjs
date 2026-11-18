@@ -1,4 +1,4 @@
-import {renderLocalAuditAgent} from './local-audit-agent.mjs?v=20261118';
+import {renderLocalAuditAgent} from './local-audit-agent.mjs?v=film-v2-20261118';
 import {renderAgentic} from './agentic-audit.mjs?v=connected-audit-20261116';
 import {icon,rail,footer,simplePaper} from './audit-story.mjs?v=connected-audit-20261116';
 import {renderAdoptionIllustration} from './adoption-illustration.mjs?v=connected-audit-20261116';
