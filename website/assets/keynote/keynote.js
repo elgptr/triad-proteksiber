@@ -1,3 +1,4 @@
+import {fullscreenGuideStrings,installFullscreenGuide} from './fullscreen-guide.mjs?v=20261118';
 import {auditContent,auditDesigns} from './audit-beyond.mjs?v=connected-audit-20261116';
 import {installDataHandling} from './data-handling.mjs?v=connected-audit-20261116';
 import {installAssuranceStory} from './assurance-story.mjs?v=connected-audit-20261116';
@@ -134,6 +135,7 @@ slides.cover.html+='<a class="cover-access" href="https://s.kemenkeu.go.id/signa
 slides['your-turn'].html=slides['your-turn'].html.replace('href="'+app+'/audience/"','href="'+esc(joinHref)+'"').replace('<p class="micro">Local design study <span>Open the production Admin separately to run a participant session.</span></p>',`<p class="micro">One shared seminar<span>Your organization. Your decisions. Your private workspace.</span></p>`);
 
 const stage=document.getElementById('stage');
+Object.assign(languageCatalogue.strings,fullscreenGuideStrings);
 // Resolve published packages before constructing slide navigation or live-follow state.
 const auditPreview=new URLSearchParams(location.search).get('previewTopic')==='ai-audit-beyond';
 let contentSnapshot=null;
@@ -164,6 +166,7 @@ stage.innerHTML=reference.slides.map((entry,i)=>{const s=slides[entry.key],chapt
 await Promise.all(presentationStyles);
 if(document.fonts)await Promise.race([document.fonts.ready,new Promise(resolve=>setTimeout(resolve,3000))]);
 loading?.remove();
+installFullscreenGuide(stage);
 installDataHandling(stage);
 installAssuranceStory(stage);
 const frames=[...stage.querySelectorAll('.frame')],sheet=document.getElementById('sheet'),sheetBody=document.getElementById('sheet-body'),seek=document.getElementById('seek');
