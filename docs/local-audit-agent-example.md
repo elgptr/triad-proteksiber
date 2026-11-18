@@ -23,3 +23,14 @@ The illustrated exception references E01 section 4.2 and E02 row 18, with no mat
 Sources: https://agentskills.io/specification and https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents/
 
 Deploy both Render and Pages. The runtime topic-library adapter inserts missing example slides after the existing daily-tasks anchor, preserves other edits and does not duplicate slides on repeated reads. No database schema migration is required.
+
+
+## Cinematic revision
+
+Setup now explains three concepts separately: a skill is the repeatable procedure, a template specifies output fields, and the workspace defines permitted source material. Permission and processing-location tips appear below those cards.
+
+The workflow is a 58-second, 11-scene simulated desktop: prompt typing, skill loading, template inspection, policy reading, register inspection, approval matching, a permitted reconciliation script, exception review, a five-section draft working paper, a six-row exception register and a human review gate. Folder/file icons and active-file highlights connect every step to the workspace. Draft sections and spreadsheet rows appear progressively. Outputs are illustrative, not measured client results or real files.
+
+Playback supports Play/Pause, Replay, next scene, timeline scrubbing and 0.5x/1x/1.5x/2x speed. It plays once and stops at review. Time freezes when the slide is off-screen or browser is hidden. Reduced-motion users start paused and can advance scenes manually. The scene localizes its own EN/ID text, so typewriter changes are excluded from the full-deck translation observer. No network, database or agent/model requests run during playback.
+
+This revision changes frontend assets only. Deploy GitHub Pages; no Render or database change is needed if the two example slide identities are already present from the previous release.

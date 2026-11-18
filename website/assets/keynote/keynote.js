@@ -1,10 +1,10 @@
-import {installLocalAuditAgent} from './local-audit-agent.mjs?v=20261118';
+import {installLocalAuditAgent} from './local-audit-agent.mjs?v=film-v2-20261118';
 import {fullscreenGuideStrings,installFullscreenGuide} from './fullscreen-guide.mjs?v=20261118';
-import {auditContent,auditDesigns} from './audit-beyond.mjs?v=local-agent-20261118';
+import {auditContent,auditDesigns} from './audit-beyond.mjs?v=agent-film-20261118';
 import {installDataHandling} from './data-handling.mjs?v=connected-audit-20261116';
 import {installAssuranceStory} from './assurance-story.mjs?v=connected-audit-20261116';
 import {composeModules,loadContentSnapshot} from './content-modules.mjs?v=connected-audit-20261116';
-import {installDeckLanguage} from './deck-language.js?v=connected-audit-20261116';
+import {installDeckLanguage} from './deck-language.js?v=agent-film-20261118';
 import {connectLiveDeck} from '../js/deck-live.js?v=hitl-1';
 let reference=await fetch(new URL('./reference.json',import.meta.url)).then(r=>{if(!r.ok)throw Error('Reference unavailable');return r.json();});
 const languageCatalogue=await fetch(new URL('./translations-id.json',import.meta.url)).then(r=>{if(!r.ok)throw Error('Translations unavailable');return r.json();});
@@ -152,7 +152,7 @@ if(auditPreview||contentSnapshot?.config?.modules?.some(m=>m.slides.some(s=>s.bu
  const material=await fetch(new URL('./audit-beyond-topic.json?v=local-agent-20261118',import.meta.url)).then(r=>r.json());
  const designed=auditDesigns(material,{appUrl:app,assetsUrl:assets,preview:auditPreview});
  Object.assign(slides,designed.renderers);reference={...reference,slides:[...reference.slides,...designed.entries]};
- for(const stylesheet of ['./audit-beyond.css','./data-handling.css','./audit-story.css','./rsm-seminar.css','./local-audit-agent.css']){const css=document.createElement('link');css.rel='stylesheet';const url=new URL(stylesheet,import.meta.url);url.searchParams.set('v','connected-audit-20261116');css.href=url;presentationStyles.push(new Promise((resolve,reject)=>{css.onload=resolve;css.onerror=()=>reject(Error('Presentation styles unavailable'));}));document.head.append(css);}
+ for(const stylesheet of ['./audit-beyond.css','./data-handling.css','./audit-story.css','./rsm-seminar.css','./local-audit-agent.css']){const css=document.createElement('link');css.rel='stylesheet';const url=new URL(stylesheet,import.meta.url);url.searchParams.set('v',stylesheet==='./local-audit-agent.css'?'film-v2-20261118':'connected-audit-20261116');css.href=url;presentationStyles.push(new Promise((resolve,reject)=>{css.onload=resolve;css.onerror=()=>reject(Error('Presentation styles unavailable'));}));document.head.append(css);}
  if(auditPreview)contentSnapshot={revision:0,config:auditContent(material),preview:true,topicId:material.id};
 }
 if(contentSnapshot&&(contentSnapshot.revision>0||contentSnapshot.preview)){

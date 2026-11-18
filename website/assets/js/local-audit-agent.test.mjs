@@ -1,16 +1,20 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {renderLocalAuditAgent,installLocalAuditAgent} from '../keynote/local-audit-agent.mjs';
-test('audit setup separates evidence, skill, templates and reviewed output',()=>{
+import {renderLocalAuditAgent,filmFrame,filmScenes,filmDuration} from '../keynote/local-audit-agent.mjs';
+test('setup teaches skills, output templates, permissions and local-processing limits',()=>{
  const html=renderLocalAuditAgent({visual:'local-agent-setup'});
- for(const value of ['SKILL.md','working-paper.docx','finding-register.xlsx','READ ONLY','output/drafts/','output/reviewed/','not a product screenshot','does not mean the model runs offline'])assert(html.includes(value),value);
+ for(const v of ['Skill = how to do the job','Template = what good output looks like','SKILL.md','working-paper.docx','Criterion + source','READ ONLY','tool permissions','local files do not mean offline AI'])assert(html.includes(v),v);
  assert(!html.includes('<iframe'));assert.equal(renderLocalAuditAgent({visual:'unknown'}),null);
 });
-test('document flow names evidence trace, draft status and human gate; animation can pause',()=>{
- const html=renderLocalAuditAgent({visual:'local-agent-flow'});
- for(const value of ['E02 row 18','Not an issued report','Auditor validates','data-la-pause','data-la-replay','not a measured result'])assert(html.includes(value),value);
- let click;const classes=new Set();const demo={classList:{toggle(c){if(classes.has(c)){classes.delete(c);return false;}classes.add(c);return true;}}};
- const button={closest:()=>demo,hasAttribute:()=>true,setAttribute(k,v){this[k]=v;}};
- installLocalAuditAgent({addEventListener:(_,fn)=>click=fn});click({target:{closest:()=>button}});assert.equal(button['aria-pressed'],'true');assert(classes.has('la-paused'));
- click({target:{closest:()=>button}});assert.equal(button['aria-pressed'],'false');
+test('film sequences 11 scenes from a typed prompt through evidence, tool, draft and human gate',()=>{
+ assert.equal(filmScenes.length,11);assert.equal(filmFrame(0).prompt,'');assert(filmFrame(2500).prompt.length>0);assert(filmFrame(6000).prompt.endsWith('documents.'));
+ assert.equal(filmFrame(6000).scene.file,'skill');assert.equal(filmFrame(11000).scene.file,'template');assert.equal(filmFrame(16000).scene.file,'policy');assert.equal(filmFrame(21000).scene.file,'register');assert.equal(filmFrame(26000).scene.file,'approvals');assert.equal(filmFrame(31000).scene.file,'script');
+ assert.equal(filmFrame(31000).checked,0);assert.equal(filmFrame(37000).checked,40);
+ assert.equal(filmFrame(41000).paperRows,0);assert.equal(filmFrame(42000).paperRows,1);assert.equal(filmFrame(47500).paperRows,5);
+ assert.equal(filmFrame(48000).findingRows,1);assert.equal(filmFrame(54000).findingRows,6);assert.equal(filmFrame(54000).scene.kind,'review');assert(filmFrame(filmDuration).finished);
+});
+test('seeking backwards restores outputs; bounds and Indonesian prompt remain deterministic',()=>{
+ assert.equal(filmFrame(50000).findingRows,3);assert.equal(filmFrame(20000).findingRows,0);assert.equal(filmFrame(-1).time,0);assert.equal(filmFrame(Infinity).time,filmDuration);
+ assert(filmFrame(6000,'id').prompt.includes('Jangan ubah dokumen sumber.'));
+ const html=renderLocalAuditAgent({visual:'local-agent-flow'});for(const v of ['data-la-seek','data-la-speed','data-la-next','data-la-replay','data-la-pause','data-la-paper','data-la-sheet','data-la-gate','not a live agent run'])assert(html.includes(v),v);
 });
