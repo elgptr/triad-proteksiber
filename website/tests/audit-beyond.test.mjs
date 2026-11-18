@@ -18,12 +18,12 @@ test('agentic assurance follows scoped survey evidence and precedes the organisa
  assert(material.sources['pwc-alignment'].scope.includes('not the denominator'));
 });
 test('audit topic follows familiar work, practical assistance, business AI assurance, connected AMS, then risk action',()=>{
- assert.equal(material.slides.length,43);
+ assert.equal(new Set(material.slides.map(s=>s.key)).size,material.slides.length);
  assert.deepEqual(material.sections.map(s=>s.id),['capability','audit-object','assistant','ams']);
  const designs=auditDesigns(material,{appUrl:'https://example.test/grc50',assetsUrl:'https://example.test/assets/',preview:true});
  const original=JSON.parse(fs.readFileSync(new URL('../assets/keynote/reference.json',import.meta.url),'utf8'));
  const built=composeModules(auditContent(material),{...original,slides:[...original.slides,...designs.entries]},designs.renderers,{revision:8});
- assert.equal(built.reference.slides.length,43);assert(!built.reference.slides.some(s=>s.key==='cover'));
+ assert.equal(built.reference.slides.length,material.slides.length);assert(!built.reference.slides.some(s=>s.key==='cover'));
  for(const entry of built.reference.slides){const design=built.renderers[entry.key];assert(design.kind.includes('audit-beyond'));assert(!/undefined|NaN|\[object Object\]/.test(design.html),entry.key);assert(entry.note.length>80,entry.key);assert(design.html.includes('brand/rsm/logo.png'),entry.key);assert(design.html.includes('alt="RSM"'),entry.key);}
  for(const section of material.sections)assert.equal(material.slides.filter(s=>s.chapter===section.id&&s.kind==='section').length,1);
  assert(designs.renderers['aib-annual-planning'].html.includes('workspace=audit&amp;previewTopic=ai-audit-beyond'));

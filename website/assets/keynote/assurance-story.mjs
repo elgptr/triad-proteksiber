@@ -1,3 +1,4 @@
+import {renderLocalAuditAgent} from './local-audit-agent.mjs?v=20261118';
 import {renderAgentic} from './agentic-audit.mjs?v=connected-audit-20261116';
 import {icon,rail,footer,simplePaper} from './audit-story.mjs?v=connected-audit-20261116';
 import {renderAdoptionIllustration} from './adoption-illustration.mjs?v=connected-audit-20261116';
@@ -14,6 +15,7 @@ export const trustQualities=[
 ];
 const trustPanel=i=>`<aside class="as-trust-detail" aria-live="polite"><h2 data-trust-question>${trustQualities[i][1]}</h2><p data-trust-evidence>${trustQualities[i][2]}</p></aside>`;
 export function renderAssuranceStory(s,options={}){
+ const local=renderLocalAuditAgent(s);if(local!==null)return local;
  const agentic=renderAgentic(s,options);if(agentic!==null)return agentic;
  const revised=renderRsmFramework(s,options);if(revised!==null)return revised;
  const {appUrl='',preview=false}=options;
