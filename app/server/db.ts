@@ -11,8 +11,9 @@ const rawPool=new pg.Pool({connectionString,max:poolMax,connectionTimeoutMillis:
 rawPool.on('error',error=>console.error('Idle database connection failed:',error.name));
 // Set an explicit, non-public search path before handing out every connection.
 // Production uses Supabase's session pooler; no session can fall back to Atlas public tables.
+const initialized=new WeakSet<pg.PoolClient>();
 export const pool={
- async connect(){const client=await rawPool.connect();try{const check=await client.query("SELECT set_config('search_path',$1,false),current_user AS db_user",[schema+',pg_catalog']);if(cloud&&check.rows[0].db_user!=='signal_app')throw Error('Cloud requires the restricted signal_app role; provision and migrate before starting the app');return client;}catch(e){client.release();throw e;}},
+ async connect(){const client=await rawPool.connect();try{if(!initialized.has(client)){const check=await client.query("SELECT set_config('search_path',$1,false),current_user AS db_user",[schema+',pg_catalog']);if(cloud&&check.rows[0].db_user!=='signal_app')throw Error('Cloud requires the restricted signal_app role; provision and migrate before starting the app');initialized.add(client);}return client;}catch(e){client.release();throw e;}},
  async query<T extends pg.QueryResultRow=any>(sql:string,values?:any[]){const client=await this.connect();try{return await client.query<T>(sql,values);}finally{client.release();}},
  end:()=>rawPool.end()
 };

@@ -1,3 +1,4 @@
+import {readPublicRoom,invalidatePublicRoom} from './roomReads.js';
 import {Router} from 'express';
 import {z} from 'zod';
 import {pool} from './db.js';
@@ -7,12 +8,10 @@ import {demoBroadcast} from './demoBroadcast.js';
 import {presentationOutline} from './content.js';
 export const presentationPublic=Router(),presentationHost=Router();
 function state(data:any){const p=data.presentation,outline=presentationOutline(data),key=outline.slides.some(s=>s.key===p?.slideKey)?p.slideKey:outline.slides[0].key;return {deckId:outline.deckId,slideKey:key,slideNumber:outline.slides.findIndex(s=>s.key===key)+1,total:outline.slides.length,revision:p?.revision||0,updatedAt:p?.updatedAt||null,published:!!p,presenting:p?.presenting===true};}
-let snapshot:Promise<any>|undefined,snapshotUntil=0;
-export function invalidatePresentation(){snapshot=undefined;}
+export function invalidatePresentation(){invalidatePublicRoom();}
 presentationPublic.get('/presentation/:code',async(req,res)=>{
  if(!['live',roomCode].includes(String(req.params.code)))return res.status(404).json({error:'Presentation not found.'});
- if(!snapshot||Date.now()>snapshotUntil){snapshotUntil=Date.now()+200;snapshot=sharedRoom().then(room=>state(room.data)).catch(error=>{snapshot=undefined;throw error;});}
- res.json({...await snapshot,demo:demoBroadcast.status()});
+ res.json({...state(await readPublicRoom()),demo:demoBroadcast.status()});
 });
 async function save(req:any,res:any,mode='slide'){
  if(mode!=='status'&&demoBroadcast.status().active)return res.status(409).json({error:'Hide the live app before changing slides.'});
@@ -28,7 +27,7 @@ async function save(req:any,res:any,mode='slide'){
   const slideKey='presenting' in input?current.slideKey:'direction' in input?outline.slides[Math.max(0,Math.min(outline.slides.length-1,current.slideNumber-1+(input.direction==='next'?1:-1)))].key:input.slideKey;
   const next={slideKey,presenting:'presenting' in input?input.presenting:current.presenting,revision:current.revision+1,updatedAt:new Date().toISOString()};
   await db.query("UPDATE seminar_sessions SET data=jsonb_set(data,'{presentation}',$1::jsonb) WHERE code=$2",[JSON.stringify(next),roomCode]);
-  await db.query('COMMIT');snapshot=undefined;res.json(state({...row.data,presentation:next}));
+  await db.query('COMMIT');invalidatePresentation();res.json(state({...row.data,presentation:next}));
  }catch(e){await db.query('ROLLBACK');throw e;}finally{db.release();}
 }
 presentationHost.put('/admin/presentation',requireAdmin,(req,res)=>save(req,res));

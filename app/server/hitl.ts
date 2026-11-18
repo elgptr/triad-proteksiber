@@ -1,19 +1,21 @@
+import {sharedRoomId} from './roomReads.js';
+import {readCache} from './readCache.js';
 import {Router} from 'express';
 import {randomUUID} from 'node:crypto';
 import {z} from 'zod';
 import {pool} from './db.js';
-import {sharedRoom} from './sharedRoom.js';
 import {requireAdmin} from './adminAuth.js';
 import {hitlCards,type HitlPin} from '../shared/hitlDocuments.js';
 // Normalized bounds live only on the server; public documents contain no answer zones.
 export const hitlTargets=[{card:0,page:0,x1:.06,y1:.58,x2:.94,y2:.72},{card:1,page:1,x1:.065,y1:.60,x2:.95,y2:.66},{card:2,page:0,x1:.355,y1:.25,x2:.65,y2:.31}];
 export function gradeHitl(answers:HitlPin[][]){return answers.reduce((total,pins,card)=>{const targets=hitlTargets.filter(t=>t.card===card);const hits=new Set<number>();let misses=0;for(const p of pins){const i=targets.findIndex(t=>p.page===t.page&&p.x>=t.x1&&p.x<=t.x2&&p.y>=t.y1&&p.y<=t.y2);if(i<0)misses++;else if(hits.has(i))misses++;else hits.add(i);}const base=targets.length?20*hits.size/targets.length:20;return total+Math.max(0,base-5*misses);},0);}
 export const hitl=Router();
-async function change(fn:(state:any)=>any){const room=await sharedRoom(),db=await pool.connect();try{await db.query('BEGIN');const row=(await db.query('SELECT data FROM seminar_sessions WHERE id=$1 FOR UPDATE',[room.id])).rows[0];const result=fn(row.data.hitl||null);if(result?.save)await db.query("UPDATE seminar_sessions SET data=jsonb_set(data,'{hitl}',$1::jsonb) WHERE id=$2",[JSON.stringify(result.save),room.id]);await db.query('COMMIT');return result.value;}catch(e){await db.query('ROLLBACK');throw e;}finally{db.release();}}
+async function change(fn:(state:any)=>any){const id=await sharedRoomId(),db=await pool.connect();try{await db.query('BEGIN');const row=(await db.query("SELECT data->'hitl' AS hitl FROM seminar_sessions WHERE id=$1 FOR UPDATE",[id])).rows[0];const result=fn(row.hitl||null);if(result?.save)await db.query("UPDATE seminar_sessions SET data=jsonb_set(data,'{hitl}',$1::jsonb) WHERE id=$2",[JSON.stringify(result.save),id]);await db.query('COMMIT');if(result?.save)hitlSnapshot.clear();return result.value;}catch(e){await db.query('ROLLBACK');throw e;}finally{db.release();}}
 function view(s:any,id:string,admin=false){return {id:s?.id,version:s?.version||2,open:!!s?.open&&s?.version===2,cards:hitlCards,me:s?.players?.[id]||null,...(!s?.open?{leaderboard:Object.values(s?.players||{}).filter((p:any)=>p.finished&&!p.demo).sort((a:any,b:any)=>b.score-a.score||a.elapsed-b.elapsed).map((p:any)=>({name:p.name,score:p.score,elapsed:p.elapsed})),targets:hitlTargets,explanations:['Anggaran belum disetujui; jaminan 100% tidak didukung.','Report halaman 2: sampel dan dokumen yang belum tersedia tidak membuktikan fraud pada seluruh cabang. Klarifikasi masih diperlukan.','Seharusnya 75%: 60 dari 80 faktur dibayar.','Tidak ada slop: instruksi sesuai kebijakan.','Tidak ada slop: brief membedakan perubahan jumlah dan rasio serta tidak mengklaim sebab-akibat.']}:{}),...(admin?{joined:Object.values(s?.players||{}).filter((p:any)=>!p.demo).length,finished:Object.values(s?.players||{}).filter((p:any)=>p.finished&&!p.demo).length}:{})};}
+const hitlSnapshot=readCache(async()=>{const id=await sharedRoomId();return (await pool.query("SELECT data->'hitl' AS hitl FROM seminar_sessions WHERE id=$1",[id])).rows[0]?.hitl||null;},1000);
 for(const prefix of ['/hitl','/admin/hitl']){
  if(prefix.startsWith('/admin'))hitl.use(prefix,requireAdmin);
- hitl.get(prefix,async(_req,res)=>res.json(await change(s=>({value:view(s,res.locals.workspace.id,res.locals.admin)}))));
+ hitl.get(prefix,async(_req,res)=>res.json(view(await hitlSnapshot.read(),res.locals.workspace.id,res.locals.admin)));
 }
 hitl.post('/admin/hitl/start',requireAdmin,async(_req,res)=>res.json(await change(s=>{if(s?.open&&s.version===2)return {value:view(s,res.locals.workspace.id,true)};const next={id:randomUUID(),open:true,version:2,players:{}};return {save:next,value:view(next,res.locals.workspace.id,true)};})));
 hitl.post('/admin/hitl/close',requireAdmin,async(_req,res)=>res.json(await change(s=>{if(s)s.open=false;return {save:s,value:view(s,res.locals.workspace.id,true)};})));

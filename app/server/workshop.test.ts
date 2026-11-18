@@ -109,10 +109,18 @@ test('complete workshop: private organizations, guided case, mitigation, externa
  assert.equal((await req('/admin/presentation/presenting','PUT',host,{presenting:true})).status,200);
  const publicDeck=await(await liveState()).json();assert.equal(publicDeck.slideKey,'the-foundation');assert.equal(publicDeck.published,true);
  assert.deepEqual(Object.keys(publicDeck).sort(),['deckId','demo','presenting','published','revision','slideKey','slideNumber','total','updatedAt']);
+ const {invalidatePublicRoom}=await import('./roomReads.js');invalidatePublicRoom();
+ const originalQuery=pool.query;let projectedReads=0;
+ (pool as any).query=async function(this:any,sql:any,values?:any[]){if(String(sql).includes('jsonb_build_object'))projectedReads++;return originalQuery.call(this,sql,values);};
+ try{const requests=await Promise.all(Array.from({length:20},()=>liveState()));assert(requests.every(r=>r.status===200));assert.equal(projectedReads,1,'20 concurrent deck viewers share one projected database read');}finally{pool.query=originalQuery;}
  assert.equal((await req('/admin/hitl/start','POST',a)).status,403);
  const game=await(await req('/admin/hitl/start','POST',host)).json();assert(game.open);
  assert.equal((await req('/hitl/join','POST',a,{sessionId:game.id,name:'Reviewer'})).status,200);
  assert.equal((await(await req('/hitl','GET',a)).json()).targets,undefined);
+ let hitlReads=0;(pool as any).query=async function(this:any,sql:any,values?:any[]){if(String(sql).includes("data->'hitl' AS hitl"))hitlReads++;return originalQuery.call(this,sql,values);};
+ try{const replies=await Promise.all(Array.from({length:20},()=>req('/hitl','GET',a)));assert(replies.every(r=>r.status===200));assert(hitlReads<=1,'Quiz GET polls reuse the snapshot with at most one read and no row-locking transaction');}finally{pool.query=originalQuery;}
+ assert.equal((await(await req('/hitl','GET',b)).json()).me,null,'A shared quiz snapshot must not share a participant identity');
+ 
  assert.equal((await req('/hitl/finish','POST',a,{sessionId:game.id,answers:[[{page:2,x:1.1,y:.5}],[],[],[],[]]})).status,400);
  assert.equal((await req('/hitl/finish','POST',a,{sessionId:game.id,answers:[[{page:1,x:.5,y:.5}],[],[],[],[]]})).status,400);
  assert.equal((await req('/hitl/finish','POST',a,{sessionId:game.id,answers:[[{page:0,x:.5,y:.63}],[{page:1,x:.5,y:.63}],[{page:0,x:.5,y:.28}],[],[]]})).status,200);
