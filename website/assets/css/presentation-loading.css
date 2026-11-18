@@ -1,0 +1,21 @@
+#content-loading{position:fixed;inset:0;z-index:999999;display:grid;place-items:center;padding:24px;background:radial-gradient(ellipse at 80% 10%,#124878 0,transparent 55%),#00153d;color:#fff;font-family:Arial,sans-serif;overflow:auto}
+#content-loading .loading-card{width:min(100%,460px);box-sizing:border-box;padding:40px 36px;border:1px solid #ffffff24;border-radius:22px;background:#ffffff08;box-shadow:0 28px 90px #0003;text-align:left}
+#content-loading .loading-eyebrow{font-size:11px;letter-spacing:.18em;line-height:1.6;color:#b9d4e5;font-weight:700}
+#content-loading .loading-visual{height:112px;position:relative;margin:30px 0 24px;display:flex;align-items:center}
+#content-loading .loading-slide{width:150px;height:94px;border:1px solid #ffffff50;background:#163654;border-radius:9px;position:absolute;box-sizing:border-box;padding:18px;transform:rotate(-7deg) translate(14px,-5px)}
+#content-loading .loading-slide.front{background:#eaf3f8;transform:rotate(3deg) translate(35px,8px);box-shadow:0 12px 25px #0003}
+#content-loading .loading-slide i{display:block;height:5px;background:#a9bfcd;border-radius:3px;width:80%;margin:7px 0}
+#content-loading .loading-slide i:first-child{height:8px;width:62%;background:#009cde}
+#content-loading .loading-slide i:last-child{width:45%;background:#3f9c35}
+#content-loading h1{font-size:clamp(26px,4vw,34px);letter-spacing:-.035em;line-height:1.17;margin:0 0 16px;font-weight:600}
+#content-loading p{font-size:15px;line-height:1.65;margin:0;color:#c5d7e4;min-height:3.3em}
+#content-loading .loading-track{height:3px;overflow:hidden;background:#ffffff18;margin:30px 0 18px;border-radius:4px}
+#content-loading .loading-track span{display:block;width:40%;height:100%;background:linear-gradient(90deg,#009cde,#85cb6a);border-radius:4px;animation:presentation-loading 1.8s ease-in-out infinite}
+#content-loading .loading-hint{font-size:12px;line-height:1.5;color:#90acbf;margin:0}
+#content-loading button{margin-top:22px;border:0;border-radius:8px;padding:12px 20px;font:600 14px Arial,sans-serif;background:#eaf5fc;color:#00153d;cursor:pointer}
+#content-loading button[hidden]{display:none}
+#content-loading button:focus-visible{outline:3px solid #71d5fa;outline-offset:4px}
+#content-loading[data-state="error"] .loading-track span{animation:none;width:100%;background:#dfad68}
+@keyframes presentation-loading{0%{transform:translateX(-110%)}100%{transform:translateX(350%)}}
+@media(prefers-reduced-motion:reduce){#content-loading .loading-track span{animation:none;width:100%}}
+@media(max-width:480px),(max-height:560px){#content-loading .loading-card{padding:24px}#content-loading .loading-visual{height:85px;margin:18px 0}#content-loading .loading-slide{width:130px;height:80px;padding:12px}#content-loading .loading-track{margin-top:20px}}
