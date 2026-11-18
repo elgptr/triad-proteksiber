@@ -113,6 +113,8 @@ test('complete workshop: private organizations, guided case, mitigation, externa
  const originalQuery=pool.query;let projectedReads=0;
  (pool as any).query=async function(this:any,sql:any,values?:any[]){if(String(sql).includes('jsonb_build_object'))projectedReads++;return originalQuery.call(this,sql,values);};
  try{const requests=await Promise.all(Array.from({length:20},()=>liveState()));assert(requests.every(r=>r.status===200));assert.equal(projectedReads,1,'20 concurrent deck viewers share one projected database read');}finally{pool.query=originalQuery;}
+ let healthQueries=0;(pool as any).query=async function(this:any,sql:any,values?:any[]){healthQueries++;return originalQuery.call(this,sql,values);};
+ try{assert.equal((await req('/live')).status,200);assert.equal(healthQueries,0,'Render liveness must not wake the database');assert.equal((await req('/health')).status,200);assert.equal(healthQueries,1,'Explicit readiness still checks the database');}finally{pool.query=originalQuery;}
  assert.equal((await req('/admin/hitl/start','POST',a)).status,403);
  const game=await(await req('/admin/hitl/start','POST',host)).json();assert(game.open);
  assert.equal((await req('/hitl/join','POST',a,{sessionId:game.id,name:'Reviewer'})).status,200);

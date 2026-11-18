@@ -1,14 +1,15 @@
+import {visiblePoll} from '../../website/assets/js/visible-poll.mjs';
 ﻿import React,{useEffect,useState} from 'react';
 import {activeSlides,sandboxTemplate,type ContentConfig} from '../shared/content';
 import {newTopicContent,topicApplication,type Topic,type TopicLibrary} from '../shared/topics';
 import './modules.css';
 import {browserPath} from '../shared/deployment';
 const appName=(config:ContentConfig)=>{const app=topicApplication(config);return app.kind==='signal'?'SIGNAL':app.kind==='audit-suite'?'Audit & Risk workspace':app.kind==='sandbox'?app.config.title:'Tanpa aplikasi latihan';};
-export default function ContentStudio({request,onPublished}:{request:(path:string,method?:string,body?:unknown)=>Promise<any>;onPublished:()=>void}){
+export default function ContentStudio({request,onPublished,visible=true}:{visible?:boolean;request:(path:string,method?:string,body?:unknown)=>Promise<any>;onPublished:()=>void}){
  const [library,setLibrary]=useState<TopicLibrary>(),[editing,setEditing]=useState<Topic>(),[dirty,setDirty]=useState(false),[busy,setBusy]=useState(false),[error,setError]=useState(''),[message,setMessage]=useState('');
  async function load(){try{setLibrary(await request('/admin/topics'));setError('');}catch(e){setError((e as Error).message);}}
- useEffect(()=>{void load();},[]);
- useEffect(()=>{if(dirty||editing||busy)return;const timer=setInterval(()=>void load(),3000);return()=>clearInterval(timer);},[dirty,!!editing,busy]);
+ 
+ useEffect(()=>{if(!visible||dirty||editing||busy)return;return visiblePoll(load,10000);},[visible,dirty,!!editing,busy]);
  useEffect(()=>{const warn=(e:BeforeUnloadEvent)=>{if(dirty){e.preventDefault();e.returnValue='';}};window.addEventListener('beforeunload',warn);return()=>window.removeEventListener('beforeunload',warn);},[dirty]);
  function change(patch:Partial<Topic>){if(editing){setEditing({...editing,...patch});setDirty(true);setMessage('');}}
  async function save(){if(!editing||!library)return;setBusy(true);setError('');try{const data=await request('/admin/topics'+(editing.id?'/'+editing.id:''),editing.id?'PUT':'POST',{expectedRevision:library.revision,topic:{title:editing.title,description:editing.description,config:{...editing.draft,title:editing.title}}});setLibrary(data);setEditing(undefined);setDirty(false);setMessage('Topik tersimpan di library. Peserta tetap melihat topik aktif sampai Anda mengaktifkan perubahan.');}catch(e){setError((e as Error).message);}finally{setBusy(false);}}

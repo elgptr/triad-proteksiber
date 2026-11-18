@@ -20,3 +20,12 @@ Production pg_stat_statements was unavailable (42P01). No extension or statistic
 A read-only size query against the current Neon SIGNAL row measured 160506 bytes for the old full JSON, 41288 bytes for the published deck projection, and 205 bytes for current HITL state. These are JSON payload sizes, not wire-level or monthly billing estimates. Growth of quiz participation changes its payload. Authentication and transaction overhead remain. No application data or cloud schema was changed for this measurement.
 
 Backend-only release: deploy the corresponding commit on Render. Pages does not require redeployment. Continue checking Neon usage after a representative audience session; this change does not guarantee free-plan limits will never be reached.
+
+
+## Second efficiency pass: background polling and sleep
+
+Network polling in the workshop, content module, HITL and CRA now pauses while the browser document is hidden or offline, refreshes on return and schedules the next read only after the preceding read settles. Topic editing polls at 10 seconds, only while its panel is visible and no edit is pending. HITL/CRA session controls poll only in Signals & participants. Admin participant-progress polling runs only in that panel. The embedded admin deck is mounted only in the Presentation panel; slide state is restored from the API on return. Demo control polling pauses when idle and hidden, but continues for active broadcasts so recorder leases are preserved. No short-lived auth cache was introduced: logout/revocation checks retain their immediate behavior.
+
+`/api/live` checks the API process without touching PostgreSQL; `/api/health` still performs database readiness. After deploying the backend, set the existing Render service's Health Check Path to `/api/live` (render.yaml now declares this for managed/new services). This is necessary to stop routine platform probes from waking Neon. Startup still validates database connectivity and schema before the HTTP server starts. A liveness success alone intentionally does not claim database availability.
+
+Deploy both Render and GitHub Pages for the second pass. Network lifecycle tests cover hidden/offline pauses, resume, request serialization and cleanup. Database integration tests assert liveness performs zero DB queries and readiness still performs a real query. Background tabs do not guarantee scale-to-zero: active broadcasts, foreground users, external monitors, or other clients can still keep the database awake.

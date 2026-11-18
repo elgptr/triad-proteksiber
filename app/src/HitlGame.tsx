@@ -1,12 +1,13 @@
+import {visiblePoll} from '../../website/assets/js/visible-poll.mjs';
 import React,{useEffect,useRef,useState} from 'react';
 import {request} from './WorkshopApp';
 import {browserPath} from '../shared/deployment';
 import type {HitlPin} from '../shared/hitlDocuments';
 import './hitl.css';
 const empty=():HitlPin[][]=>[[],[],[],[],[]];
-export function HitlSessionControls(){
+export function HitlSessionControls({visible=true}:{visible?:boolean}){
  const [state,setState]=useState<any>(),[error,setError]=useState(''),[busy,setBusy]=useState(false);
- useEffect(()=>{let live=true;const read=()=>request('/admin/hitl').then(s=>{if(live)setState(s);}).catch(e=>{if(live)setError(e.message);});void read();const timer=setInterval(read,3000);return()=>{live=false;clearInterval(timer);};},[]);
+ useEffect(()=>{if(!visible)return;let live=true;const read=()=>request('/admin/hitl').then(s=>{if(live)setState(s);}).catch(e=>{if(live)setError(e.message);});const stop=visiblePoll(read,3000);return()=>{live=false;stop();};},[visible]);
  async function run(action:string){if(action==='start'&&state?.id&&!confirm('Ganti hasil sesi sebelumnya dengan sesi baru?'))return;if(action==='close'&&!confirm('Tutup sesi dan tampilkan hasil? Peserta yang belum Finish tidak masuk peringkat.'))return;setBusy(true);try{setState(await request('/admin/hitl/'+action,'POST'));setError('');}catch(e){setError((e as Error).message);}finally{setBusy(false);}}
  return <section className="w-panel"><h2>Human-in-the-loop: pengaturan sesi</h2><p>{state?.open?'Sesi terbuka':'Sesi belum dibuka / ditutup'} | {state?.joined||0} peserta | {state?.finished||0} selesai</p><button disabled={busy||!state||state.open} onClick={()=>void run('start')}>Buka sesi baru</button> <button disabled={busy||!state?.open} onClick={()=>void run('close')}>Tutup sesi & tampilkan leaderboard</button><p>Setelah membuka sesi, pilih Human-in-the-loop di tab Demo aplikasi untuk walkthrough. Ruang walkthrough memakai alur peserta dan tidak masuk leaderboard.</p>{error&&<p role="alert">{error}</p>}</section>;
 }
@@ -14,7 +15,7 @@ export default function HitlGame(){
  const demo=location.pathname.replace(/\/$/,'').endsWith('/admin/demo');
  const [state,setState]=useState<any>(),[name,setName]=useState(''),[cardIndex,setCard]=useState(0),[pageIndex,setPage]=useState(0),[answers,setAnswers]=useState<HitlPin[][]>(empty),[error,setError]=useState(''),[busy,setBusy]=useState(false),[cursor,setCursor]=useState({x:.5,y:.5}),[zoom,setZoom]=useState(1);
  const storage=useRef('');
- useEffect(()=>{let live=true,reading=false,authenticated=false;async function read(){if(reading)return;reading=true;try{if(!authenticated){if(demo){await request('/auth/admin/me');try{await request('/auth/me');}catch{const guest=await request('/admin/demo/workspace','POST');sessionStorage.setItem('signal-demo-token',guest.token);}}else await request('/auth/me').catch(()=>request('/auth/guest','POST'));authenticated=true;}const s=await request('/hitl');if(live){setState(s);setError('');}}catch(e){if(live)setError((e as Error).message);}finally{reading=false;}}void read();const timer=setInterval(read,2000);return()=>{live=false;clearInterval(timer);};},[]);
+ useEffect(()=>{let live=true,reading=false,authenticated=false;async function read(){if(reading)return;reading=true;try{if(!authenticated){if(demo){await request('/auth/admin/me');try{await request('/auth/me');}catch{const guest=await request('/admin/demo/workspace','POST');sessionStorage.setItem('signal-demo-token',guest.token);}}else await request('/auth/me').catch(()=>request('/auth/guest','POST'));authenticated=true;}const s=await request('/hitl');if(live){setState(s);setError('');}}catch(e){if(live)setError((e as Error).message);}finally{reading=false;}}const stop=visiblePoll(read,2000);return()=>{live=false;stop();};},[]);
  useEffect(()=>{setCard(0);setPage(0);storage.current='hitl-area-v2-'+state?.id+(demo?'-demo':'');try{const saved=JSON.parse(sessionStorage.getItem(storage.current)||'null');setAnswers(Array.isArray(saved)&&saved.length===5&&saved.every(a=>Array.isArray(a)&&a.every(p=>p&&typeof p.x==='number'&&typeof p.y==='number'&&Number.isInteger(p.page)))?saved:empty());}catch{setAnswers(empty());}},[state?.id]);
  async function action(path:string,body:any){setBusy(true);try{setState(await request(path,'POST',body));setError('');}catch(e){setError((e as Error).message);}finally{setBusy(false);}}
  function save(next:HitlPin[][]){setAnswers(next);try{sessionStorage.setItem(storage.current,JSON.stringify(next));}catch{setError('Penyimpanan browser tidak tersedia. Jangan tutup tab sebelum Finish.');}}

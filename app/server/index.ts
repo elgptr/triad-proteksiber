@@ -24,6 +24,7 @@ app.get('/presentation/assets/vendor/rrweb-replay.css',(_req,res)=>res.type('tex
 app.use('/presentation',express.static(fileURLToPath(new URL('../../website',import.meta.url))));
 const hash=(value:string)=>createHash('sha256').update(value).digest('hex');
 app.use('/api',(req,res,next)=>{res.set('Cache-Control','no-store');if(!['GET','HEAD'].includes(req.method)&&req.get('x-signal-request')!=='1'&&req.get('x-hori-request')!=='1')return res.status(403).json({error:'Invalid request origin.'});next();});
+app.get('/api/live',(_req,res)=>res.json({status:'ok'}));
 app.get('/api/health',async(_req,res)=>{try{await pool.query('SELECT 1');res.json({database:'connected',generation:'rules'});}catch{res.status(503).json({error:'PostgreSQL is not configured or unavailable.'});}});
 app.post('/api/auth/guest',async(req,res)=>{const c=await pool.connect();try{await c.query('BEGIN');const id=randomUUID(),token=randomBytes(32).toString('hex');await c.query('INSERT INTO workspaces(id,name) VALUES($1,$2)',[id,'My private workspace']);await c.query("INSERT INTO guest_sessions(token_hash,workspace_id,expires_at) VALUES($1,$2,now()+interval '30 days')",[hash(token),id]);await c.query('COMMIT');res.cookie('signal_session',token,{httpOnly:true,sameSite:'strict',secure:process.env.NODE_ENV==='production',maxAge:30*86400000,path:'/'});res.status(201).json({id,name:'My private workspace',...(process.env.NODE_ENV==='production'?{token}:{})});}catch(e){await c.query('ROLLBACK');throw e;}finally{c.release();}});
 app.use('/api',adminAuth);
