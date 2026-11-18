@@ -1,0 +1,22 @@
+const card=(label,title,body)=>`<article><small>${label}</small><h2>${title}</h2>${body}</article>`;
+export function renderLocalAuditAgent(s){
+ if(s.visual==='local-agent-setup')return `<div class="la-workspace"><div class="la-window"><header><span aria-hidden="true">● ● ●</span><b>credit-limit-audit / local workspace</b><small>ILLUSTRATION</small></header><div class="la-window-body"><pre aria-label="Example audit workspace">credit-limit-audit/
+  instructions/audit-rules.md
+  skills/credit-review/SKILL.md
+  templates/working-paper.docx
+  templates/finding-register.xlsx
+  evidence/                  [READ ONLY]
+    E01-credit-policy.pdf
+    E02-limit-changes.xlsx
+    E03-approvals.pdf
+  scripts/reconcile.py
+  output/drafts/             [WRITE]
+  output/reviewed/           [HUMAN]</pre><div class="la-editor"><small>SKILL.md / CREDIT REVIEW</small><code>name: credit-review</code><p>Use when checking credit-limit changes against approval rules.</p><ol><li>Read policy; identify the applicable rule.</li><li>Reconcile register rows with approval evidence.</li><li>Flag missing evidence; do not infer fraud.</li><li>Fill the approved template with source references.</li><li>Stop for auditor review before release.</li></ol></div></div></div><div class="la-setup-notes">${card('01 / DEFINE THE JOB','One scoped instruction','<p>Review 40 changes. Produce a cited exception register and a draft working paper.</p>')}${card('02 / CONNECT RESOURCES','Skill + templates + tools','<p>Register the skill in the agent, attach the templates and permit the required local file tools.</p>')}${card('03 / ENFORCE PERMISSIONS','Read evidence. Write drafts.','<p>Use tool or sandbox permissions. Folder labels and written instructions alone do not enforce access.</p>')}</div></div><p class="la-footnote">Illustrative setup, not a product screenshot. Skill discovery depends on the agent. A local folder does not mean the model runs offline; use an approved processing environment.</p>`;
+ if(s.visual==='local-agent-flow')return `<div class="la-demo" data-local-agent-flow><div class="la-flow-controls"><span>ILLUSTRATIVE DOCUMENT FLOW / NO FILES ARE EXECUTED</span><button type="button" data-la-pause aria-pressed="false">Pause animation</button><button type="button" data-la-replay>Replay</button></div><div class="la-flow"><div class="la-flow-stage la-step-1">${card('1 / INPUT','Read the source','<p>E01 policy · E02 register · E03 approvals</p><b>Evidence stays read-only</b>')}</div><span class="la-flow-arrow" aria-hidden="true">→</span><div class="la-flow-stage la-step-2">${card('2 / AGENT + TOOLS','Apply the review skill','<p>Extract fields → reconcile → inspect exceptions → fill templates</p><b>Keep source references</b>')}</div><span class="la-flow-arrow" aria-hidden="true">→</span><div class="la-flow-stage la-step-3">${card('3 / DRAFT','Prepare reviewable files','<p>working-paper.docx<br>exception-register.xlsx</p><b>Not an issued report</b>')}</div><span class="la-flow-arrow" aria-hidden="true">→</span><div class="la-flow-stage la-step-4">${card('4 / HUMAN GATE','Auditor validates','<p>Check evidence, correct the draft, request more information or approve release.</p><b>Rework returns to the agent</b>')}</div></div><div class="la-trace"><article><small>EXAMPLE SOURCE TRACE</small><h3>Exception 06 / limit override</h3><p>E01 section 4.2 requires independent approval. E02 row 18 records a limit change. E03 contains no matching approval in the supplied pack.</p></article><article><small>DRAFT FINDING / TEMPLATE FILLED</small><h3>Approval evidence not provided</h3><p>Request the approval record and confirm timing. Do not conclude that approval never existed or that fraud occurred.</p></article></div><p class="la-footnote">Animation shows a teaching example, not a measured result or live agent run. Only a reviewer-approved version is moved to output/reviewed/.</p></div>`;
+ return null;
+}
+export function installLocalAuditAgent(root){root.addEventListener('click',event=>{
+ const button=event.target.closest('[data-la-pause],[data-la-replay]');if(!button)return;const demo=button.closest('[data-local-agent-flow]');
+ if(button.hasAttribute('data-la-pause')){const paused=demo.classList.toggle('la-paused');button.setAttribute('aria-pressed',String(paused));}
+ else{demo.classList.remove('la-restarting');void demo.offsetWidth;demo.classList.add('la-restarting');requestAnimationFrame(()=>demo.classList.remove('la-restarting'));}
+});}

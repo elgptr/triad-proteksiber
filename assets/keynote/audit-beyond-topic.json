@@ -629,6 +629,40 @@
       "notesEn": "AI can help organise a report, turn checked findings into slides, and analyse approved records. A missing approval record is a reason to investigate; it does not prove approval never occurred. Check sources, assumptions and the destination of the output.\n\nHBS / BCG field experiment - 2023: 758 BCG consultants; knowledge-work tasks using GPT-4. Benefits refer to tasks inside the tested capability frontier, not audit accuracy.\n\nPCAOB staff · GenAI outreach · 2024: July 2024 staff observations from limited U.S. audit-firm and preparer outreach, especially pp. 4–5. Historical practice evidence, not a Board rule, a current adoption survey, or Indonesian audit requirements."
     },
     {
+      "key": "aib-local-agent-setup",
+      "title": "Set up an audit agent on your computer",
+      "lead": "One scoped workspace: instructions, skills, evidence and approved templates.",
+      "chapter": "assistant",
+      "kind": "story",
+      "visual": "local-agent-setup",
+      "items": [],
+      "refs": [],
+      "notes": "Contoh fiktif audit perubahan limit kredit. Di komputer, buat workspace khusus, kumpulkan hanya bukti yang diizinkan, hubungkan agent ke folder tersebut, aktifkan skill review kredit dan lampirkan template kertas kerja serta register temuan. Tampilkan contoh audit-rules.md: scope 40 perubahan, referensikan E01/E02/E03, jangan mengarang bukti, simpan hanya ke output/drafts dan minta review sebelum penerbitan. Skill berisi prosedur berulang, template menentukan bentuk keluaran, dan scripts/reconcile.py adalah tool untuk pengujian deterministik yang diizinkan. Penemuan dan registrasi skill mengikuti produk yang dipakai; folder contoh bukan jaminan skill otomatis aktif. Label READ ONLY harus ditegakkan melalui izin tool atau sandbox. Folder lokal tidak membuktikan model offline; periksa persetujuan pemrosesan, retensi dan lokasi inference. Visual adalah ilustrasi, bukan screenshot aplikasi atau hasil implementasi klien.\n\nSources: https://agentskills.io/specification ; https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents/",
+      "notesEn": "Fictional credit-limit audit example. Open an approved local workspace in the agent, register its credit-review skill according to the chosen product, attach the working-paper and findings templates, and grant only the necessary file tools. Scope the task to 40 changes, require evidence references and missing-evidence flags, and write drafts only. A skill supplies a repeatable procedure; templates supply output structure; a permitted script can perform deterministic reconciliation. Folder names and instructions do not enforce permissions. A local workspace does not imply local model inference or approved confidential processing. This is an illustrative setup, not a product screenshot.\n\nSources: https://agentskills.io/specification ; https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents/",
+      "narrative": {
+        "question": "Set up an audit agent on your computer",
+        "transition": "One scoped workspace: instructions, skills, evidence and approved templates."
+      },
+      "evidenceNote": ""
+    },
+    {
+      "key": "aib-local-agent-flow",
+      "title": "Watch the evidence become a reviewable draft",
+      "lead": "Read-only inputs / skill and tools / cited draft / auditor review.",
+      "chapter": "assistant",
+      "kind": "story",
+      "visual": "local-agent-flow",
+      "items": [],
+      "refs": [],
+      "notes": "Jelaskan animasi dari kiri ke kanan. Agent membaca kebijakan E01, register E02 dan bukti E03; menjalankan prosedur skill dan tool rekonsiliasi; lalu mengisi template menjadi working-paper.docx dan exception-register.xlsx. Contoh exception06: E01 pasal4.2 mensyaratkan persetujuan independen, E02 baris18 berisi perubahan, E03 tidak memuat bukti cocok dalam paket. Output harus menyatakan bukti belum diberikan dan meminta klarifikasi, bukan menyatakan fraud. Auditor memeriksa rujukan dan interpretasi, meminta revisi bila perlu, dan reviewer berwenang menyetujui penerbitan. Hanya versi disetujui dipindah ke output/reviewed oleh manusia. Animasi ilustratif, bukan eksekusi file atau klaim hasil aktual. Gunakan Pause atau Replay; mode reduced motion menampilkan semua tahap statis.\n\nSources: https://agentskills.io/specification ; https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents/",
+      "notesEn": "Walk through the animation: read E01 policy, E02 change register and E03 approvals; apply the review skill and permitted reconciliation tools; fill the approved templates; stop at the auditor review gate. Exception 06 cites policy section 4.2 and register row 18; the supplied approval pack contains no matching record. The draft requests clarification rather than inferring fraud. Auditor/reviewer checks, corrects, rejects or approves; only an approved version is moved to output/reviewed by a person. Pause and Replay support teaching, and reduced-motion mode shows all steps statically. This is a conceptual animation, not a live run or measured result.\n\nSources: https://agentskills.io/specification ; https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents/",
+      "narrative": {
+        "question": "Watch the evidence become a reviewable draft",
+        "transition": "Read-only inputs / skill and tools / cited draft / auditor review."
+      },
+      "evidenceNote": ""
+    },
+    {
       "key": "aib-confidential-work",
       "title": "Confidential data in AI-assisted audit work",
       "lead": "A no-training switch alone is not permission to share a client document.",

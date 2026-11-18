@@ -1,5 +1,6 @@
+import {installLocalAuditAgent} from './local-audit-agent.mjs?v=20261118';
 import {fullscreenGuideStrings,installFullscreenGuide} from './fullscreen-guide.mjs?v=20261118';
-import {auditContent,auditDesigns} from './audit-beyond.mjs?v=connected-audit-20261116';
+import {auditContent,auditDesigns} from './audit-beyond.mjs?v=local-agent-20261118';
 import {installDataHandling} from './data-handling.mjs?v=connected-audit-20261116';
 import {installAssuranceStory} from './assurance-story.mjs?v=connected-audit-20261116';
 import {composeModules,loadContentSnapshot} from './content-modules.mjs?v=connected-audit-20261116';
@@ -146,12 +147,12 @@ if(!auditPreview){while(!contentSnapshot){try{loadingState('connecting');content
 loadingState('preparing');
 if(auditPreview||contentSnapshot?.config?.modules?.some(m=>m.slides.some(s=>s.builtin?.startsWith('aib-')))){
  document.querySelector('.deck-language-switch')?.removeAttribute('hidden');
- const auditLanguage=await fetch(new URL('./audit-translations-id.json?v=connected-audit-20261116',import.meta.url)).then(r=>{if(!r.ok)throw Error('Audit translations unavailable');return r.json();});
+ const auditLanguage=await fetch(new URL('./audit-translations-id.json?v=local-agent-20261118',import.meta.url)).then(r=>{if(!r.ok)throw Error('Audit translations unavailable');return r.json();});
  Object.assign(languageCatalogue.strings,auditLanguage.strings);Object.assign(languageCatalogue.notes,auditLanguage.notes);Object.assign(languageCatalogue.contexts??={},auditLanguage.contexts);
- const material=await fetch(new URL('./audit-beyond-topic.json?v=connected-audit-20261116',import.meta.url)).then(r=>r.json());
+ const material=await fetch(new URL('./audit-beyond-topic.json?v=local-agent-20261118',import.meta.url)).then(r=>r.json());
  const designed=auditDesigns(material,{appUrl:app,assetsUrl:assets,preview:auditPreview});
  Object.assign(slides,designed.renderers);reference={...reference,slides:[...reference.slides,...designed.entries]};
- for(const stylesheet of ['./audit-beyond.css','./data-handling.css','./audit-story.css','./rsm-seminar.css']){const css=document.createElement('link');css.rel='stylesheet';const url=new URL(stylesheet,import.meta.url);url.searchParams.set('v','connected-audit-20261116');css.href=url;presentationStyles.push(new Promise((resolve,reject)=>{css.onload=resolve;css.onerror=()=>reject(Error('Presentation styles unavailable'));}));document.head.append(css);}
+ for(const stylesheet of ['./audit-beyond.css','./data-handling.css','./audit-story.css','./rsm-seminar.css','./local-audit-agent.css']){const css=document.createElement('link');css.rel='stylesheet';const url=new URL(stylesheet,import.meta.url);url.searchParams.set('v','connected-audit-20261116');css.href=url;presentationStyles.push(new Promise((resolve,reject)=>{css.onload=resolve;css.onerror=()=>reject(Error('Presentation styles unavailable'));}));document.head.append(css);}
  if(auditPreview)contentSnapshot={revision:0,config:auditContent(material),preview:true,topicId:material.id};
 }
 if(contentSnapshot&&(contentSnapshot.revision>0||contentSnapshot.preview)){
@@ -166,6 +167,7 @@ stage.innerHTML=reference.slides.map((entry,i)=>{const s=slides[entry.key],chapt
 await Promise.all(presentationStyles);
 if(document.fonts)await Promise.race([document.fonts.ready,new Promise(resolve=>setTimeout(resolve,3000))]);
 loading?.remove();
+installLocalAuditAgent(stage);
 installFullscreenGuide(stage);
 installDataHandling(stage);
 installAssuranceStory(stage);
