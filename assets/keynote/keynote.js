@@ -138,7 +138,10 @@ const stage=document.getElementById('stage');
 const auditPreview=new URLSearchParams(location.search).get('previewTopic')==='ai-audit-beyond';
 let contentSnapshot=null;
 const loading=document.getElementById('content-loading');
-if(!auditPreview){while(!contentSnapshot){try{contentSnapshot=await loadContentSnapshot({onRetry:()=>{if(loading)loading.querySelector('p').textContent='The presentation server is starting. Please keep this page open?';}});}catch{if(loading){loading.querySelector('p').textContent='Unable to connect. Your presentation has not been replaced with another topic.';const retry=loading.querySelector('button');retry.hidden=false;await new Promise(resolve=>retry.onclick=resolve);retry.hidden=true;}else throw Error('Presentation unavailable');}}}
+const presentationStyles=[];
+const loadingState=state=>window.SIGNAL_LOADING?.set(state);
+if(!auditPreview){while(!contentSnapshot){try{loadingState('connecting');contentSnapshot=await loadContentSnapshot({onRetry:()=>loadingState('waiting')});}catch{if(loading){loadingState('error');const retry=loading.querySelector('button');retry.hidden=false;await new Promise(resolve=>retry.onclick=resolve);retry.hidden=true;}else throw Error('Presentation unavailable');}}}
+loadingState('preparing');
 if(auditPreview||contentSnapshot?.config?.modules?.some(m=>m.slides.some(s=>s.builtin?.startsWith('aib-')))){
  document.querySelector('.deck-language-switch')?.removeAttribute('hidden');
  const auditLanguage=await fetch(new URL('./audit-translations-id.json?v=connected-audit-20261116',import.meta.url)).then(r=>{if(!r.ok)throw Error('Audit translations unavailable');return r.json();});
@@ -146,7 +149,7 @@ if(auditPreview||contentSnapshot?.config?.modules?.some(m=>m.slides.some(s=>s.bu
  const material=await fetch(new URL('./audit-beyond-topic.json?v=connected-audit-20261116',import.meta.url)).then(r=>r.json());
  const designed=auditDesigns(material,{appUrl:app,assetsUrl:assets,preview:auditPreview});
  Object.assign(slides,designed.renderers);reference={...reference,slides:[...reference.slides,...designed.entries]};
- for(const stylesheet of ['./audit-beyond.css','./data-handling.css','./audit-story.css','./rsm-seminar.css']){const css=document.createElement('link');css.rel='stylesheet';const url=new URL(stylesheet,import.meta.url);url.searchParams.set('v','connected-audit-20261116');css.href=url;document.head.append(css);}
+ for(const stylesheet of ['./audit-beyond.css','./data-handling.css','./audit-story.css','./rsm-seminar.css']){const css=document.createElement('link');css.rel='stylesheet';const url=new URL(stylesheet,import.meta.url);url.searchParams.set('v','connected-audit-20261116');css.href=url;presentationStyles.push(new Promise((resolve,reject)=>{css.onload=resolve;css.onerror=()=>reject(Error('Presentation styles unavailable'));}));document.head.append(css);}
  if(auditPreview)contentSnapshot={revision:0,config:auditContent(material),preview:true,topicId:material.id};
 }
 if(contentSnapshot&&(contentSnapshot.revision>0||contentSnapshot.preview)){
@@ -158,6 +161,8 @@ if(contentSnapshot&&(contentSnapshot.revision>0||contentSnapshot.preview)){
 
 for(const entry of reference.slides)if(!slides[entry.key])throw Error('Missing design for '+entry.key);
 stage.innerHTML=reference.slides.map((entry,i)=>{const s=slides[entry.key],chapterIndex=reference.chapters.findIndex(c=>c.id===entry.chapter);return `<section id="frame-${i+1}" class="frame ${s.tone||'day'} ${s.kind||''}" aria-label="Slide ${i+1}: ${esc(s.title.replace(/<[^>]*>/g,' ').replaceAll('&amp;','&'))}" data-key="${entry.key}" ${i?'hidden':''}><div class="frame-content">${s.html}</div><div class="frame-foot"><span>${esc(contentSnapshot?.config?.title||'Beyond Compliance')}<span class="foot-dot">●</span>${chapterIndex>=0?`<span class="foot-chapter">0${chapterIndex+1} / ${esc(reference.chapters[chapterIndex].title)}</span>`:''}</span><span>${String(i+1).padStart(2,'0')} / ${reference.slides.length}</span></div></section>`;}).join('');
+await Promise.all(presentationStyles);
+if(document.fonts)await Promise.race([document.fonts.ready,new Promise(resolve=>setTimeout(resolve,3000))]);
 loading?.remove();
 installDataHandling(stage);
 installAssuranceStory(stage);
