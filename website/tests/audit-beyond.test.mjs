@@ -87,7 +87,7 @@ test('the active seminar has one risk demo, followed by closing then the referen
  const built=composeModules(auditContent(material),{slides:auditDesigns(material).entries,chapters:[]},auditDesigns(material).renderers);
  const keys=built.reference.slides.map(s=>s.key);
  assert(!keys.includes('aib-annual-planning'));assert(material.slides.find(s=>s.key==='aib-annual-planning').enabled===false);
- assert.equal(keys.length,44);assert.equal(keys.at(-5),'aib-closing');assert.deepEqual(keys.slice(-4),['aib-sources','aib-research','aib-data-technical-references','aib-agentic-references']);
+ assert.equal(keys.length,45);assert.equal(keys.at(-6),'aib-recap');assert.equal(keys.at(-5),'aib-closing');assert.deepEqual(keys.slice(-4),['aib-sources','aib-research','aib-data-technical-references','aib-agentic-references']);
  const demo=built.reference.slides.find(s=>s.key==='aib-three-signals');assert(!/part [12]/i.test(demo.title));
  const ba=auditDesigns(material).renderers['aib-adoption'].html;
  for(const text of ['BUSINESS ANALYST','Curate the need','acceptance criteria','operating cost','shadow IT','security baseline','branches'])assert(ba.includes(text),text);

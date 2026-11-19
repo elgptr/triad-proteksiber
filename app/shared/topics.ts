@@ -38,12 +38,18 @@ function reviseSeminarDeck(library:TopicLibrary){
  topic.seminarDeckRevision=1;
  return library;
 }
+function addSeminarRecap(library:TopicLibrary){
+ const topic=library.topics.find(t=>t.id===auditTopicId);if(!topic||(topic.seminarDeckRevision||0)>=2)return library;
+ const source=auditTopicContent().modules.flatMap(m=>m.slides).find(s=>s.key==='aib-recap')!;
+ for(const config of [topic.draft,topic.published]){if(!config||config.modules.some(m=>m.slides.some(s=>s.key===source.key)))continue;const module=config.modules.find(m=>m.slides.some(s=>s.builtin==='aib-closing'));if(module)module.slides.splice(module.slides.findIndex(s=>s.builtin==='aib-closing'),0,structuredClone(source));}
+ topic.seminarDeckRevision=2;return library;
+}
 export function topicLibrary(data:any):TopicLibrary{
- if(data.topicLibrary){const library=structuredClone(data.topicLibrary) as TopicLibrary;if(!library.topics.some(t=>t.id===auditTopicId))library.topics.push(auditDraft());const audit=library.topics.find(t=>t.id===auditTopicId);if(audit)for(const config of [audit.draft,audit.published]){if(!config||config.modules.some(m=>m.slides.some(s=>s.key==='aib-hitl-practice')))continue;const module=config.modules.find(m=>m.slides.some(s=>s.key==='aib-human-authority'));const source=auditTopicContent().modules.flatMap(m=>m.slides).find(s=>s.key==='aib-hitl-practice');if(module&&source)module.slides.splice(module.slides.findIndex(s=>s.key==='aib-human-authority')+1,0,structuredClone(source));}return reviseSeminarDeck(addLocalAgentExample(library));}
+ if(data.topicLibrary){const library=structuredClone(data.topicLibrary) as TopicLibrary;if(!library.topics.some(t=>t.id===auditTopicId))library.topics.push(auditDraft());const audit=library.topics.find(t=>t.id===auditTopicId);if(audit)for(const config of [audit.draft,audit.published]){if(!config||config.modules.some(m=>m.slides.some(s=>s.key==='aib-hitl-practice')))continue;const module=config.modules.find(m=>m.slides.some(s=>s.key==='aib-human-authority'));const source=auditTopicContent().modules.flatMap(m=>m.slides).find(s=>s.key==='aib-hitl-practice');if(module&&source)module.slides.splice(module.slides.findIndex(s=>s.key==='aib-human-authority')+1,0,structuredClone(source));}return addSeminarRecap(reviseSeminarDeck(addLocalAgentExample(library)));}
  const published=data.content?.published?.config||defaultContent;
  return {revision:0,liveRevision:data.content?.published?.revision||0,activeTopicId:'beyond-compliance',topics:[{id:'beyond-compliance',title:'Beyond Compliance',description:'Memaksimalkan Potensi AI dalam Mengawal Strategi dan Risiko Organisasi. Deck lengkap dan aplikasi SIGNAL.',draft:data.content?.draft||published,published},auditDraft()]};
 }
 export function topicApplication(config:ContentConfig){return config.modules.find(m=>m.enabled&&m.demo.kind!=='none')?.demo||{kind:'none' as const};}
 export function newTopicContent(title:string):ContentConfig{return {schemaVersion:1,title,modules:[{id:'opening',title:'Pembukaan',description:'',enabled:true,demo:{kind:'none'},slides:[{key:'cover',title,body:'',notes:'',enabled:true,layout:'title',tone:'day'}]}]};}
 
-function auditDraft():Topic{return {id:auditTopicId,title:"AI in Audit and Beyond",description:"RSM Indonesia: Dena Sucianandika and Teuku Raja Irfan Radarma. AI capability, auditing AI, audit assistance, an assurance workspace and dynamic risk management.",draft:auditTopicContent(),published:null,seminarDeckRevision:1};}
+function auditDraft():Topic{return {id:auditTopicId,title:"AI in Audit and Beyond",description:"RSM Indonesia: Dena Sucianandika and Teuku Raja Irfan Radarma. AI capability, auditing AI, audit assistance, an assurance workspace and dynamic risk management.",draft:auditTopicContent(),published:null,seminarDeckRevision:2};}

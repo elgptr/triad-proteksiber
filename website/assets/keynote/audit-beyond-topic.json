@@ -1088,6 +1088,35 @@
       "notesEn": "Choose one decision that should improve, a real user, authorised evidence and an outcome you can check. Test on a small scope and compare with current work. Assign ownership and maintenance before expanding a useful application."
     },
     {
+      "key": "aib-recap",
+      "title": "AI can change the work. Make it count.",
+      "lead": "Capture the potential. Keep the organisation protected.",
+      "chapter": "ams",
+      "kind": "story",
+      "visual": "seminar-recap",
+      "items": [
+        [
+          "Multiply productivity",
+          "AI can accelerate everyday work, including audit analysis, documentation and reporting."
+        ],
+        [
+          "Break old deadlocks",
+          "AI can help enable dynamic, continuous risk assurance. Our demo illustrates the basic concept."
+        ],
+        [
+          "Keep the risk in view",
+          "Data exposure, flawed decisions and insecure systems can cause severe organisational harm."
+        ]
+      ],
+      "refs": [],
+      "notes": "Rangkum empat pesan utama. Potensi produktivitas AI sangat besar, termasuk untuk pekerjaan audit. Nilainya juga dapat melampaui efisiensi: AI membuka cara baru untuk mendekati kebuntuan lama, seperti risk assurance yang dinamis dan berkelanjutan. Demo seminar menunjukkan konsep dasarnya, bukan bukti bahwa solusi produksi sudah matang atau manfaat tertentu sudah tercapai.\n\nPotensi ini datang bersama risiko AI sendiri. Kebocoran data, keputusan yang keliru dan sistem yang tidak aman dapat menimbulkan dampak serius bagi organisasi. Berdasarkan informasi pembicara, RSM memiliki lini layanan khusus untuk membantu organisasi merealisasikan potensi AI melalui solusi yang sesuai kebutuhan, disertai governance, keamanan dan assurance. Hindari janji bebas risiko atau hasil yang dijamin. Tutup dengan ajakan memilih masalah bisnis yang bernilai dan membangun solusi dengan kontrol yang jelas.",
+      "notesEn": "Recap four messages. AI offers substantial productivity potential, including audit work. Its value can also extend beyond efficiency: dynamic, continuous risk assurance illustrates a way to approach longstanding limitations. The seminar demo illustrates the basic concept rather than proving production readiness or measured benefits.\n\nAI also introduces risks of its own. Data exposure, flawed decisions and insecure systems can cause severe organisational harm. Based on the presenters' information, RSM has a dedicated service line to help organisations realise AI potential through suitable solutions, governance, security and assurance. Do not promise risk elimination or guaranteed outcomes. Invite the audience to start with a valuable business problem and clear controls.",
+      "narrative": {
+        "question": "AI can change the work. Make it count.",
+        "transition": "Capture the potential. Keep the organisation protected."
+      }
+    },
+    {
       "key": "aib-closing",
       "title": "Thank you",
       "kind": "closing",

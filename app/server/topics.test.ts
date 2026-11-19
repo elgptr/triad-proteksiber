@@ -25,3 +25,11 @@ test('the seminar revision updates stored decks without losing custom slides or 
  topic.draft.modules.flatMap(m=>m.slides).find(s=>s.key==='aib-annual-planning')!.enabled=true;
  assert.equal(topicLibrary({topicLibrary:revised}).topics[0].draft.modules.flatMap(m=>m.slides).find(s=>s.key==='aib-annual-planning')?.enabled,true,'An explicit later admin edit can re-enable the parked demo');
 });
+
+test('recap is added once immediately before closing in stored draft and published decks',()=>{
+ const config=auditTopicContent();for(const m of config.modules)m.slides=m.slides.filter(s=>s.key!=='aib-recap');
+ const old={revision:12,liveRevision:6,activeTopicId:'ai-audit-beyond',topics:[{id:'ai-audit-beyond',title:'Audit',description:'Keep',draft:config,published:structuredClone(config),seminarDeckRevision:1}]};
+ const lib=topicLibrary({topicLibrary:old});
+ for(const c of [lib.topics[0].draft,lib.topics[0].published!]){const keys=activeSlides(c).map(s=>s.key);assert.equal(keys.filter(k=>k==='aib-recap').length,1);assert.equal(keys[keys.indexOf('aib-closing')-1],'aib-recap');}
+ assert.deepEqual(topicLibrary({topicLibrary:lib}),lib);assert.equal(lib.liveRevision,6);assert(!old.topics[0].draft.modules.some(m=>m.slides.some(s=>s.key==='aib-recap')));
+});
