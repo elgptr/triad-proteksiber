@@ -23,7 +23,7 @@ test('audit topic follows familiar work, practical assistance, business AI assur
  const designs=auditDesigns(material,{appUrl:'https://example.test/grc50',assetsUrl:'https://example.test/assets/',preview:true});
  const original=JSON.parse(fs.readFileSync(new URL('../assets/keynote/reference.json',import.meta.url),'utf8'));
  const built=composeModules(auditContent(material),{...original,slides:[...original.slides,...designs.entries]},designs.renderers,{revision:8});
- assert.equal(built.reference.slides.length,material.slides.length);assert(!built.reference.slides.some(s=>s.key==='cover'));
+ assert.equal(built.reference.slides.length,material.slides.filter(s=>s.enabled!==false).length);assert(!built.reference.slides.some(s=>s.key==='cover'));
  for(const entry of built.reference.slides){const design=built.renderers[entry.key];assert(design.kind.includes('audit-beyond'));assert(!/undefined|NaN|\[object Object\]/.test(design.html),entry.key);assert(entry.note.length>80,entry.key);assert(design.html.includes('brand/rsm/logo.png'),entry.key);assert(design.html.includes('alt="RSM"'),entry.key);}
  for(const section of material.sections)assert.equal(material.slides.filter(s=>s.chapter===section.id&&s.kind==='section').length,1);
  assert(designs.renderers['aib-annual-planning'].html.includes('workspace=audit&amp;previewTopic=ai-audit-beyond'));
@@ -77,7 +77,19 @@ test('RSM speakers, recognised authorities and limits are integral to the narrat
  assert(material.slides.find(s=>s.key==='aib-trustworthy').refs.includes('nist-trust'));
  assert(material.slides.find(s=>s.key==='aib-readiness').evidenceNote.includes('does not establish'));
 
- assert.equal(material.slides.at(-1).key,'aib-closing');
+ assert.equal(material.slides.at(-5).key,'aib-closing');
+ assert(material.slides.slice(-4).every(s=>s.kind==='references'));
  const bibliography=new Set(material.slides.filter(s=>s.kind==='references').flatMap(s=>s.refs));
  for(const slide of material.slides)for(const id of slide.refs)assert(bibliography.has(id),id+' missing from reference appendix');
+});
+
+test('the active seminar has one risk demo, followed by closing then the reference appendix',()=>{
+ const built=composeModules(auditContent(material),{slides:auditDesigns(material).entries,chapters:[]},auditDesigns(material).renderers);
+ const keys=built.reference.slides.map(s=>s.key);
+ assert(!keys.includes('aib-annual-planning'));assert(material.slides.find(s=>s.key==='aib-annual-planning').enabled===false);
+ assert.equal(keys.length,44);assert.equal(keys.at(-5),'aib-closing');assert.deepEqual(keys.slice(-4),['aib-sources','aib-research','aib-data-technical-references','aib-agentic-references']);
+ const demo=built.reference.slides.find(s=>s.key==='aib-three-signals');assert(!/part [12]/i.test(demo.title));
+ const ba=auditDesigns(material).renderers['aib-adoption'].html;
+ for(const text of ['BUSINESS ANALYST','Curate the need','acceptance criteria','operating cost','shadow IT','security baseline','branches'])assert(ba.includes(text),text);
+ assert(!ba.includes('86%'));assert(!ba.includes('36%'));
 });

@@ -230,6 +230,18 @@
       "type": "Global survey",
       "year": 2023,
       "scope": "49% of business executives perceived a lack of strong alignment between internal audit and other lines on key risks and problems. The overall study covered 4,680 respondents in 81 countries; that total is not the denominator for this subgroup percentage."
+    },
+    "iiba-analysis": {
+      "label": "IIBA - Needs, solutions, requirements and designs",
+      "url": "https://www.iiba.org/professional-development/knowledge-centre/articles/needs-and-solutions/",
+      "scope": "Business analysis connects stakeholder needs and context to solutions that deliver value. Used as conceptual guidance, not a quantified claim about AI investment returns.",
+      "type": "Professional guidance"
+    },
+    "citizen-development": {
+      "label": "OWASP - Citizen Development Top 10",
+      "url": "https://owasp.org/projects/citizen-development-top-10",
+      "scope": "Security and governance risks in low-code/no-code, AI-assisted coding and AI-agent development. The seminar applies this guidance to employee and branch applications; it does not claim that every such application is insecure.",
+      "type": "Security guidance"
     }
   },
   "slides": [
@@ -748,31 +760,23 @@
     },
     {
       "key": "aib-adoption",
-      "title": "AI adoption and organisational integration",
-      "kind": "comparison",
+      "title": "Business analysis turns AI ideas into business value",
+      "kind": "story",
       "chapter": "assistant",
-      "lead": "RSM’s survey distinguishes partial integration from AI embedded in core processes.",
-      "items": [
-        [
-          "86%",
-          "Partly or fully integrated into operations."
-        ],
-        [
-          "36%",
-          "Fully embedded across core processes."
-        ]
-      ],
-      "notes": "RSM Middle Market AI Survey 2026: 1.030 responden, 827 Amerika Serikat dan 203 Kanada, periode 5–16 Maret 2026. Semua organisasi responden telah menggunakan AI, termasuk pilot. Dalam sampel tersebut 86% melaporkan integrasi sebagian atau penuh ke operasi; 36% menyatakan sudah melekat penuh pada proses inti. Ini bukan persentase adopsi seluruh pasar dan bukan survei Indonesia. Pertanyaan berikutnya adalah bagaimana kualitas data, kontrol dan proses kerja mendukung penggunaan yang konsisten.\n\nPertanyaan: A working application is not yet useful adoption. Penghubung: RSM’s survey distinguishes partial integration from AI embedded in core processes.",
+      "lead": "Curate the business need. Design the right system. Prove the value.",
+      "items": [],
+      "notes": "Membuat prototipe chatbot relatif mudah. Menghasilkan nilai nyata bagi perusahaan memerlukan business analyst untuk mengkurasi kebutuhan, memahami pengguna dan proses, menyepakati batasan serta memprioritaskan masalah yang layak didanai. Bersama tim bisnis dan teknologi, kebutuhan diterjemahkan menjadi alur kerja, kebutuhan data, kontrol dan acceptance criteria yang bisa diuji. Tentukan pemilik, baseline manfaat dan biaya operasi; uji pilot sebelum memperluas investasi agar sumber daya tidak terbuang.\n\nVibe coding di berbagai level pegawai atau kantor cabang dapat memperbanyak shadow IT bila tidak disertai governance. Parameter akses, pengelolaan secret, perlindungan data dan konfigurasi keamanan bisa berbeda-beda. Sediakan intake dan inventaris aplikasi, platform yang disetujui, baseline keamanan, pemilik, review dan kontrol rilis. Business analyst membantu menyelaraskan kebutuhan dan nilai; tim teknologi serta keamanan tetap bertanggung jawab atas desain dan assurance teknis. IIBA dan OWASP menjadi rujukan konsep, bukan bukti angka penghematan tertentu.",
       "refs": [
-        "rsm",
-        "rsm-method"
+        "iiba-analysis",
+        "citizen-development"
       ],
-      "evidenceNote": "1,030 respondents · U.S. and Canada · organisations already using AI, including pilots · March 2026.",
+      "evidenceNote": "",
       "narrative": {
-        "question": "A working application is not yet useful adoption.",
-        "transition": "RSM’s survey distinguishes partial integration from AI embedded in core processes."
+        "question": "A chatbot is easy to build. A useful business system takes more.",
+        "transition": "Curate the business need. Design the right system. Prove the value."
       },
-      "notesEn": "The RSM survey distinguishes partial integration from AI embedded in core processes among organisations already using AI. The figures are not an adoption rate for all companies or Indonesia. A working application still needs evidence of useful adoption.\n\nRSM · Middle Market AI Survey · 2026: U.S./Canada study: 1,030 respondents from organisations already using AI, including pilots. The 86% integration and 36% fully-embedded figures describe this sample; they do not measure adoption across all businesses or in Indonesia.\n\nRSM · Survey methodology · 2026: Fieldwork 5–16 March 2026: 827 U.S. and 203 Canadian respondents, management level or above with influence over technology investment. Government and nonprofits excluded. All participating organisations already used AI."
+      "notesEn": "A chatbot prototype is relatively easy to build. Delivering company value requires business analysis: understand users and processes, prioritise a worthwhile need, define constraints and agree testable acceptance criteria with business and technology teams. Establish an owner, expected benefit, baseline and operating cost. Pilot the use case before scaling the investment.\n\nAI-assisted development across employees and branches can expand shadow IT without shared governance. Access, secret handling, data protection and security settings may be inconsistent. Use a common intake, application inventory, approved platforms, security baseline, named owners and review/release controls. Business analysts connect needs to value; technology and security teams retain technical design and assurance responsibilities. IIBA and OWASP support these concepts. No quantified savings or automatic security guarantee is claimed.",
+      "visual": "business-analysis"
     },
     {
       "key": "aib-section-ams",
@@ -960,12 +964,13 @@
         "question": "Demo, part 1: the agentic audit workflow",
         "transition": "Start in Assurance: review the proposed annual priorities and approve the audit scope."
       },
-      "notesEn": "Open the assurance workspace. Inspect the audit universe, visible risk aggregation, other parameters and audit-day capacity. Include mandatory work, prepare the proposal and approve the plan with a reason. Choose Customer credit and collections for the engagement.\n\nThe IIA · Global Internal Audit Standards · 2024: 2024 edition, effective January 2025. References include Standards 4.3, 11.5, 13.2, 14.1–14.4 and 15.2. The deck paraphrases selected implications for internal audit; it does not replace the Standards or prescribe financial-statement audit requirements."
+      "notesEn": "Open the assurance workspace. Inspect the audit universe, visible risk aggregation, other parameters and audit-day capacity. Include mandatory work, prepare the proposal and approve the plan with a reason. Choose Customer credit and collections for the engagement.\n\nThe IIA · Global Internal Audit Standards · 2024: 2024 edition, effective January 2025. References include Standards 4.3, 11.5, 13.2, 14.1–14.4 and 15.2. The deck paraphrases selected implications for internal audit; it does not replace the Standards or prescribe financial-statement audit requirements.",
+      "enabled": false
     },
     {
       "key": "aib-three-signals",
-      "title": "Demo, part 2: continuous risk assurance",
-      "lead": "Switch to the risk workspace. Choose an organisation and review its objective and risks.",
+      "title": "Demo: continuous risk assurance",
+      "lead": "Choose an organisation. Review its risk map, evidence and response.",
       "chapter": "ams",
       "kind": "story",
       "items": [],
@@ -973,14 +978,14 @@
         "coso",
         "gias"
       ],
-      "notes": "Peserta memilih eksportir pangan atau pembiayaan UKM. Masing-masing memulai dengan satu tujuan dan tiga risiko. Eksposur diberikan: ketergantungan pembeli AS atau konsentrasi debitur eksportir. Sinyal baru muncul setelah presenter merilis kasus historis ANTARA. Satu perusahaan menilai ulang risiko terdaftar, sedangkan yang lain dapat menambah risiko yang disarankan sebelum menilai. Keputusan bersifat privat dan tersimpan di server.",
+      "notes": "Satu demo untuk sesi ini: continuous risk assurance. Peserta memilih eksportir pangan atau pembiayaan UKM, lalu masuk langsung ke risk map dan register tanpa tahapan audit. Tiga risiko mendapatkan alert setelah presenter membuka paket dari Signals & participants. Risiko pertama mendapatkan dua berita ANTARA historis April 2025, satu laporan internal simulasi dan satu laporan audit simulasi. Dua risiko lain masing-masing mendapatkan satu sumber yang relevan.\n\nBuka modal risiko, periksa tab Risk detail dan Early warning, lalu expand sumber untuk membaca ringkasan dan dampak yang diusulkan AI. Terima atau tolak tiap signal, tentukan skor AI atau skor sendiri beserta alasan, dan evaluasi tolerance. Jika melampaui tolerance, isi atau edit rencana mitigasi. Save & finish menyimpan keputusan ke database dan menghapus alert pending untuk risiko tersebut. Efek mitigasi masih berupa rencana sampai efektivitasnya dibuktikan.",
       "evidenceNote": "",
       "visual": "cra-contexts",
       "narrative": {
-        "question": "Demo, part 2: continuous risk assurance",
-        "transition": "Switch to the risk workspace. Choose an organisation and review its objective and risks."
+        "question": "Demo: continuous risk assurance",
+        "transition": "Choose an organisation. Review its risk map, evidence and response."
       },
-      "notesEn": "Participants choose a food exporter or an SME finance company. Each starts with one objective and three risks. Exposure context is given: US buyer dependence for exports, export-borrower concentration for finance. No signal appears until the presenter releases the historical ANTARA case. One company reassesses a registered risk; the other can add the suggested missing risk before assessment. Decisions are private and persist on the server."
+      "notesEn": "This session has one demo: continuous risk assurance. Choose a food exporter or an SME finance company and open its risk map and register directly. The presenter releases the evidence pack from Signals & participants. Three risks receive alerts; the first receives two historical April 2025 ANTARA news articles, one simulated internal report and one simulated audit report.\n\nOpen a risk modal, inspect Risk detail and Early warning, expand each source and accept or reject its relevance. Accept the AI assessment or record an independent score and reasoning. Evaluate tolerance and complete an editable mitigation plan if above tolerance. Save & finish persists decisions and clears pending alerts for that risk only. Planned mitigation effects require later verification."
     },
     {
       "key": "aib-tariff-case",
@@ -1083,6 +1088,21 @@
       "notesEn": "Choose one decision that should improve, a real user, authorised evidence and an outcome you can check. Test on a small scope and compare with current work. Assign ownership and maintenance before expanding a useful application."
     },
     {
+      "key": "aib-closing",
+      "title": "Thank you",
+      "kind": "closing",
+      "chapter": "ams",
+      "lead": "Thank you. What will you put to work?",
+      "items": [],
+      "notes": "Tutup dengan pertanyaan praktis tentang hal yang akan dilakukan berbeda pada hari kerja berikutnya. Ringkas hubungan bantuan AI, pemeriksaan bukti dan tindakan manusia. Ucapkan terima kasih atas nama Dena Sucianandika dan Teuku Raja Irfan Radarma, RSM Indonesia. Jangan mengklaim semua manfaat sudah terbukti dalam aplikasi contoh; minta peserta memulai satu tugas yang terkontrol dan menilai hasilnya.\n\nPertanyaan: Useful AI. Human authority. Better decisions. Penghubung: Thank you. What will you put to work?",
+      "refs": [],
+      "narrative": {
+        "question": "Useful AI. Human authority. Better decisions.",
+        "transition": "Thank you. What will you put to work?"
+      },
+      "notesEn": "Thank the audience and return to the practical test: useful AI, human authority and better decisions. Invite one small experiment with an owner, permitted information and an outcome that can be checked."
+    },
+    {
       "key": "aib-sources",
       "title": "Framework and professional references",
       "kind": "references",
@@ -1162,12 +1182,14 @@
       "title": "Agentic AI and case references",
       "kind": "references",
       "chapter": "ams",
-      "lead": "Architecture guidance and the historical article used in the exercise.",
+      "lead": "Architecture, business analysis and historical exercise sources.",
       "items": [],
       "refs": [
         "agents",
         "antara-tariff",
-        "pwc-alignment"
+        "pwc-alignment",
+        "iiba-analysis",
+        "citizen-development"
       ],
       "notes": "Baca panduan arsitektur asli dan berita bertanggal. Diagram merupakan sintesis pembelajaran; angka eksposur perusahaan adalah asumsi skenario, bukan fakta yang dibuktikan berita.",
       "notesEn": "Read the original architectural guidance and the dated article. The diagrams are teaching syntheses; the company exposure figures are scenario assumptions, not facts established by the news.",
@@ -1175,21 +1197,6 @@
         "question": "Agentic AI and case references: what changes in the work?",
         "transition": "Architecture guidance and the historical article used in the exercise."
       }
-    },
-    {
-      "key": "aib-closing",
-      "title": "Thank you",
-      "kind": "closing",
-      "chapter": "ams",
-      "lead": "Thank you. What will you put to work?",
-      "items": [],
-      "notes": "Tutup dengan pertanyaan praktis tentang hal yang akan dilakukan berbeda pada hari kerja berikutnya. Ringkas hubungan bantuan AI, pemeriksaan bukti dan tindakan manusia. Ucapkan terima kasih atas nama Dena Sucianandika dan Teuku Raja Irfan Radarma, RSM Indonesia. Jangan mengklaim semua manfaat sudah terbukti dalam aplikasi contoh; minta peserta memulai satu tugas yang terkontrol dan menilai hasilnya.\n\nPertanyaan: Useful AI. Human authority. Better decisions. Penghubung: Thank you. What will you put to work?",
-      "refs": [],
-      "narrative": {
-        "question": "Useful AI. Human authority. Better decisions.",
-        "transition": "Thank you. What will you put to work?"
-      },
-      "notesEn": "Thank the audience and return to the practical test: useful AI, human authority and better decisions. Invite one small experiment with an owner, permitted information and an outcome that can be checked."
     }
   ],
   "presenters": [

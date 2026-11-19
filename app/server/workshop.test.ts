@@ -1,3 +1,4 @@
+import {activeSlides} from '../shared/content';
 import {auditTopicContent} from '../shared/auditTopic.js';
 import {test} from 'node:test';
 import {newTopicContent} from '../shared/topics.js';
@@ -276,7 +277,7 @@ test('complete workshop: private organizations, guided case, mitigation, externa
  assert.equal((await req('/workshop/host/'+code+'/reset','POST',host,{confirmation:'RESET',epoch:1})).status,200);assert.equal((await(await req('/content')).json()).topicId,'beyond-compliance','Workshop reset keeps the topic library');assert.equal((await(await req('/admin/topics','GET',host)).json()).topics.length,3);
 
  assert.equal((await req('/admin/topics/ai-audit-beyond/activate','POST',host,{expectedRevision:6})).status,200);
- const auditTopic=await(await req('/content')).json();assert.equal(auditTopic.application.kind,'audit-suite');assert.equal((await(await liveState()).json()).total,auditTopicContent().modules.reduce((n,m)=>n+m.slides.length,0));assert.equal((await req('/workshop/join','POST',a)).status,200);
+ const auditTopic=await(await req('/content')).json();assert.equal(auditTopic.application.kind,'audit-suite');assert.equal((await(await liveState()).json()).total,activeSlides(auditTopicContent()).length);assert.equal((await req('/workshop/join','POST',a)).status,200);
 
  // The new exercise uses private server state and an admin-only, shared release.
  const craA=await(await req('/cra/state','GET',a)).json(),craB=await(await req('/cra/state','GET',b)).json();
