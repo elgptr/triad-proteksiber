@@ -5,12 +5,14 @@ import {craOrganizations,craRiskDescription,craSuggestion,craMitigationSuggestio
 import type {Risk,Signal} from '../shared/assurance';
 import './continuous-risk.css';
 import {projectedScore} from '../shared/assurance';
+// Pages authenticates to Render with bearer tokens, not cross-site cookies.
+// Retain same-origin cookies for local development without credentialed CORS.
 let authentication:Promise<void>|undefined;
 async function craRequest(path:string,method='GET',body?:unknown,admin=false):Promise<any>{
  const demo=frontendRoute().kind==='demo';
  const headers=()=>({'Content-Type':'application/json','x-signal-request':'1',...(admin?authHeaders(true):demo?{Authorization:'Bearer '+(sessionStorage.getItem('signal-demo-token')||'')}:authHeaders())});
- if(!admin){authentication??=(async()=>{if(demo){const m=await import('./WorkshopApp');await m.request('/auth/admin/me');try{await m.request('/auth/me');}catch{const guest=await m.request('/admin/demo/workspace','POST');sessionStorage.setItem('signal-demo-token',guest.token);}return;}const me=await fetch(apiOrigin+'/api/auth/me',{headers:headers(),credentials:'include'});if(me.status===401){const guest=await fetch(apiOrigin+'/api/auth/guest',{method:'POST',headers:headers(),credentials:'include'});if(!guest.ok)throw Error('Unable to enter a private workspace.');saveApiSession((await guest.json()).token);}else if(!me.ok)throw Error('Workspace service is unavailable.');})().catch(e=>{authentication=undefined;throw e;});await authentication;}
- const response=await fetch(apiOrigin+'/api'+path,{method,headers:headers(),credentials:'include',body:body===undefined?undefined:JSON.stringify(body),signal:AbortSignal.timeout(20000)});const data=await response.json();if(!response.ok){if(response.status===401)authentication=undefined;throw Error(data.error||'Unable to save this decision.');}return data;
+ if(!admin){authentication??=(async()=>{if(demo){const m=await import('./WorkshopApp');await m.request('/auth/admin/me');try{await m.request('/auth/me');}catch{const guest=await m.request('/admin/demo/workspace','POST');sessionStorage.setItem('signal-demo-token',guest.token);}return;}const me=await fetch(apiOrigin+'/api/auth/me',{headers:headers(),credentials:'same-origin'});if(me.status===401){const guest=await fetch(apiOrigin+'/api/auth/guest',{method:'POST',headers:headers(),credentials:'same-origin'});if(!guest.ok)throw Error('Unable to enter a private workspace.');saveApiSession((await guest.json()).token);}else if(!me.ok)throw Error('Workspace service is unavailable.');})().catch(e=>{authentication=undefined;throw e;});await authentication;}
+ const response=await fetch(apiOrigin+'/api'+path,{method,headers:headers(),credentials:'same-origin',body:body===undefined?undefined:JSON.stringify(body),signal:AbortSignal.timeout(20000)});const data=await response.json();if(!response.ok){if(response.status===401)authentication=undefined;throw Error(data.error||'Unable to save this decision.');}return data;
 }
 export function CraControls({visible=true}:{visible?:boolean}){
  const [release,setRelease]=useState<any>(),[error,setError]=useState(''),[busy,setBusy]=useState(false);
