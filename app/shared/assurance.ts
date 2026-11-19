@@ -1,5 +1,5 @@
 export type Risk={id:string;title:string;objective:string;owner:string;likelihood:number;impact:number;tolerance:number;revision:number;mitigations:Mitigation[]};
-export type Mitigation={id:string;action:string;owner:string;due:string;likelihoodReduction:number;impactReduction:number;status:'planned'|'verified'};
+export type Mitigation={id:string;action:string;owner:string;due:string;likelihoodReduction:number;impactReduction:number;title?:string;description?:string;status:'planned'|'verified'};
 export type Universe={id:string;name:string;riskIds:string[];change:number;coverageGap:number;importance:number;days:number;mandatory:boolean};
 export type Weights={risk:number;change:number;coverage:number;strategy:number};
 export type Criterion={id:string;title:string;version:string;text:string;url?:string};
@@ -112,12 +112,12 @@ export function exampleSignals():Signal[]{return [
  {id:'social-lead',type:'news',title:'Social-media lead: alleged delivery cancellations',summary:'An unverified teaching example of a public post. No real person or account is attributed.',why:'It may be a lead for verification. It is not sufficient evidence on its own to raise a risk score.',riskIds:['collections'],evidence:'Teaching social post: “Some export orders may be delayed.” Verify the original account, date, corroborating news and customer records. Do not treat the claim as established.',date:'Unverified example',verified:false,eventId:'social-lead',decisions:{}}
  ];}
 export function suggestedAssessment(r:Risk,signals:Signal[]){const credible=signals.filter(s=>s.verified&&s.riskIds.includes(r.id));return {likelihood:credible.length?Math.max(r.likelihood,4):r.likelihood,impact:r.impact,reason:credible.some(s=>s.eventId==='cra-tariff')?credible[0].why:credible.length?'Verified-source signals challenge the existing control or collection assumption. Review the proposed likelihood; this is an illustration, not a statistical estimate.':'No corroborated accepted evidence supports a score increase. Keep the assessment or document a justified alternative.'};}
-export function finishRiskReview(s:AssuranceState,input:{riskId:string;revision:number;decisions:Record<string,'accept'|'decline'>;likelihood:number;impact:number;reason:string;mitigation?:Omit<Mitigation,'id'|'status'>}):AssuranceState{
+export function finishRiskReview(s:AssuranceState,input:{riskId:string;revision:number;decisions:Record<string,'accept'|'decline'>;likelihood:number;impact:number;reason:string;mitigation?:Omit<Mitigation,'id'|'status'>},options:{allowIndependentAssessment?:boolean}={}):AssuranceState{
  const r=s.risks.find(r=>r.id===input.riskId);if(!r||r.revision!==input.revision)throw Error('The assessment changed. Reopen the review.');
  const pending=s.signals.filter(x=>x.riskIds.includes(r.id)&&!x.decisions[r.id]);if(!pending.length||pending.some(x=>!['accept','decline'].includes(input.decisions[x.id]))||Object.keys(input.decisions).some(id=>!pending.some(x=>x.id===id)))throw Error('Decide every signal in this risk review.');
  if(![input.likelihood,input.impact].every(n=>Number.isFinite(n)&&n>=1&&n<=5)||!input.reason.trim())throw Error('Select a score and record the reasoning.');
  const accepted=pending.filter(x=>input.decisions[x.id]==='accept');
- if(!accepted.length&&(input.likelihood!==r.likelihood||input.impact!==r.impact))throw Error('No accepted signal: keep the current assessment for this review.');
+ if(!options.allowIndependentAssessment&&!accepted.length&&(input.likelihood!==r.likelihood||input.impact!==r.impact))throw Error('No accepted signal: keep the current assessment for this review.');
  const m=input.mitigation;
  if(accepted.length&&input.likelihood*input.impact>r.tolerance&&!m)throw Error('A response is required above tolerance.');
  if(m&&([m.action,m.owner,m.due].some(v=>!v.trim())||!validDate(m.due)||![m.likelihoodReduction,m.impactReduction].every(v=>Number.isFinite(v)&&v>=0&&v<=4)))throw Error('Complete the response, owner, valid due date and expected effect.');

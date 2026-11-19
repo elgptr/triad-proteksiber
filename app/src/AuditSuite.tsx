@@ -54,4 +54,5 @@ export function LegacyAuditSuite({children,storageKey,preview=false,fixedWorkspa
  </div>;
 }
 
-export default function AuditSuite({storageKey}:{storageKey:string;children?:React.ReactNode;preview?:boolean;fixedWorkspace?:'audit'|'risk'}){return <AgenticAuditJourney storageKey={storageKey}/>;}
+function StandaloneRisk(){const {root,language,setLanguage,copy}=useAssuranceLanguage();return <div className="audit-suite" ref={root} data-ui-language={language}><header className="audit-app-bar"><div><small>RISK WORKSPACE</small><strong>Continuous risk assurance</strong></div><a href={browserPath('/presentation/deck/')}>Deck</a><div className="audit-language" data-language-fixed><button onClick={()=>setLanguage('en')}>EN</button><button onClick={()=>setLanguage('id')}>ID</button></div></header><ContinuousRiskExercise copy={copy}/></div>;}
+export default function AuditSuite({storageKey,fixedWorkspace}:{storageKey:string;children?:React.ReactNode;preview?:boolean;fixedWorkspace?:'audit'|'risk'}){return fixedWorkspace==='risk'||new URLSearchParams(location.search).get('workspace')==='risk'||new URLSearchParams(location.search).get('demoApp')==='continuous-risk'?<StandaloneRisk/>:<AgenticAuditJourney storageKey={storageKey}/>;}
