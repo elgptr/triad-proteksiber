@@ -1,8 +1,8 @@
 import {renderLocalAuditAgent} from './local-audit-agent.mjs?v=film-v2-20261118';
-import {renderAgentic} from './agentic-audit.mjs?v=deck-revision-20261119';
+import {renderAgentic} from './agentic-audit.mjs?v=recap-20261119';
 import {icon,rail,footer,simplePaper} from './audit-story.mjs?v=connected-audit-20261116';
 import {renderAdoptionIllustration} from './adoption-illustration.mjs?v=connected-audit-20261116';
-import {renderRsmFramework} from './rsm-frameworks.mjs?v=deck-revision-20261119';
+import {renderRsmFramework} from './rsm-frameworks.mjs?v=recap-20261119';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const trustQualities=[
  ['Valid & reliable','Does it work for the intended use?','Inspect relevant test data, acceptance thresholds and failures under expected conditions.','model'],

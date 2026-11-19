@@ -64,3 +64,16 @@
  .ba-value-line{display:grid;gap:12px}.ba-value-line b{font-size:26px}.ba-value-line span{font-size:19px}
  .ba-workflow,.ba-governance{grid-template-columns:1fr;gap:22px}.ba-workflow h2{font-size:25px}.ba-workflow p{font-size:18px}
 }
+
+/* Closing recap: three takeaways and one RSM service invitation. */
+.recap-messages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:35px}
+.recap-messages article{border-top:2px solid #009cde;padding-top:18px}
+.recap-messages article:last-child{border-color:#3f9c35}
+.recap-messages h2{font-size:28px;line-height:1.15;margin:14px 0 12px;color:#00153d}
+.recap-messages p{font-size:20px;line-height:1.4;margin:0;color:#526674}
+.recap-rsm{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center;background:#00153d;color:white;border-left:6px solid #3f9c35;padding:22px 26px}
+.recap-rsm small{font-size:10px;letter-spacing:.1em;color:#80d2ef}
+.recap-rsm h2{font-size:26px;line-height:1.2;margin:9px 0 0;color:white}
+.recap-rsm p{font-size:19px;line-height:1.4;margin:0;color:#e0eaf1}
+@media(min-width:801px) and (max-height:780px){.rsm-template.ab-story-seminar-recap .frame-content{padding:40px 5vw 48px;gap:17px}.rsm-template.ab-story-seminar-recap .ab-heading h1{font-size:38px}.rsm-template.ab-story-seminar-recap .ab-heading>p{font-size:19px}.recap-messages{gap:27px}.recap-messages h2{font-size:25px;margin:10px 0}.recap-messages p{font-size:18px}.recap-rsm{padding:18px 22px}.recap-rsm h2{font-size:23px}.recap-rsm p{font-size:17px}}
+@media(max-width:800px){.recap-messages,.recap-rsm{grid-template-columns:1fr;gap:23px}.recap-messages article{position:relative;padding-left:65px}.recap-messages article>span{position:absolute;left:0;top:20px}.recap-messages h2{font-size:25px}.recap-messages p{font-size:18px}.recap-rsm h2{font-size:24px}.recap-rsm p{font-size:18px}}
