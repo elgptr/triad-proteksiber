@@ -329,7 +329,7 @@ export function triadDesigns(material, { appUrl = '', assetsUrl = '', preview = 
       title: s.title,
       tone: 'night',
       kind: 'triad-frame ' + (s.kind || ''),
-      html: `<div class="frame-content">${html}</div>`
+      html
     };
   }
 

@@ -163,6 +163,7 @@ if(triadTopicRequested){
  document.head.appendChild(css);
  const wordmark=document.querySelector('.wordmark');if(wordmark){wordmark.textContent='TRIAD PRO-TX SIBER';wordmark.classList.add('topic-wordmark');}
  document.title='TRIAD PRO-TX SIBER | Enterprise Cybersecurity Deck';
+ contentSnapshot={revision:0,config:{title:'TRIAD PRO-TX SIBER',modules:[]},preview:true,topicId:triadMaterial.id};
 }else if(auditPreview||contentSnapshot?.config?.modules?.some(m=>m.slides.some(s=>s.builtin?.startsWith('aib-')))){
  document.querySelector('.deck-language-switch')?.removeAttribute('hidden');
  const auditLanguage=await fetch(new URL('./audit-translations-id.json?v=recap-20261119',import.meta.url)).then(r=>{if(!r.ok)throw Error('Audit translations unavailable');return r.json();});
