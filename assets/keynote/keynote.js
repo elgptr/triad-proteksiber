@@ -160,7 +160,7 @@ if(triadTopicRequested){
    research: {}
  };
  const css=document.createElement('link');css.rel='stylesheet';css.href=new URL('./triad-style.css?v=20261124',import.meta.url);
- presentationStyles.push(new Promise((resolve,reject)=>{css.onload=resolve;css.onerror=()=>reject(Error('Presentation styles unavailable'));}));
+ presentationStyles.push(new Promise((resolve)=>{css.onload=resolve;css.onerror=()=>resolve();setTimeout(resolve,1000);}));
  document.head.appendChild(css);
  const wordmark=document.querySelector('.wordmark');if(wordmark){wordmark.textContent='TRIAD PRO-TX SIBER';wordmark.classList.add('topic-wordmark');}
  document.title='TRIAD PRO-TX SIBER | Enterprise Cybersecurity Deck';
