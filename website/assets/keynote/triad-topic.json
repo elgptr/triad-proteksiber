@@ -1,0 +1,239 @@
+{
+  "id": "triad-proteksiber",
+  "title": "TRIAD PRO-TX SIBER",
+  "tagline": "Transforming IT and Cyber complexity into Strategic Clarity that unlocks Value — enabled by experience.",
+  "description": "Enterprise Cybersecurity Assurance, Strategic Consulting, and Cyber Resilience Architecture.",
+  "accessUrl": "https://eranusasiber.my.id",
+  "organisation": "TRIAD PRO-TX SIBER",
+  "sections": [
+    {
+      "id": "about",
+      "title": "About & Vision",
+      "caption": "Pondasi ketahanan siber, nilai integritas digital, dan perkenalan tim spesialis."
+    },
+    {
+      "id": "threat-landscape",
+      "title": "Cyber Landscape & Regulation",
+      "caption": "Eskalasi ancaman modern, kepatuhan regulasi (UU PDP, Indeks KAMI BSSN, ISO 27001), dan urgensi mitigasi."
+    },
+    {
+      "id": "assurance",
+      "title": "Assurance Services",
+      "caption": "Audit ISMS ISO 27001, Data Center Performance Audit (ANSI/TIA-942C), Penetration Testing, dan Red Teaming."
+    },
+    {
+      "id": "consulting",
+      "title": "Consulting & Zero Trust",
+      "caption": "Zero Trust Architecture, Cyber Security Program, IT Strategic Planning, dan Executive Security Training."
+    },
+    {
+      "id": "action",
+      "title": "Engagement & Next Steps",
+      "caption": "Tahapan kolaborasi terukur, model kemitraan, dan jalur komunikasi langsung."
+    }
+  ],
+  "presenters": [
+    {
+      "name": "Erlangga",
+      "organisation": "TRIAD PRO-TX SIBER",
+      "role": "Governance, Risk, and Compliance Specialist",
+      "credentials": [
+        "Information Security Governance (ISACA / ISO 27001)",
+        "IT Risk Assessment & Enterprise Compliance",
+        "Cyber Regulatory Alignment (UU PDP, POJK 11, BSSN)"
+      ],
+      "credentialsShort": "GRC / IT Governance / Compliance Specialist",
+      "experience": [
+        "Penyusunan tata kelola keamanan informasi dan kerangka manajemen risiko TI terintegrasi.",
+        "Penyelarasan kepatuhan regulasi data pribadi (UU PDP) dan standar perbankan/keuangan (POJK 11/2022).",
+        "Perancangan strategi pengawasan kepatuhan dan continuous risk assurance di tingkat eksekutif."
+      ]
+    },
+    {
+      "name": "Adhitya J.P.",
+      "organisation": "TRIAD PRO-TX SIBER",
+      "role": "Ethical Cybersecurity Specialist",
+      "credentials": [
+        "Certified Ethical Hacker & Offensive Security",
+        "Adversary Simulation & Red Teaming Assessment",
+        "Infrastructure & Web Vulnerability Research"
+      ],
+      "credentialsShort": "Offensive Security / Ethical Hacker / Red Teaming",
+      "experience": [
+        "Pengujian penetrasi mendalam pada infrastruktur cloud, jaringan on-premises, dan aplikasi web kritis.",
+        "Simulasi skenario penyerangan nyata (Red Teaming) untuk menguji kesiapsiagaan deteksi dan respons tim internal.",
+        "Penilaian kerentanan arsitektur sistem dan remediation advisory berbasis eksploitasi aktual."
+      ]
+    },
+    {
+      "name": "Fawzan",
+      "organisation": "TRIAD PRO-TX SIBER",
+      "role": "IS Audit Specialist",
+      "credentials": [
+        "Information Systems Audit & Assurance",
+        "ISO/IEC 27001:2022 ISMS Lead Auditor",
+        "Data Center Infrastructure Audit (ANSI/TIA-942C)"
+      ],
+      "credentialsShort": "IS Audit / ISO 27001 Lead Auditor / Data Center Auditor",
+      "experience": [
+        "Evaluasi kepatuhan kontrol keamanan informasi terhadap standar internasional ISO/IEC 27001:2022.",
+        "Audit performa dan ketahanan fisik data center berdasarkan ANSI/TIA-942C.",
+        "Gap assessment dan persiapan audit sertifikasi bagi institusi strategis dan enterprise."
+      ]
+    }
+  ],
+  "slides": [
+    {
+      "key": "triad-cover",
+      "chapter": null,
+      "kind": "triad-cover",
+      "title": "TRIAD PRO-TX SIBER",
+      "lead": "ENTERPRISE CYBERSECURITY & ASSURANCE",
+      "notes": "Slide pembuka company profile dan interactive deck resmi TRIAD PRO-TX SIBER. Memperkenalkan proposisi nilai utama: mentransformasikan kompleksitas TI dan keamanan siber menjadi kejelasan strategis yang membuka nilai bisnis."
+    },
+    {
+      "key": "triad-deck-guide",
+      "chapter": null,
+      "kind": "triad-guide",
+      "title": "Interactive Workspace Guide",
+      "lead": "HOW TO EXPLORE",
+      "notes": "Panduan navigasi: gunakan tombol panah kiri/kanan atau spasi untuk berpindah slide, tombol C untuk daftar isi (Contents), dan tombol F untuk mode Fullscreen presentasi. Panel 'Behind the Defense' dapat dibuka kapan saja untuk melihat rujukan regulasi."
+    },
+    {
+      "key": "triad-about-us",
+      "chapter": "about",
+      "kind": "triad-about",
+      "title": "About TRIAD PRO-TX SIBER",
+      "lead": "WHO WE ARE",
+      "notes": "Triad Pro-TX Siber memastikan integritas dan keandalan informasi digital organisasi, mendorong transformasi digital yang aman, dan membangun kepercayaan kokoh dengan klien Anda."
+    },
+    {
+      "key": "triad-team",
+      "chapter": "about",
+      "kind": "triad-team",
+      "title": "Our Multidisciplinary Team",
+      "lead": "SUBJECT MATTER EXPERTS",
+      "notes": "Profil pakar multidisiplin TRIAD PRO-TX SIBER: Erlangga (GRC), Adhitya J.P. (Ethical Cybersecurity), dan Fawzan (IS Audit). Kolaborasi ketiga pilar ini menjamin pertahanan siber holistik: dari governance, ofensif, hingga audit kepatuhan."
+    },
+    {
+      "key": "triad-credentials",
+      "chapter": "about",
+      "kind": "triad-credentials",
+      "title": "Certified Standards & Trust",
+      "lead": "RECOGNISED EXCELLENCE",
+      "notes": "Standar dan sertifikasi profesional yang menjadi fondasi metodologi kami: ISO/IEC 27001, ANSI/TIA-942C, CIS Top 18, NIST CSF, dan regulasi nasional (UU PDP, Indeks KAMI BSSN)."
+    },
+    {
+      "key": "triad-agenda",
+      "chapter": null,
+      "kind": "triad-agenda",
+      "title": "Executive Journey",
+      "lead": "STRUCTURE OF ASSURANCE",
+      "notes": "Rangkuman alur presentasi: Lanskap ancaman siber terkini, pilar kapabilitas Assurance, solusi strategis Consulting & Zero Trust, dan tahapan engagement kerja sama."
+    },
+    {
+      "key": "triad-sec-landscape",
+      "chapter": "threat-landscape",
+      "kind": "triad-section",
+      "title": "Cyber Landscape & Regulation",
+      "lead": "SECTION 01",
+      "notes": "Memasuki bab 1: memahami konteks ancaman digital modern dan dorongan regulasi yang mewajibkan akuntabilitas penuh pada perlindungan data serta ketahanan infrastruktur informasi vital."
+    },
+    {
+      "key": "triad-threat-context",
+      "chapter": "threat-landscape",
+      "kind": "triad-threat",
+      "title": "The Threat Landscape in Indonesia",
+      "lead": "MACRO THREAT CONTEXT",
+      "notes": "Serangan ransomware, kebocoran data terorganisir, dan eksploitasi rantai pasok (supply chain) kian intensif. Kepatuhan semu (checklist compliance) tidak lagi memadai untuk menahan serangan riil."
+    },
+    {
+      "key": "triad-regulatory-pressure",
+      "chapter": "threat-landscape",
+      "kind": "triad-regulation",
+      "title": "The Compliance Imperative",
+      "lead": "NATIONAL & GLOBAL MANDATES",
+      "notes": "Tekanan hukum dan regulasi siber di Indonesia: UU PDP No. 27/2022 (sanksi denda s.d. 2% pendapatan dan pidana), Indeks KAMI BSSN v5.0, POJK 11/POJK.03/2022 tentang Ketahanan Siber Perbankan, dan ISO/IEC 27001:2022."
+    },
+    {
+      "key": "triad-sec-assurance",
+      "chapter": "assurance",
+      "kind": "triad-section",
+      "title": "Enterprise Assurance Services",
+      "lead": "SECTION 02",
+      "notes": "Memasuki bab 2: Portofolio layanan jaminan (Assurance) yang memberikan kepastian teknis dan kepatuhan secara objektif, independen, dan terukur."
+    },
+    {
+      "key": "triad-iso-audit",
+      "chapter": "assurance",
+      "kind": "triad-service-card",
+      "title": "ISMS ISO/IEC 27001:2022 Audit",
+      "lead": "ASSURANCE CAPABILITY 01",
+      "notes": "Evaluasi komprehensif Sistem Manajemen Keamanan Informasi (SMKI): Gap assessment, risk assessment & treatment plan, penyusunan Statement of Applicability (SoA), dan internal audit readiness menuju sertifikasi."
+    },
+    {
+      "key": "triad-datacenter-audit",
+      "chapter": "assurance",
+      "kind": "triad-service-card",
+      "title": "Data Center Performance Audit",
+      "lead": "ASSURANCE CAPABILITY 02",
+      "notes": "Audit infrastruktur fisik, daya (electrical), pendingin (HVAC), keamanan fisik, dan telekomunikasi data center berdasarkan standar internasional ANSI/TIA-942C untuk menjamin uptime dan keandalan operasional."
+    },
+    {
+      "key": "triad-pentest",
+      "chapter": "assurance",
+      "kind": "triad-service-card",
+      "title": "Penetration Testing & Red Teaming",
+      "lead": "ASSURANCE CAPABILITY 03",
+      "notes": "Network, Web Application, API, dan Infrastructure Penetration Testing, dipadukan dengan Adversary Simulation / Red Teaming Assessment untuk memvalidasi ketahanan kontrol deteksi dan insiden secara riil."
+    },
+    {
+      "key": "triad-sec-consulting",
+      "chapter": "consulting",
+      "kind": "triad-section",
+      "title": "Strategic Consulting & Zero Trust",
+      "lead": "SECTION 03",
+      "notes": "Memasuki bab 3: Konsultasi strategis untuk mentransformasikan postur keamanan siber dari reaktif menjadi arsitektur pertahanan adaptif dan terstruktur."
+    },
+    {
+      "key": "triad-zero-trust",
+      "chapter": "consulting",
+      "kind": "triad-zero-trust-slide",
+      "title": "Zero Trust Architecture Consulting",
+      "lead": "CONSULTING CAPABILITY 01",
+      "notes": "Penerapan prinsip 'Never Trust, Always Verify' di 5 pilar utama: Identity, Device, Network, Application/Workload, dan Data. Meliputi maturity assessment, target blueprint, dan roadmap implementasi bertahap."
+    },
+    {
+      "key": "triad-security-program",
+      "chapter": "consulting",
+      "kind": "triad-service-card",
+      "title": "Cyber Security Program & Strategic Planning",
+      "lead": "CONSULTING CAPABILITY 02",
+      "notes": "Penyusunan IT & Cyber Strategic Planning, Security Development Program (DevSecOps), kebijakan tata kelola, serta Executive & Staff IT Security Awareness Training untuk membangun budaya sadar siber di seluruh lini organisasi."
+    },
+    {
+      "key": "triad-sec-action",
+      "chapter": "action",
+      "kind": "triad-section",
+      "title": "Engagement & Next Steps",
+      "lead": "SECTION 04",
+      "notes": "Memasuki bab 4: Bagaimana memulai kolaborasi dengan TRIAD PRO-TX SIBER dan langkah konkret pengamanan aset digital Anda."
+    },
+    {
+      "key": "triad-roadmap",
+      "chapter": "action",
+      "kind": "triad-roadmap-slide",
+      "title": "Engagement Lifecycle",
+      "lead": "METHODOLOGY & DELIVERY",
+      "notes": "4 Tahapan Engagement TRIAD: 1. Discovery & Baseline (Asesmen awal), 2. Deep-Dive Fieldwork (Audit & Pengujian Teknis), 3. Strategic Reporting & Remediation (Laporan eksekutif & panduan perbaikan), 4. Continuous Assurance (Monitoring & evaluasi berkelanjutan)."
+    },
+    {
+      "key": "triad-contact",
+      "chapter": "action",
+      "kind": "triad-contact-slide",
+      "title": "Partner with TRIAD PRO-TX SIBER",
+      "lead": "GET IN TOUCH",
+      "notes": "Hubungi tim spesialis kami untuk mendiskusikan kebutuhan asesmen keamanan siber, audit sertifikasi, atau arsitektur Zero Trust organisasi Anda: WhatsApp +62 822-5420-3272, Email triad-proteksiber@pm.me, Web eranusasiber.my.id."
+    }
+  ]
+}

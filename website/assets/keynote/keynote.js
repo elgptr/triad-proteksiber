@@ -1,6 +1,7 @@
 import {installLocalAuditAgent} from './local-audit-agent.mjs?v=film-v2-20261118';
 import {fullscreenGuideStrings,installFullscreenGuide} from './fullscreen-guide.mjs?v=20261118';
 import {auditContent,auditDesigns} from './audit-beyond.mjs?v=recap-20261119';
+import {triadDesigns} from './triad-designs.mjs?v=20261124';
 import {installDataHandling} from './data-handling.mjs?v=connected-audit-20261116';
 import {installAssuranceStory} from './assurance-story.mjs?v=connected-audit-20261116';
 import {composeModules,loadContentSnapshot} from './content-modules.mjs?v=connected-audit-20261116';
@@ -138,14 +139,31 @@ slides['your-turn'].html=slides['your-turn'].html.replace('href="'+app+'/audienc
 const stage=document.getElementById('stage');
 Object.assign(languageCatalogue.strings,fullscreenGuideStrings);
 // Resolve published packages before constructing slide navigation or live-follow state.
-const auditPreview=new URLSearchParams(location.search).get('previewTopic')==='ai-audit-beyond';
+const previewTopicParam=new URLSearchParams(location.search).get('previewTopic');
+const triadTopicRequested=previewTopicParam==='triad-proteksiber'||(!previewTopicParam&&!location.search.includes('legacy'));
+const auditPreview=previewTopicParam==='ai-audit-beyond';
 let contentSnapshot=null;
 const loading=document.getElementById('content-loading');
 const presentationStyles=[];
 const loadingState=state=>window.SIGNAL_LOADING?.set(state);
-if(!auditPreview){while(!contentSnapshot){try{loadingState('connecting');contentSnapshot=await loadContentSnapshot({onRetry:()=>loadingState('waiting')});}catch{if(loading){loadingState('error');const retry=loading.querySelector('button');retry.hidden=false;await new Promise(resolve=>retry.onclick=resolve);retry.hidden=true;}else throw Error('Presentation unavailable');}}}
+if(!auditPreview&&!triadTopicRequested){while(!contentSnapshot){try{loadingState('connecting');contentSnapshot=await loadContentSnapshot({onRetry:()=>loadingState('waiting')});}catch{if(loading){loadingState('error');const retry=loading.querySelector('button');retry.hidden=false;await new Promise(resolve=>retry.onclick=resolve);retry.hidden=true;}else throw Error('Presentation unavailable');}}}
 loadingState('preparing');
-if(auditPreview||contentSnapshot?.config?.modules?.some(m=>m.slides.some(s=>s.builtin?.startsWith('aib-')))){
+if(triadTopicRequested){
+ document.querySelector('.deck-language-switch')?.removeAttribute('hidden');
+ const triadMaterial=await fetch(new URL('./triad-topic.json?v=20261124',import.meta.url)).then(r=>r.json());
+ const designed=triadDesigns(triadMaterial,{appUrl:app,assetsUrl:assets,preview:true});
+ Object.assign(slides,designed.renderers);
+ reference={
+   deckId: triadMaterial.id,
+   chapters: triadMaterial.sections,
+   slides: designed.entries
+ };
+ const css=document.createElement('link');css.rel='stylesheet';css.href=new URL('./triad-style.css?v=20261124',import.meta.url);
+ presentationStyles.push(new Promise((resolve,reject)=>{css.onload=resolve;css.onerror=()=>reject(Error('Presentation styles unavailable'));}));
+ document.head.appendChild(css);
+ const wordmark=document.querySelector('.wordmark');if(wordmark){wordmark.textContent='TRIAD PRO-TX SIBER';wordmark.classList.add('topic-wordmark');}
+ document.title='TRIAD PRO-TX SIBER | Enterprise Cybersecurity Deck';
+}else if(auditPreview||contentSnapshot?.config?.modules?.some(m=>m.slides.some(s=>s.builtin?.startsWith('aib-')))){
  document.querySelector('.deck-language-switch')?.removeAttribute('hidden');
  const auditLanguage=await fetch(new URL('./audit-translations-id.json?v=recap-20261119',import.meta.url)).then(r=>{if(!r.ok)throw Error('Audit translations unavailable');return r.json();});
  Object.assign(languageCatalogue.strings,auditLanguage.strings);Object.assign(languageCatalogue.notes,auditLanguage.notes);Object.assign(languageCatalogue.contexts??={},auditLanguage.contexts);
