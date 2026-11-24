@@ -1,5 +1,5 @@
 // TRIAD PRO-TX SIBER Dynamic Presentation Module Engine
-const escape = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>', '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const escape = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
 export function triadDesigns(material, { appUrl = '', assetsUrl = '', preview = false } = {}) {
   const renderers = {};
