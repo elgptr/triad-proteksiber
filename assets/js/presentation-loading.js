@@ -17,6 +17,9 @@
  root.querySelector('.loading-hint').textContent=id?'Materi yang aktif akan tampil otomatis.':'Your active presentation will appear automatically.';
  window.SIGNAL_LOADING={set(state){if(!root.isConnected)return;const copy=messages[state]||messages.connecting;root.dataset.state=state;root.querySelector('h1').textContent=copy[0];root.querySelector('[data-loading-message]').textContent=copy[1];button.hidden=state!=='error';if(state!=='error')button.onclick=()=>location.reload();}};
  window.SIGNAL_LOADING.set('connecting');
- const failed=()=>{if(root.isConnected)window.SIGNAL_LOADING.set('error');};
+ const failed=(e)=>{
+   console.error('Presentation loading encountered error:', e);
+   if(root.isConnected)window.SIGNAL_LOADING.set('error');
+ };
  window.addEventListener('error',failed);window.addEventListener('unhandledrejection',failed);
 })();

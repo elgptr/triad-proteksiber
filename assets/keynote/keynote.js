@@ -294,4 +294,8 @@ const hashIndex=()=>{const module=location.hash.match(/^#module-([a-z0-9-]+)$/);
 addEventListener('hashchange',()=>show(hashIndex(),false));show(hashIndex(),false,true);
 if(!triadTopicRequested&&!contentSnapshot?.preview)connectLiveDeck({slides:reference.slides.map(entry=>({...entry,title:slides[entry.key].title})),outline:reference,current:()=>current,showRemote:index=>{if(index>=0)show(index,true,true);}});
 
-installDeckLanguage({catalogue:languageCatalogue,reference});
+try {
+  installDeckLanguage({catalogue:languageCatalogue,reference});
+} catch(e) {
+  console.warn('Language catalogue setup bypassed', e);
+}
