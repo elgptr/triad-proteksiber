@@ -156,7 +156,8 @@ if(triadTopicRequested){
  reference={
    deckId: triadMaterial.id,
    chapters: triadMaterial.sections,
-   slides: designed.entries
+   slides: designed.entries,
+   research: {}
  };
  const css=document.createElement('link');css.rel='stylesheet';css.href=new URL('./triad-style.css?v=20261124',import.meta.url);
  presentationStyles.push(new Promise((resolve,reject)=>{css.onload=resolve;css.onerror=()=>reject(Error('Presentation styles unavailable'));}));
@@ -187,10 +188,10 @@ stage.innerHTML=reference.slides.map((entry,i)=>{const s=slides[entry.key],chapt
 await Promise.all(presentationStyles);
 if(document.fonts)await Promise.race([document.fonts.ready,new Promise(resolve=>setTimeout(resolve,3000))]);
 loading?.remove();
-installLocalAuditAgent(stage);
-installFullscreenGuide(stage);
-installDataHandling(stage);
-installAssuranceStory(stage);
+try { installLocalAuditAgent(stage); } catch(e) {}
+try { installFullscreenGuide(stage); } catch(e) {}
+try { installDataHandling(stage); } catch(e) {}
+try { installAssuranceStory(stage); } catch(e) {}
 const frames=[...stage.querySelectorAll('.frame')],sheet=document.getElementById('sheet'),sheetBody=document.getElementById('sheet-body'),seek=document.getElementById('seek');
 let current=0;
 
@@ -291,6 +292,6 @@ stage.addEventListener('touchstart',event=>{if(event.target.closest('button,a,in
 stage.addEventListener('touchend',event=>{if(!start)return;const dx=event.changedTouches[0].clientX-start.x,dy=event.changedTouches[0].clientY-start.y;start=null;if(Math.abs(dx)>80&&Math.abs(dx)>Math.abs(dy)*1.5)show(current+(dx<0?1:-1));},{passive:true});
 const hashIndex=()=>{const module=location.hash.match(/^#module-([a-z0-9-]+)$/);if(module)return Math.max(0,reference.slides.findIndex(s=>s.chapter===module[1]));const match=location.hash.match(/^#(?:slide-)?(\d+)$/);return match?Number(match[1])-1:0;};
 addEventListener('hashchange',()=>show(hashIndex(),false));show(hashIndex(),false,true);
-if(!contentSnapshot?.preview)connectLiveDeck({slides:reference.slides.map(entry=>({...entry,title:slides[entry.key].title})),outline:reference,current:()=>current,showRemote:index=>{if(index>=0)show(index,true,true);}});
+if(!triadTopicRequested&&!contentSnapshot?.preview)connectLiveDeck({slides:reference.slides.map(entry=>({...entry,title:slides[entry.key].title})),outline:reference,current:()=>current,showRemote:index=>{if(index>=0)show(index,true,true);}});
 
 installDeckLanguage({catalogue:languageCatalogue,reference});
