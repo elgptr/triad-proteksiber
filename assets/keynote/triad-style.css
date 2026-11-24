@@ -1,0 +1,307 @@
+/* TRIAD PRO-TX SIBER Modern Keynote Theme (Linear / Vercel Dark Technical Aesthetic) */
+
+:root {
+  --triad-navy: #0b0f19;
+  --triad-surface: #111827;
+  --triad-card: rgba(17, 24, 39, 0.7);
+  --triad-border: rgba(56, 189, 248, 0.2);
+  --triad-border-hover: rgba(56, 189, 248, 0.5);
+  --triad-cyan: #00f0ff;
+  --triad-blue: #0284c7;
+  --triad-sky: #38bdf8;
+  --triad-emerald: #10b981;
+  --triad-amber: #f59e0b;
+  --triad-text: #f8fafc;
+  --triad-muted: #94a3b8;
+  --triad-glow: radial-gradient(circle at 50% 30%, rgba(0, 240, 255, 0.12), transparent 70%);
+}
+
+.night.triad-frame {
+  background: radial-gradient(ellipse at 80% 10%, rgba(2, 132, 199, 0.15), transparent 60%),
+              radial-gradient(ellipse at 15% 90%, rgba(0, 240, 255, 0.08), transparent 60%),
+              #070a11 !important;
+  color: var(--triad-text) !important;
+  --ink: #f8fafc;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --line: rgba(56, 189, 248, 0.18);
+}
+
+.triad-grid-bg {
+  position: absolute;
+  inset: 0;
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  mask-image: radial-gradient(ellipse at center, black 40%, transparent 85%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Header & Eyebrow */
+.triad-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--triad-cyan);
+  margin-bottom: 12px;
+}
+.triad-pulse-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--triad-cyan);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--triad-cyan);
+  animation: triad-pulse 2s infinite ease-in-out;
+}
+@keyframes triad-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+/* Cover specific */
+.triad-cover-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 28px;
+  position: relative;
+  z-index: 1;
+}
+.triad-brand-title {
+  font-size: clamp(48px, 6vw, 92px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  margin: 0;
+  background: linear-gradient(135deg, #ffffff 30%, #38bdf8 80%, #0284c7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.triad-brand-sub {
+  font-size: clamp(18px, 2vw, 26px);
+  color: var(--triad-muted);
+  max-width: 950px;
+  line-height: 1.5;
+  margin: 0;
+}
+.triad-pillars-banner {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+.triad-pill-item {
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--triad-sky);
+  backdrop-filter: blur(8px);
+}
+
+/* Cards & Layout */
+.triad-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  position: relative;
+  z-index: 1;
+  margin-top: 10px;
+}
+.triad-card {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(56, 189, 248, 0.16);
+  border-radius: 16px;
+  padding: 28px;
+  backdrop-filter: blur(16px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+}
+.triad-card:hover {
+  border-color: rgba(0, 240, 255, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px -10px rgba(0, 240, 255, 0.15);
+}
+.triad-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.6), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.triad-card:hover::before {
+  opacity: 1;
+}
+
+.triad-card-badge {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--triad-sky);
+}
+.triad-card h2, .triad-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: #fff;
+}
+.triad-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--triad-muted);
+  margin: 0;
+}
+.triad-card-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.triad-card-bullets li {
+  font-size: 13.5px;
+  color: #cbd5e1;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.45;
+}
+.triad-card-bullets li::before {
+  content: "▹";
+  color: var(--triad-cyan);
+  font-weight: bold;
+}
+
+/* Team Grid */
+.triad-team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  position: relative;
+  z-index: 1;
+}
+.triad-team-card {
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(56, 189, 248, 0.18);
+  border-radius: 16px;
+  padding: 26px;
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.triad-team-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(2, 132, 199, 0.3));
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--triad-cyan);
+}
+.triad-team-name {
+  font-size: 21px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+.triad-team-role {
+  font-size: 13px;
+  color: var(--triad-sky);
+  font-weight: 600;
+  margin: 0;
+}
+.triad-team-cred {
+  font-size: 11px;
+  color: var(--triad-muted);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 10px;
+  margin-top: 5px;
+  line-height: 1.45;
+}
+
+/* Zero Trust Pillars */
+.triad-zt-pillars {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  position: relative;
+  z-index: 1;
+}
+.triad-zt-node {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-radius: 12px;
+  padding: 20px 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.triad-zt-node strong {
+  font-size: 15px;
+  color: #ffffff;
+}
+.triad-zt-node span {
+  font-size: 12px;
+  color: var(--triad-muted);
+  line-height: 1.4;
+}
+
+/* Contact Terminal */
+.triad-contact-box {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 20px;
+  padding: 40px;
+  backdrop-filter: blur(20px);
+  position: relative;
+  z-index: 1;
+}
+.triad-btn-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #0284c7, #00f0ff);
+  color: #070a11;
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  transition: opacity 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+.triad-btn-action:hover {
+  opacity: 0.92;
+  transform: scale(1.02);
+}
