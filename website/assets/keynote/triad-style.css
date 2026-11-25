@@ -298,6 +298,61 @@
   font-weight: 700;
   font-size: 15px;
   text-decoration: none;
+}
+
+/* Approved SVG Illustrations & Animations (ILL-01..08) */
+.triad-cover-split {
+  display: grid;
+  grid-template-columns: 1.35fr 0.85fr;
+  align-items: center;
+  gap: 32px;
+  position: relative;
+  z-index: 1;
+}
+.triad-svg { display: block; max-width: 100%; height: auto; }
+.triad-svg-cover { width: min(380px, 100%); justify-self: center; }
+.triad-svg-inline { width: min(340px, 100%); margin: 4px auto 0; }
+.triad-svg-banner { width: min(380px, 100%); max-height: 150px; margin: 0 auto 4px; }
+.triad-svg-mini { width: 108px; flex-shrink: 0; }
+.triad-svg-pipe { width: min(760px, 100%); max-height: 68px; margin: 0 auto 6px; }
+.triad-svg-beacon { width: 140px; height: 112px; margin: 0 auto 8px; }
+.triad-service-head { display: flex; align-items: center; gap: 18px; }
+
+@keyframes triadSpinSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes triadSpinRev { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
+@keyframes triadDashFlow { to { stroke-dashoffset: -40; } }
+@keyframes triadScanY { 0%, 100% { transform: translateY(0); opacity: .25; } 50% { transform: translateY(96px); opacity: .95; } }
+@keyframes triadFloatY { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@keyframes triadRipple { 0% { r: 18; opacity: .85; } 100% { r: 72; opacity: 0; } }
+@keyframes triadBarPulse { 0%, 100% { opacity: .35; } 50% { opacity: 1; } }
+
+.triad-spin-slow { transform-origin: center; transform-box: fill-box; animation: triadSpinSlow 14s linear infinite; }
+.triad-spin-rev { transform-origin: center; transform-box: fill-box; animation: triadSpinRev 20s linear infinite; }
+.triad-dash-flow { stroke-dasharray: 6 6; animation: triadDashFlow 1.6s linear infinite; }
+.triad-scan-line { animation: triadScanY 3s ease-in-out infinite; }
+.triad-float-y { animation: triadFloatY 3.2s ease-in-out infinite; }
+.triad-pulse-svg { animation: triad-pulse 2s infinite ease-in-out; }
+.triad-ripple-1 { animation: triadRipple 3s ease-out infinite; }
+.triad-ripple-2 { animation: triadRipple 3s ease-out 1s infinite; }
+.triad-ripple-3 { animation: triadRipple 3s ease-out 2s infinite; }
+.triad-bar-pulse { animation: triadBarPulse 1.5s infinite; }
+.triad-bar-pulse.d2 { animation-delay: .5s; }
+.triad-bar-pulse.d3 { animation-delay: 1s; }
+
+/* Approved Transition TR-01: Zoom-Blur Focus for Cover & Section Dividers */
+.frame.triad-cover.active,
+.frame.triad-section.active {
+  animation: triadZoomBlur 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes triadZoomBlur {
+  from { opacity: 0; transform: scale(0.94); filter: blur(6px); }
+  to { opacity: 1; transform: scale(1); filter: blur(0); }
+}
+
+@media (max-width: 900px) {
+  .triad-cover-split { grid-template-columns: 1fr; }
+  .triad-svg-cover { width: 240px; }
+}
   transition: opacity 0.2s, transform 0.2s;
   cursor: pointer;
 }
